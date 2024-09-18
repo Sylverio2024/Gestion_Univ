@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/salle"
+        android:layout_width="170dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="180dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/editbox_dropdown_light_frame" />
+
+    <ImageView
+        android:id="@+id/evenement"
+        android:layout_width="170dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/salle"
+        app:srcCompat="@android:drawable/editbox_dropdown_light_frame" />
+
+    <TextView
+        android:id="@+id/textEvent"
+        android:layout_width="142dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Evenement"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/evenement"
+        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintStart_toStartOf="@+id/evenement"
+        app:layout_constraintTop_toTopOf="@+id/evenement" />
+
+    <TextView
+        android:id="@+id/textSalle"
+        android:layout_width="142dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Salle"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/salle"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="@+id/salle"
+        app:layout_constraintTop_toTopOf="@+id/salle" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="147dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/salle"
+        app:layout_constraintStart_toStartOf="@+id/salle"
+        app:layout_constraintTop_toBottomOf="@+id/textSalle"
+        app:srcCompat="@drawable/salle" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="130dp"
+        android:layout_height="54dp"
+        app:layout_constraintEnd_toEndOf="@+id/evenement"
+        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintStart_toStartOf="@+id/evenement"
+        app:layout_constraintTop_toBottomOf="@+id/textEvent"
+        app:srcCompat="@drawable/evenement" />
+
+    <ImageView
+        android:id="@+id/cours"
+        android:layout_width="170dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="180dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/editbox_dropdown_light_frame" />
+
+    <TextView
+        android:id="@+id/textCours"
+        android:layout_width="142dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Cours"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/cours"
+        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintStart_toStartOf="@+id/cours"
+        app:layout_constraintTop_toTopOf="@+id/cours" />
+
+    <ImageView
+        android:id="@+id/notification"
+        android:layout_width="170dp"
+        android:layout_height="156dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cours"
+        app:srcCompat="@android:drawable/editbox_dropdown_light_frame"/>
+
+    <ImageView
+        android:id="@+id/imageView18"
+        android:layout_width="91dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/cours"
+        app:layout_constraintHorizontal_bias="0.54"
+        app:layout_constraintStart_toStartOf="@+id/cours"
+        app:layout_constraintTop_toBottomOf="@+id/textCours"
+        app:srcCompat="@drawable/cours" />
+
+    <TextView
+        android:id="@+id/textNotification"
+        android:layout_width="143dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="Envoie Notification"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/notification"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="@+id/notification"
+        app:layout_constraintTop_toTopOf="@+id/notification" />
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="87dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/notification"
+        app:layout_constraintHorizontal_bias="0.535"
+        app:layout_constraintStart_toStartOf="@+id/notification"
+        app:layout_constraintTop_toBottomOf="@+id/textNotification"
+        app:srcCompat="@drawable/notification1" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

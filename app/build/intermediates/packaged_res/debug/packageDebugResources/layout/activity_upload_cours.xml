@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UploadCours">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/scrollView2"
+        android:layout_height="620dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
+            android:background="@drawable/lavender_border">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Chargé les données"
+                android:textSize="20dp"
+                android:textAlignment="center"
+                android:textColor="@color/lavender"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:id="@+id/txtNumeroCours"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="5dp"
+                android:padding="16sp"
+                android:textSize="13sp"
+                android:hint="Numero"
+                android:textColorHint="@color/lavender"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/lavender" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:id="@+id/txtNameCours"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="5dp"
+                android:padding="16sp"
+                android:textSize="13sp"
+                android:hint="Nom"
+                android:textColorHint="@color/lavender"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/lavender" />
+
+            <EditText
+                android:id="@+id/txtSalleCours"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/lavender_border"
+                android:drawableEnd="@android:drawable/ic_input_add"
+
+                android:editable="false"
+                android:gravity="start|center_vertical"
+                android:hint="Salle"
+                android:padding="16sp"
+                android:textColor="@color/lavender"
+                android:textColorHint="@color/lavender"
+                android:textSize="13sp" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:id="@+id/txtParcoursCours"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="5dp"
+                android:padding="16sp"
+                android:textSize="13sp"
+                android:hint="Parcours"
+                android:textColorHint="@color/lavender"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/lavender" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:id="@+id/txtNiveauCours"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="5dp"
+                android:padding="16sp"
+                android:textSize="13sp"
+                android:hint="Niveau"
+                android:textColorHint="@color/lavender"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/lavender" />
+
+            <EditText
+                android:id="@+id/txtDescriptionCours"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/lavender_border"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="Description"
+                android:inputType="textMultiLine"
+                android:padding="16sp"
+                android:textColor="@color/lavender"
+                android:textColorHint="@color/lavender"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/bntSaveCours"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Enregistré"
+                android:layout_marginStart="100dp"
+                android:textSize="15sp"
+                app:cornerRadius="20dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</androidx.cardview.widget.CardView>

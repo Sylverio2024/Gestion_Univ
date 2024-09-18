@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="#0E92FB"
+tools:context=".Register">
+
+    <ImageView
+        android:id="@+id/bckRegister"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="341dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="Créer un compte"
+        android:textSize="35sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bckRegister"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="370dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:hint="Nom complet"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="#F4EBEB"
+        android:textColorHint="#F4EBEB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtEmail"
+        android:layout_width="379dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:hint="Votre adresse email"
+        android:textColorHint="#F4EBEB"
+        app:boxBackgroundColor="#0E92FB"
+        app:boxBackgroundMode="filled"
+        app:boxStrokeColor="#F4EBEB"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtName"
+        app:startIconDrawable="@drawable/baseline_alternate_email_24"
+        app:startIconTint="#F4EBEB">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/eTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textWebEmailAddress|textAutoComplete"
+            android:textColor="#F4EBEB" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtMdp"
+        android:layout_width="376dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="20dp"
+        android:hint="Mot de passe"
+        android:textColorHint="#F4EBEB"
+        app:boxBackgroundColor="#0E92FB"
+        app:boxBackgroundMode="filled"
+        app:boxStrokeColor="#F4EBEB"
+        app:counterEnabled="true"
+        app:endIconMode="password_toggle"
+        app:endIconTint="#F4EBEB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail"
+        app:startIconDrawable="@drawable/baseline_lock_24"
+        app:startIconTint="#F4EBEB">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/eTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textPassword|textNoSuggestions"
+            android:textColor="#F4EBEB" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <EditText
+        android:id="@+id/txtPhone"
+        android:layout_width="369dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:hint="Téléphone"
+        android:inputType="textPhonetic"
+        android:padding="10dp"
+        android:textColor="#F4EBEB"
+        android:textColorHint="#F4EBEB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtMdp" />
+
+    <Button
+        android:id="@+id/btnRegistre"
+        android:layout_width="229dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:text="Enregistrer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPhone" />
+
+<TextView
+    android:id="@+id/txtlogin"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:gravity="center"
+    android:text="Déjà inscrit? Connectez-vous ici"
+    android:textColor="#F4F1F1"
+    android:textSize="18sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/btnRegistre" />
+
+<ProgressBar
+    android:id="@+id/progressBar"
+    style="?android:attr/progressBarStyle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:visibility="invisible"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/txtlogin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

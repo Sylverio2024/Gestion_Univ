@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Consulter">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/Cours1"
+                    android:icon="@drawable/baseline_business_center_24"
+                    android:title="Cours"
+                    />
+                <item android:id="@+id/Event1"
+                    android:icon="@drawable/baseline_event_note_24"
+                    android:title="Evenement"
+                    />
+            </group>
+        </menu>
+    </item>
+    <item android:title="Mon compte">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/About1"
+                      android:title="A propos"
+                      android:icon="@drawable/baseline_account_circle_24"/>
+                <item android:id="@+id/Lgout1"
+                      android:icon="@drawable/baseline_logout_24"
+                      android:title="Déconnexion" />
+            </group>
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0E92FB"
+    tools:context=".fen2">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="345dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="156dp"
+        android:gravity="center"
+        android:text="VOUS ÊTES ?"
+        android:textColor="#ffffff"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="84dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/retour_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="85dp"
+            android:layout_height="55dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="?attr/homeAsUpIndicator" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btn3"
+        android:layout_width="279dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="32dp"
+        android:text="ETUDIANT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/btn4"
+        android:layout_width="279dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="48dp"
+        android:text="ENSEIGNANT"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn3" />
+
+    <Button
+        android:id="@+id/btn5"
+        android:layout_width="279dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="48dp"
+        android:text="SCOLARITE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn4" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="58dp"
+        android:layout_height="40dp"
+        android:backgroundTint="#673AB7"
+        app:layout_constraintBottom_toBottomOf="@+id/btn3"
+        app:layout_constraintEnd_toEndOf="@+id/btn3"
+        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintStart_toStartOf="@+id/btn3"
+        app:layout_constraintTop_toTopOf="@+id/btn3"
+        app:layout_constraintVertical_bias="0.518"
+        app:srcCompat="@drawable/etudiant" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="64dp"
+        android:layout_height="41dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn4"
+        app:layout_constraintEnd_toEndOf="@+id/btn4"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toStartOf="@+id/btn4"
+        app:layout_constraintTop_toTopOf="@+id/btn4"
+        app:srcCompat="@drawable/png_clipart_computer_icons_professor_teacher_teacher_angle_logo" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="52dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn5"
+        app:layout_constraintEnd_toEndOf="@+id/btn5"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="@+id/btn5"
+        app:layout_constraintTop_toTopOf="@+id/btn5"
+        app:srcCompat="@drawable/_60_f_362150083_tbz2jnkwvegpbx2n8i3awmmuokyrlxj5" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

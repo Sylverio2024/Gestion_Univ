@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".photoEtudiant">
+
+    <include
+        android:id="@+id/include2"
+        layout="@layout/activity_fn5_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/btnSaveS"
+        android:layout_width="123dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        android:text="Enregistré √ "
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgChooseS"
+        android:layout_width="352dp"
+        android:layout_height="384dp"
+        android:layout_marginTop="104dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include2"
+        android:src="@drawable/imageicon" />
+
+    <ImageView
+        android:id="@+id/btnCamS"
+        android:layout_width="88dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgChooseS"
+        app:srcCompat="@drawable/ic_menu_camera" />
+
+    <TextView
+        android:id="@+id/textCam1"
+        android:layout_width="88dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Camera"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCamS" />
+
+    <ImageView
+        android:id="@+id/btnGalS"
+        android:layout_width="88dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgChooseS"
+        app:srcCompat="@drawable/ic_menu_gallery" />
+
+    <TextView
+        android:id="@+id/textGal1"
+        android:layout_width="88dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="80dp"
+        android:gravity="center"
+        android:text="Galerie"
+        android:textSize="17dp"
+        android:textStyle="bold"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGalS" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

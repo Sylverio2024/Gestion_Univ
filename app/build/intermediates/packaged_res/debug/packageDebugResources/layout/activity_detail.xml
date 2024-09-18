@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/detailImage"
+                android:layout_width="0dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="16dp"
+                android:padding="8dp"
+                android:src="@drawable/imageicon"
+                android:scaleType="fitXY"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/petiteImageView"
+                android:layout_width="37dp"
+                android:layout_height="35dp"
+                android:layout_margin="8dp"
+                android:background="@drawable/back_round"
+                android:scaleType="centerCrop"
+                android:src="@drawable/baseline_add_a_photo_24"
+                app:layout_constraintBottom_toBottomOf="@id/detailImage"
+                app:layout_constraintEnd_toEndOf="@id/detailImage" />
+
+            <!-- NuméroID -->
+            <TextView
+                android:id="@+id/labelNumeroID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="NuméroID:"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/detailImage"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/detailNumeroID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NumeroID"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/labelNumeroID"
+                app:layout_constraintTop_toTopOf="@id/labelNumeroID"
+                app:layout_constraintBottom_toBottomOf="@id/labelNumeroID" />
+
+            <!-- Nom -->
+            <TextView
+                android:id="@+id/labelNom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Nom:"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/labelNumeroID"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/detailNom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nom"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/labelNom"
+                app:layout_constraintTop_toTopOf="@id/labelNom"
+                app:layout_constraintBottom_toBottomOf="@id/labelNom" />
+
+            <!-- Prénom -->
+            <TextView
+                android:id="@+id/labelPrenom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Prénom:"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/labelNom"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/detailPrenom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prénom"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/labelPrenom"
+                app:layout_constraintTop_toTopOf="@id/labelPrenom"
+                app:layout_constraintBottom_toBottomOf="@id/labelPrenom" />
+
+            <!-- Spécialité -->
+            <TextView
+                android:id="@+id/labelSpecialite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Spécialité:"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/labelPrenom"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/detailSpecialite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Spécialité"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/labelSpecialite"
+                app:layout_constraintTop_toTopOf="@id/labelSpecialite"
+                app:layout_constraintBottom_toBottomOf="@id/labelSpecialite" />
+
+            <!-- Adresse -->
+            <TextView
+                android:id="@+id/labelAdresse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Adresse:"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/detailSpecialite"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/detailAdresse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Adresse"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/labelAdresse"
+                app:layout_constraintTop_toTopOf="@id/labelAdresse"
+                app:layout_constraintBottom_toBottomOf="@id/labelAdresse" />
+
+            <!-- Catégorie -->
+            <TextView
+                android:id="@+id/labelCategorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Catégorie:"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/detailAdresse"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/detailCategorie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Catégorie"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/labelCategorie"
+                app:layout_constraintTop_toTopOf="@id/labelCategorie"
+                app:layout_constraintBottom_toBottomOf="@id/labelCategorie" />
+
+            <!-- Téléphone -->
+            <TextView
+                android:id="@+id/labelTelephone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Téléphone:"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintTop_toBottomOf="@id/detailCategorie"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/detailTelephone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Téléphone"
+                android:textColor="@color/lavender"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/labelTelephone"
+                app:layout_constraintTop_toTopOf="@id/labelTelephone"
+                app:layout_constraintBottom_toBottomOf="@id/labelTelephone" />
+
+            <!-- Floating Action Menu -->
+            <com.github.clans.fab.FloatingActionMenu
+                android:id="@+id/fabMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:menu_colorNormal="@color/lavender"
+                app:menu_colorPressed="@color/lavender"
+                app:menu_fab_size="normal"
+                app:menu_icon="@drawable/baseline_format_list_bulleted_24"
+                app:menu_openDirection="down"
+                app:menu_showShadow="true">
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/editButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_edit_24"
+                    app:fab_colorNormal="@color/green"
+                    app:fab_showShadow="true"
+                    app:fab_size="mini" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/deleteButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_delete_24"
+                    app:fab_colorNormal="@color/red"
+                    app:fab_showShadow="true"
+                    app:fab_size="mini" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/printButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_local_printshop_24"
+                    app:fab_colorNormal="@color/lavender"
+                    app:fab_showShadow="true"
+                    app:fab_size="mini" />
+            </com.github.clans.fab.FloatingActionMenu>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</ScrollView>

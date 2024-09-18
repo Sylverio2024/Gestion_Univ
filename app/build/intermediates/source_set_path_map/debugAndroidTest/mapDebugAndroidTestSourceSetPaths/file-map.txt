@@ -1,0 +1,6 @@
+com.example.gestion_univ.test.app-annotation-experimental-1.3.0-0 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\7d620e99115b98c60ea288289ff9f0e1\transformed\annotation-experimental-1.3.0\res
+com.example.gestion_univ.test.app-core-1.5.0-1 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\c959c58bdd4327cf277d8bb353022bf0\transformed\core-1.5.0\res
+com.example.gestion_univ.test.app-androidTest-2 E:\AndroidProject\app\build\generated\res\resValues\androidTest\debug
+com.example.gestion_univ.test.app-mergeDebugAndroidTestResources-3 E:\AndroidProject\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.gestion_univ.test.app-mergeDebugAndroidTestResources-4 E:\AndroidProject\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.gestion_univ.test.app-debugAndroidTest-5 E:\AndroidProject\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

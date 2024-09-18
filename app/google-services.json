@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1027127304644",
+    "project_id": "loginregistre-d4180",
+    "storage_bucket": "loginregistre-d4180.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027127304644:android:cd3b6f2004e8400aec0491",
+        "android_client_info": {
+          "package_name": "com.example.gestion_univ"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA74bwgKLa5OZZHgxnVWpIVJKqUt5VUl3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

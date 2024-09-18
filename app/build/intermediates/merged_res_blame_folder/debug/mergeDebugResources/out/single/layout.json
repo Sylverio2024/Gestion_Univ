@@ -1,0 +1,294 @@
+[
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_upload_salle.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_upload_salle.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_fn5_content.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_fn5_content.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_detail2.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_detail2.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_edit_profil.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_edit_profil.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\dialog_loading.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\dialog_loading.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_scanner2.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_scanner2.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\recycler_item3.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\recycler_item3.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_choix_salle.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_choix_salle.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\home1.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\home1.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_update_event.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_update_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_upload_student.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_upload_student.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_choose_pdp1.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_choose_pdp1.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_scanner3.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_scanner3.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_evenement.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_evenement.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\user_item.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\user_item.xml"
+    },
+    {
+        "merged": "com.example.gestion_univ.app-mergeDebugResources-57:/layout/recycler_item4.xml",
+        "source": "com.example.gestion_univ.app-main-60:/layout/recycler_item4.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_fn5.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_fn5.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_detail1.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_detail1.xml"
+    },
+    {
+        "merged": "com.example.gestion_univ.app-mergeDebugResources-57:/layout/recycler_item3.xml",
+        "source": "com.example.gestion_univ.app-main-60:/layout/recycler_item3.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_fn_enseignant.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_fn_enseignant.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_edit_profil1.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_edit_profil1.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\salle_item1.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\salle_item1.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_fn_etudiant.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_fn_etudiant.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_scanner.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_scanner.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_main_content1.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_main_content1.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_edit_pdp1.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_edit_pdp1.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_profile_user.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_profile_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\recycler_item2.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\recycler_item2.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_detail4.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_detail4.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\drawer_header1.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\drawer_header1.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\salle_item.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\salle_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_utilisateur.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_utilisateur.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_update_cours.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_update_cours.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_photo_etudiant.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_photo_etudiant.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\recycler_item.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\recycler_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_detail_user.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_detail_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\drawer_header.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\drawer_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_login.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "com.example.gestion_univ.app-mergeDebugResources-57:/layout/recycler_item.xml",
+        "source": "com.example.gestion_univ.app-main-60:/layout/recycler_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\dialog_image.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\dialog_image.xml"
+    },
+    {
+        "merged": "com.example.gestion_univ.app-mergeDebugResources-57:/layout/recycler_item2.xml",
+        "source": "com.example.gestion_univ.app-main-60:/layout/recycler_item2.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_update_salle.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_update_salle.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_update_student.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_update_student.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_fn4.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_fn4.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_photo_enseignant.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_photo_enseignant.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_detail.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_cours.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_cours.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\home.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\home.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_main_etudiant.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_main_etudiant.xml"
+    },
+    {
+        "merged": "com.example.gestion_univ.app-mergeDebugResources-57:/layout/recycler_item1.xml",
+        "source": "com.example.gestion_univ.app-main-60:/layout/recycler_item1.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_edit_pdp.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_edit_pdp.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_mode.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_mode.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_upload_cours.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_upload_cours.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_create_account.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_create_account.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_register.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_choose_pdp.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_choose_pdp.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\recycler_item4.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\recycler_item4.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_main_content.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_main_content.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_salle.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_salle.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\recycler_item1.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\recycler_item1.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_profile_admin.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_profile_admin.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_updload_teacher.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_updload_teacher.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\progress_layout.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\progress_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_fen2.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_fen2.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_update_teacher.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_update_teacher.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_detail3.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_detail3.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\dialog_forgot.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\dialog_forgot.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_verification_email.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_verification_email.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_choix_salle1.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_choix_salle1.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_fn3.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_fn3.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_main2.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_main2.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_upload_event.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_upload_event.xml"
+    }
+]

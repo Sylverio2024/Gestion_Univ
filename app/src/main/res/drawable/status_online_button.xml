@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- État activé du bouton -->
+    <item android:state_enabled="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#4CAF50"/> <!-- Couleur verte -->
+            <corners android:radius="12dp"/> <!-- Coins arrondis -->
+            <size android:width="48dp" android:height="48dp"/> <!-- Taille du bouton -->
+            <stroke
+                android:width="2dp"
+                android:color="#388E3C"/> <!-- Bordure plus foncée -->
+        </shape>
+    </item>
+    <!-- État désactivé du bouton -->
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle">
+            <solid android:color="#C8E6C9"/> <!-- Couleur verte claire pour l'état désactivé -->
+            <corners android:radius="12dp"/>
+            <size android:width="48dp" android:height="48dp"/>
+            <stroke
+                android:width="2dp"
+                android:color="#A5D6A7"/>
+        </shape>
+    </item>
+</selector>

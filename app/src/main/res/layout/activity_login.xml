@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="#0E92FB"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login">
+
+    <ImageView
+        android:id="@+id/bckLogin"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="44dp"
+        android:background="@color/red"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="?attr/homeAsUpIndicator" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="341dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="Connectez-vous"
+        android:textSize="35sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bckLogin"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lEmail"
+        android:layout_width="309dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="32dp"
+        android:hint="E-mail"
+        app:boxBackgroundColor="#226091"
+        app:boxBackgroundMode="outline"
+        app:boxCollapsedPaddingTop="10dp"
+        app:boxStrokeColor="#673AB7"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:placeholderText="ex: abc@cdf.com"
+        app:startIconDrawable="@drawable/baseline_alternate_email_24"
+        app:startIconTint="#673AB7">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtLemail"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:inputType="text|textWebEmailAddress|textAutoComplete" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/lMdp"
+        android:layout_width="310dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Mot de passe"
+        app:boxBackgroundColor="#226091"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#673AB7"
+        app:counterEnabled="true"
+        app:endIconMode="password_toggle"
+        app:endIconTint="#673AB7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lEmail"
+        app:startIconDrawable="@drawable/baseline_lock_24"
+        app:startIconTint="#673AB7">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtLmdp"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:inputType="text|textPassword|textNoSuggestions" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnConnexion"
+        android:layout_width="244dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="12dp"
+        android:text="Enregistrer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lMdp" />
+
+    <TextView
+        android:id="@+id/txtRegister"
+        android:layout_width="269dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:text="Nouveau ici? Creer un compte"
+        android:textColor="#F4F1F1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtdialog" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRegister" />
+
+    <TextView
+        android:id="@+id/txtdialog"
+        android:layout_width="226dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Mot de passe oublié?"
+        android:textColor="#F4F1F1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnConnexion" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

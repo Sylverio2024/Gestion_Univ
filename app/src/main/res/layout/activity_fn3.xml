@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0E92FB"
+    tools:context=".fn3">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="306dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="124dp"
+        android:background="@drawable/back_text"
+        android:text="Connectez-vous"
+        android:textAlignment="center"
+        android:textSize="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutEmail"
+        android:layout_width="309dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="90dp"
+        android:layout_marginEnd="32dp"
+        android:hint="E-mail"
+        app:boxBackgroundColor="#226091"
+        app:boxBackgroundMode="outline"
+        app:boxCollapsedPaddingTop="10dp"
+        app:boxStrokeColor="#673AB7"
+        app:endIconMode="clear_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:placeholderText="ex: abc@cdf.com"
+        app:startIconDrawable="@drawable/baseline_alternate_email_24"
+        app:startIconTint="#673AB7">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/eTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:inputType="text|textWebEmailAddress|textAutoComplete" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutPassword"
+        android:layout_width="310dp"
+        android:layout_height="76dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:hint="Mot de passe"
+        app:boxBackgroundColor="#226091"
+        app:boxBackgroundMode="outline"
+        app:boxStrokeColor="#673AB7"
+        app:counterEnabled="true"
+        app:endIconMode="password_toggle"
+        app:endIconTint="#673AB7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutEmail"
+        app:startIconDrawable="@drawable/baseline_lock_24"
+        app:startIconTint="#673AB7">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/eTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:inputType="text|textPassword|textNoSuggestions" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnSingin"
+        android:layout_width="188dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="15dp"
+        android:text="Sing in"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layoutPassword" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="415dp"
+        android:layout_height="0dp"
+        android:background="#F7F8F8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="284dp"
+            android:layout_height="53dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_vertical"
+            android:text="Connexion"
+            android:textColor="#090909"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/back_fn2"
+            android:layout_width="47dp"
+            android:layout_height="36dp"
+            android:background="@drawable/back_text"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView6"
+            app:layout_constraintHorizontal_bias="0.637"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.482"
+            app:srcCompat="?attr/homeAsUpIndicator" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textForgot"
+        android:layout_width="235dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="Mot de passe oublié ?"
+        android:textColor="#673AB7"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSingin" />
+
+    <ProgressBar
+        android:id="@+id/proBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textForgot" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

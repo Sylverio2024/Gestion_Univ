@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.example.gestion_univ.app-mergeDebugResources-56:/values-id/values-id.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\willson JFB PROd\\.gradle\\caches\\transforms-4\\df4169ea3d196d4884885c266e3dd368\\transformed\\jetified-zxing-android-embedded-4.3.0\\res\\values-id\\values-id.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,114,161,293",
+                        "endColumns": "58,46,131,108",
+                        "endOffsets": "109,156,288,397"
+                    }
+                }
+            ]
+        }
+    ]
+}

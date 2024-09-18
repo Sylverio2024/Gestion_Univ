@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".UpdateTeacher">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
+            android:background="@drawable/lavender_border">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Modifier les données"
+                android:textSize="20dp"
+                android:padding="20dp"
+                android:textAlignment="center"
+                android:textColor="@color/lavender"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:id="@+id/updateNumeroID"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="5dp"
+                android:padding="16sp"
+                android:textSize="13sp"
+                android:hint="NuméroID"
+                android:textColorHint="@color/lavender"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/lavender" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:id="@+id/updateNameT"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="5dp"
+                android:padding="16sp"
+                android:textSize="13sp"
+                android:hint="Nom"
+                android:textColorHint="@color/lavender"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/lavender" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:id="@+id/updatePrenomT"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="5dp"
+                android:padding="16sp"
+                android:textSize="13sp"
+                android:hint="Prénom"
+                android:textColorHint="@color/lavender"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/lavender" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textSize="13sp"
+                android:id="@+id/updateSpecialiteT"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="5dp"
+                android:padding="16sp"
+                android:hint="Spécialité"
+                android:textColorHint="@color/lavender"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/lavender" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textSize="13sp"
+                android:id="@+id/updateAdresseT"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="5dp"
+                android:padding="16sp"
+                android:hint="Adresse"
+                android:textColorHint="@color/lavender"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/lavender" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textSize="13sp"
+                android:id="@+id/updateCategorieT"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="5dp"
+                android:padding="16sp"
+                android:hint="Catégorie"
+                android:textColorHint="@color/lavender"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/lavender" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:textSize="13sp"
+                android:id="@+id/updateTelephoneT"
+                android:inputType="textPhonetic"
+                android:background="@drawable/lavender_border"
+                android:layout_marginTop="5dp"
+                android:padding="16sp"
+                android:hint="Téléphone"
+                android:textColorHint="@color/lavender"
+                android:gravity="start|center_vertical"
+                android:textColor="@color/lavender" />
+
+            <Button
+                android:id="@+id/bntUpdateT"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:text="Modifier"
+                android:layout_marginStart="100dp"
+                android:textSize="15sp"
+                app:cornerRadius="20dp" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</ScrollView>

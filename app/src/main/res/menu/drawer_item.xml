@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/home"
+            android:icon="@drawable/baseline_home_24"
+            android:title="Home"
+            />
+    </group>
+    <item android:title="Gestion">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/Teach"
+                      android:icon="@drawable/baseline_man_3_24"
+                    android:title="Enseignant"
+                    />
+                <item android:id="@+id/Stud"
+                    android:icon="@drawable/baseline_man_2_24"
+                    android:title="Etudiant"
+                    />
+                <item android:id="@+id/Cours"
+                    android:icon="@drawable/baseline_business_center_24"
+                    android:title="Cours"
+                    />
+            </group>
+        </menu>
+    </item>
+    <item android:title="Paramètres">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/Event"
+                    android:title="Evènement"
+                    android:icon="@drawable/baseline_event_note_24"/>
+                <item android:id="@+id/User"
+                    android:title="Utilisateurs"
+                    android:icon="@drawable/baseline_manage_accounts_24"/>
+            </group>
+        </menu>
+    </item>
+    <item android:title="Profile">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item android:id="@+id/About"
+                    android:title="A propos"
+                    android:icon="@drawable/baseline_account_circle_24"/>
+                <item android:id="@+id/qrdata"
+                    android:title="Scan codeQR"
+                    android:icon="@drawable/baseline_crop_free_24"/>
+                <item android:id="@+id/Lgout"
+                    android:icon="@drawable/baseline_logout_24"
+                    android:title="Déconnexion" />
+            </group>
+        </menu>
+    </item>
+</menu>
