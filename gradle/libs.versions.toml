@@ -21,6 +21,8 @@ playServicesCastFramework = "21.5.0"
 dexter = "6.2.3"
 ucrop = "2.2.6"
 zxing = "1.9.8"
+googleGmsGoogleServices = "4.4.2"
+firebaseMessaging = "24.0.1"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -44,7 +46,9 @@ play-services-cast-framework = { group = "com.google.android.gms", name = "play-
 dexter = { group = "com.karumi", name = "dexter", version.ref = "dexter" }
 ucrop = { group = "com.github.yalantis", name = "ucrop", version.ref = "ucrop" }
 zxing = { group = "me.dm7.barcodescanner", name = "zxing", version.ref = "zxing" }
+firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebaseMessaging" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
+googleGmsGoogleServices = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 

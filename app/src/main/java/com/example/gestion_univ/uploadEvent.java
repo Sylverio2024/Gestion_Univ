@@ -75,7 +75,7 @@ public class uploadEvent extends AppCompatActivity {
         gridLayoutImages = findViewById(R.id.imageGrid);
         btnSaveEvent = findViewById(R.id.bntSaveEvent);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("Events");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Evenement");
         storageReference = FirebaseStorage.getInstance().getReference("EventsImages");
 
         // Ouvrir la galerie pour sélectionner des images
@@ -162,6 +162,21 @@ public class uploadEvent extends AppCompatActivity {
             return;
         }
 
+        // Vérification du doublon pour numeroEvent
+        databaseReference.orderByChild("numeroEvent").equalTo(numeroEvent).get().addOnCompleteListener(task -> {
+            if (task.isSuccessful() && task.getResult().exists()) {
+                // Si un évènement avec ce numéro existe déjà
+                Toast.makeText(uploadEvent.this, "Numéro d'événement déjà existant", Toast.LENGTH_SHORT).show();
+            } else {
+                // Aucun doublon, on continue avec l'enregistrement
+                uploadImagesAndSaveEvent(numeroEvent, titreEvent, dateEvent, timeEvent, descriptionEvent);
+            }
+        }).addOnFailureListener(e -> {
+            Toast.makeText(uploadEvent.this, "Erreur lors de la vérification du numéro d'événement", Toast.LENGTH_SHORT).show();
+        });
+    }
+
+    private void uploadImagesAndSaveEvent(String numeroEvent, String titreEvent, String dateEvent, String timeEvent, String descriptionEvent) {
         // Liste pour stocker les URL des images téléchargées
         List<String> uploadedImages = new ArrayList<>();
 
