@@ -14,12 +14,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="238dp">
+        android:layout_height="153dp">
 
         <TextView
             android:id="@+id/numD"
-            android:layout_width="142dp"
-            android:layout_height="33dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:text="Numéro cours:"
@@ -29,8 +29,8 @@
 
         <TextView
             android:id="@+id/NumeroIDCours"
-            android:layout_width="187dp"
-            android:layout_height="33dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginTop="20dp"
             android:layout_toEndOf="@id/numD"
@@ -41,11 +41,11 @@
 
         <TextView
             android:id="@+id/NomD"
-            android:layout_width="134dp"
-            android:layout_height="43dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/NumeroIDCours"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="6dp"
             android:text="Nom du cours:"
             android:textAlignment="center"
             android:textColor="@color/lavender"
@@ -53,27 +53,27 @@
 
         <TextView
             android:id="@+id/NomCours"
-            android:layout_width="184dp"
-            android:layout_height="42dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/NumeroIDCours"
             android:layout_marginStart="5dp"
             android:layout_marginTop="6dp"
             android:layout_toEndOf="@id/NomD"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
             android:text="Nom du cours"
             android:textAlignment="center"
             android:textColor="@color/lavender"
-            android:textSize="16sp"
-            android:singleLine="true"
-            android:ellipsize="end"
-            android:maxLines="1"/>
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/SalleCoursD"
-            android:layout_width="138dp"
-            android:layout_height="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/NomD"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="22dp"
+            android:layout_marginTop="6dp"
             android:text="Salle du cours:"
             android:textAlignment="center"
             android:textColor="@color/lavender"
@@ -81,11 +81,11 @@
 
         <TextView
             android:id="@+id/SalleCours"
-            android:layout_width="179dp"
-            android:layout_height="37dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/NomD"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="6dp"
             android:layout_toEndOf="@id/SalleCoursD"
             android:text="Salle du cours"
             android:textAlignment="center"
@@ -94,11 +94,11 @@
 
         <TextView
             android:id="@+id/ParcoursCoursD"
-            android:layout_width="136dp"
-            android:layout_height="33dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/SalleCoursD"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="6dp"
             android:text="Parcours:"
             android:textAlignment="center"
             android:textColor="@color/lavender"
@@ -106,11 +106,11 @@
 
         <TextView
             android:id="@+id/ParcoursCours"
-            android:layout_width="172dp"
-            android:layout_height="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/SalleCours"
             android:layout_marginStart="7dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="6dp"
             android:layout_toEndOf="@id/ParcoursCoursD"
             android:text="Parcours"
             android:textColor="@color/lavender"
@@ -121,11 +121,11 @@
 
         <TextView
             android:id="@+id/NiveauCoursD"
-            android:layout_width="136dp"
-            android:layout_height="33dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/ParcoursCoursD"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="6dp"
             android:text="Niveau:"
             android:textAlignment="center"
             android:textColor="@color/lavender"
@@ -133,11 +133,11 @@
 
         <TextView
             android:id="@+id/NiveauCours"
-            android:layout_width="172dp"
-            android:layout_height="32dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/ParcoursCours"
             android:layout_marginStart="9dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="6dp"
             android:layout_toEndOf="@id/NiveauCoursD"
             android:text="Niveau"
             android:textColor="@color/lavender"

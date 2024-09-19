@@ -36,7 +36,7 @@ public class MyAdapter4 extends RecyclerView.Adapter<MyViewHolder4> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder4 holder, int position) {
-        Glide.with(context).load(dataList4.get(position).getImageEvent()).into(holder.recImage4);
+      //  Glide.with(context).load(dataList4.get(position).getImageEvent()).into(holder.recImage4);
         holder.NumeroIDEvent.setText(dataList4.get(position).getNumeroEvent());
         holder.titreEvent.setText(dataList4.get(position).getTitreEvent());
         holder.dateEvent.setText(dataList4.get(position).getDateEvent());
@@ -48,7 +48,7 @@ public class MyAdapter4 extends RecyclerView.Adapter<MyViewHolder4> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetailActivity4.class);
-                intent.putExtra("Image",dataList4.get(holder.getAdapterPosition()).getImageEvent());
+              //  intent.putExtra("Image",dataList4.get(holder.getAdapterPosition()).getImageEvent());
                 intent.putExtra("NumeroIDEvent",dataList4.get(holder.getAdapterPosition()).getNumeroEvent());
                 intent.putExtra("titreEvent",dataList4.get(holder.getAdapterPosition()).getTitreEvent());
                 intent.putExtra("dateEvent",dataList4.get(holder.getAdapterPosition()).getDateEvent());

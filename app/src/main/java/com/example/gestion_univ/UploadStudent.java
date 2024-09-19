@@ -3,6 +3,7 @@ package com.example.gestion_univ;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -54,6 +55,7 @@ import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
 import java.io.ByteArrayOutputStream;
+import java.util.Calendar;
 
 public class UploadStudent extends AppCompatActivity {
     ImageView updloadImage1;
@@ -90,6 +92,16 @@ public class UploadStudent extends AppCompatActivity {
         txtNiveauS = findViewById(R.id.txtNiveauS);
         txtTelephoneS = findViewById(R.id.txtTelephoneS);
         scrollView1 = findViewById(R.id.scrollView1);
+        txtDate_naissanceS.setOnClickListener(v -> {
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(UploadStudent.this,
+                    (view, year1, monthOfYear, dayOfMonth) -> txtDate_naissanceS.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year1), year, month, day);
+            datePickerDialog.show();
+        });
 
         etudiantReference = FirebaseDatabase.getInstance().getReference("Etudiants");
         qrdataReference = FirebaseDatabase.getInstance().getReference("qrdata");

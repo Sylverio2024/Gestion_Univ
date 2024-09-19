@@ -1,5 +1,6 @@
 package com.example.gestion_univ;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -19,6 +20,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Calendar;
 
 public class UpdateStudent extends AppCompatActivity {
     Button bntUpdateS;
@@ -43,6 +46,16 @@ public class UpdateStudent extends AppCompatActivity {
         updateDate_naissanceS = findViewById(R.id.updateDate_naissanceS);
         updateAdresseS = findViewById(R.id.updateAdresseS);
         updateTelephoneS = findViewById(R.id.updateTelephoneS);
+        updateDate_naissanceS.setOnClickListener(v -> {
+            final Calendar c = Calendar.getInstance();
+            int year = c.get(Calendar.YEAR);
+            int month = c.get(Calendar.MONTH);
+            int day = c.get(Calendar.DAY_OF_MONTH);
+
+            DatePickerDialog datePickerDialog = new DatePickerDialog(UpdateStudent.this,
+                    (view, year1, monthOfYear, dayOfMonth) -> updateDate_naissanceS.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year1), year, month, day);
+            datePickerDialog.show();
+        });
 
         // Récupération des données passées via l'intent
         Bundle bundle = getIntent().getExtras();

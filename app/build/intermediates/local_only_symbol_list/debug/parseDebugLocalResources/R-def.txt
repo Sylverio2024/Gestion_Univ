@@ -241,6 +241,7 @@ id fabSalle
 id forgotTitle
 id heureEvent
 id home
+id imageGrid
 id imageLRG
 id imageLRG1
 id imageView
@@ -480,7 +481,6 @@ id updateTelephoneS
 id updateTelephoneT
 id updloadImage
 id updloadImage1
-id updloadImageEvent
 id viewEmail
 id viewEmail1
 id viewPhoto

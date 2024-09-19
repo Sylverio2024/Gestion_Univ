@@ -3715,6 +3715,7 @@ int id ifRoom 0x7f0a018b
 int id ignore 0x7f0a018c
 int id ignoreRequest 0x7f0a018d
 int id image 0x7f0a018e
+int id imageGrid 0x7f0a03af
 int id imageLRG 0x7f0a018f
 int id imageLRG1 0x7f0a0190
 int id imageView 0x7f0a0191
@@ -4219,7 +4220,6 @@ int id updateTelephoneS 0x7f0a0383
 int id updateTelephoneT 0x7f0a0384
 int id updloadImage 0x7f0a0385
 int id updloadImage1 0x7f0a0386
-int id updloadImageEvent 0x7f0a0387
 int id useLogo 0x7f0a0388
 int id vertical_only 0x7f0a0389
 int id viewEmail 0x7f0a038a

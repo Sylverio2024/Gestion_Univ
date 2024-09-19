@@ -13,7 +13,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="164dp">
+        android:layout_height="118dp">
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageViewU"
@@ -21,7 +21,7 @@
             android:layout_height="70dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="20dp"
-            android:layout_marginBottom="69dp"
+            android:layout_marginBottom="29dp"
             android:padding="8dp"
             android:scaleType="centerCrop"
             android:src="@drawable/imageicon"
@@ -33,7 +33,7 @@
             android:layout_height="28dp"
             android:layout_alignParentBottom="true"
             android:layout_marginStart="350dp"
-            android:layout_marginBottom="126dp"
+            android:layout_marginBottom="86dp"
             android:padding="8dp"
             android:scaleType="centerCrop"
             android:src="@drawable/status_online_button"
@@ -42,20 +42,23 @@
 
         <TextView
             android:id="@+id/nomCompletU"
-            android:layout_width="230dp"
-            android:layout_height="35dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginTop="20dp"
             android:layout_toEndOf="@id/imageViewU"
             android:text="Nom complet"
             android:textAlignment="center"
             android:textColor="@color/lavender"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:maxLines="1"/>
 
         <TextView
             android:id="@+id/emailD"
-            android:layout_width="64dp"
-            android:layout_height="42dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/nomCompletU"
             android:layout_marginStart="9dp"
             android:layout_marginTop="14dp"
@@ -66,20 +69,23 @@
 
         <TextView
             android:id="@+id/emailU"
-            android:layout_width="215dp"
-            android:layout_height="47dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/nomCompletU"
             android:layout_marginStart="5dp"
             android:layout_marginTop="13dp"
             android:layout_toEndOf="@id/emailD"
             android:text="email"
             android:textColor="@color/lavender"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:maxLines="1"/>
 
         <TextView
             android:id="@+id/telephoneD"
             android:layout_width="wrap_content"
-            android:layout_height="39dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/emailD"
             android:layout_marginStart="8dp"
             android:layout_marginTop="12dp"
@@ -90,11 +96,11 @@
 
         <TextView
             android:id="@+id/telephoneU"
-            android:layout_width="163dp"
-            android:layout_height="39dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/emailU"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="12dp"
             android:layout_toEndOf="@id/telephoneD"
             android:text="Telephone"
             android:textColor="@color/lavender"

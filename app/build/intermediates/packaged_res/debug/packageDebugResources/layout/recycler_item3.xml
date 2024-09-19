@@ -14,12 +14,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="115dp">
+        android:layout_height="90dp">
 
         <TextView
             android:id="@+id/numD"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:text="Numéro salle:"
@@ -29,8 +29,8 @@
 
         <TextView
             android:id="@+id/NumeroIDSalle"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
             android:layout_marginTop="20dp"
             android:layout_toEndOf="@id/numD"
@@ -41,8 +41,8 @@
 
         <TextView
             android:id="@+id/NomD"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/NumeroIDSalle"
             android:layout_marginStart="10dp"
             android:text="Nom de salle:"
@@ -52,8 +52,8 @@
 
         <TextView
             android:id="@+id/NomSalle"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/NumeroIDSalle"
             android:layout_marginStart="5dp"
             android:layout_toEndOf="@id/NomD"
@@ -67,8 +67,8 @@
 
         <TextView
             android:id="@+id/StatutD"
-            android:layout_width="100dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/NomSalle"
             android:layout_marginStart="10dp"
             android:text="Statut:"
@@ -78,8 +78,8 @@
 
         <TextView
             android:id="@+id/StatutSalle"
-            android:layout_width="120dp"
-            android:layout_height="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/NomSalle"
             android:layout_marginStart="5dp"
             android:layout_toEndOf="@id/StatutD"

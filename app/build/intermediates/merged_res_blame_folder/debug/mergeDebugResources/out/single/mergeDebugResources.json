@@ -60,10 +60,6 @@
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_main_content1.xml"
     },
     {
-        "merged": "com.example.gestion_univ.app-debug-58:/layout_recycler_item1.xml.flat",
-        "source": "com.example.gestion_univ.app-main-60:/layout/recycler_item1.xml"
-    },
-    {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\layout_activity_salle.xml.flat",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_salle.xml"
     },
@@ -98,10 +94,6 @@
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\drawable_back_round.xml.flat",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\drawable\\back_round.xml"
-    },
-    {
-        "merged": "com.example.gestion_univ.app-debug-58:/layout_recycler_item2.xml.flat",
-        "source": "com.example.gestion_univ.app-main-60:/layout/recycler_item2.xml"
     },
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\drawable_cours3.jpg.flat",
@@ -200,6 +192,10 @@
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\drawable\\baseline_device_hub_24.xml"
     },
     {
+        "merged": "com.example.gestion_univ.app-debug-58:/layout_activity_upload_event.xml.flat",
+        "source": "com.example.gestion_univ.app-main-60:/layout/activity_upload_event.xml"
+    },
+    {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\drawable_ic_menu_slideshow.xml.flat",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\drawable\\ic_menu_slideshow.xml"
     },
@@ -230,10 +226,6 @@
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\layout_activity_update_teacher.xml.flat",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_update_teacher.xml"
-    },
-    {
-        "merged": "com.example.gestion_univ.app-debug-58:/layout_recycler_item4.xml.flat",
-        "source": "com.example.gestion_univ.app-main-60:/layout/recycler_item4.xml"
     },
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\drawable_baseline_download_24.xml.flat",
@@ -460,10 +452,6 @@
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\drawable\\baseline_lock_24.xml"
     },
     {
-        "merged": "com.example.gestion_univ.app-debug-58:/layout_recycler_item.xml.flat",
-        "source": "com.example.gestion_univ.app-main-60:/layout/recycler_item.xml"
-    },
-    {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\layout_activity_edit_pdp1.xml.flat",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_edit_pdp1.xml"
     },
@@ -502,10 +490,6 @@
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\mipmap-xxhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "com.example.gestion_univ.app-debug-58:/layout_recycler_item3.xml.flat",
-        "source": "com.example.gestion_univ.app-main-60:/layout/recycler_item3.xml"
     },
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\drawable_baseline_edit_24.xml.flat",

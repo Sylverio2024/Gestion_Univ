@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+import android.widget.GridLayout;
 import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,6 +24,9 @@ public final class ActivityUploadEventBinding implements ViewBinding {
 
   @NonNull
   public final Button bntSaveEvent;
+
+  @NonNull
+  public final GridLayout imageGrid;
 
   @NonNull
   public final CardView main;
@@ -46,16 +49,14 @@ public final class ActivityUploadEventBinding implements ViewBinding {
   @NonNull
   public final EditText txtTitreEvent;
 
-  @NonNull
-  public final ImageView updloadImageEvent;
-
   private ActivityUploadEventBinding(@NonNull CardView rootView, @NonNull Button bntSaveEvent,
-      @NonNull CardView main, @NonNull ScrollView scrollView4, @NonNull EditText txtDateEvent,
-      @NonNull EditText txtDescriptionEvent, @NonNull EditText txtHeureEvent,
-      @NonNull EditText txtNumeroEvent, @NonNull EditText txtTitreEvent,
-      @NonNull ImageView updloadImageEvent) {
+      @NonNull GridLayout imageGrid, @NonNull CardView main, @NonNull ScrollView scrollView4,
+      @NonNull EditText txtDateEvent, @NonNull EditText txtDescriptionEvent,
+      @NonNull EditText txtHeureEvent, @NonNull EditText txtNumeroEvent,
+      @NonNull EditText txtTitreEvent) {
     this.rootView = rootView;
     this.bntSaveEvent = bntSaveEvent;
+    this.imageGrid = imageGrid;
     this.main = main;
     this.scrollView4 = scrollView4;
     this.txtDateEvent = txtDateEvent;
@@ -63,7 +64,6 @@ public final class ActivityUploadEventBinding implements ViewBinding {
     this.txtHeureEvent = txtHeureEvent;
     this.txtNumeroEvent = txtNumeroEvent;
     this.txtTitreEvent = txtTitreEvent;
-    this.updloadImageEvent = updloadImageEvent;
   }
 
   @Override
@@ -96,6 +96,12 @@ public final class ActivityUploadEventBinding implements ViewBinding {
       id = R.id.bntSaveEvent;
       Button bntSaveEvent = ViewBindings.findChildViewById(rootView, id);
       if (bntSaveEvent == null) {
+        break missingId;
+      }
+
+      id = R.id.imageGrid;
+      GridLayout imageGrid = ViewBindings.findChildViewById(rootView, id);
+      if (imageGrid == null) {
         break missingId;
       }
 
@@ -137,15 +143,9 @@ public final class ActivityUploadEventBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.updloadImageEvent;
-      ImageView updloadImageEvent = ViewBindings.findChildViewById(rootView, id);
-      if (updloadImageEvent == null) {
-        break missingId;
-      }
-
-      return new ActivityUploadEventBinding((CardView) rootView, bntSaveEvent, main, scrollView4,
-          txtDateEvent, txtDescriptionEvent, txtHeureEvent, txtNumeroEvent, txtTitreEvent,
-          updloadImageEvent);
+      return new ActivityUploadEventBinding((CardView) rootView, bntSaveEvent, imageGrid, main,
+          scrollView4, txtDateEvent, txtDescriptionEvent, txtHeureEvent, txtNumeroEvent,
+          txtTitreEvent);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

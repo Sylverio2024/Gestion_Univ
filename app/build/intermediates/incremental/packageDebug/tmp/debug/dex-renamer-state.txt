@@ -1,4 +1,4 @@
-#Wed Sep 18 23:09:59 CEST 2024
+#Thu Sep 19 11:24:37 CEST 2024
 base.0=E\:\\AndroidProject\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=E\:\\AndroidProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=E\:\\AndroidProject\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex

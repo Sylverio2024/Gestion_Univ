@@ -6,114 +6,128 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".UploadSalle">
-    <ScrollView
+    app:cardCornerRadius="30dp"
+    app:cardElevation="20dp"
+    tools:context=".uploadEvent">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:id="@+id/scrollView4"
-        android:layout_height="450dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="20dp">
-        <LinearLayout
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollView4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_horizontal"
-            android:padding="5dp"
-            android:background="@drawable/lavender_border">
-            <TextView
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bntSaveEvent"
+            android:padding="10dp">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Chargé les données"
-                android:textSize="20dp"
-                android:textAlignment="center"
-                android:textColor="@color/lavender"/>
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="130dp"
-                android:src="@drawable/_00901"
-                android:id="@+id/updloadImageEvent"
-                android:layout_marginTop="10dp"
-                />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:id="@+id/txtNumeroEvent"
-                android:background="@drawable/lavender_border"
-                android:layout_marginTop="5dp"
-                android:padding="16sp"
-                android:textSize="13sp"
-                android:hint="Numero"
-                android:textColorHint="@color/lavender"
-                android:gravity="start|center_vertical"
-                android:textColor="@color/lavender" />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:id="@+id/txtTitreEvent"
-                android:background="@drawable/lavender_border"
-                android:layout_marginTop="5dp"
-                android:padding="16sp"
-                android:textSize="13sp"
-                android:hint="Titre de l'évènement"
-                android:textColorHint="@color/lavender"
-                android:gravity="start|center_vertical"
-                android:textColor="@color/lavender" />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:id="@+id/txtDateEvent"
-                android:background="@drawable/lavender_border"
-                android:layout_marginTop="5dp"
-                android:padding="16sp"
-                android:textSize="13sp"
-                android:hint="Date de l'évènement"
-                android:textColorHint="@color/lavender"
-                android:gravity="start|center_vertical"
-                android:textColor="@color/lavender" />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:id="@+id/txtHeureEvent"
-                android:background="@drawable/lavender_border"
-                android:layout_marginTop="5dp"
-                android:padding="16sp"
-                android:textSize="13sp"
-                android:hint="Heure de l'évènement"
-                android:textColorHint="@color/lavender"
-                android:gravity="start|center_vertical"
-                android:textColor="@color/lavender" />
+                android:orientation="vertical"
+                android:padding="5dp"
+                android:background="@drawable/lavender_border">
 
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:id="@+id/txtDescriptionEvent"
-                android:background="@drawable/lavender_border"
-                android:layout_marginTop="5dp"
-                android:padding="16sp"
-                android:textSize="13sp"
-                android:hint="Description"
-                android:ems="10"
-                android:gravity="start|top"
-                android:inputType="textMultiLine"
-                android:textColorHint="@color/lavender"
-                android:textColor="@color/lavender" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Chargé les données"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/lavender"/>
 
-            <Button
-                android:id="@+id/bntSaveEvent"
-                android:layout_width="150dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:text="Enregistré"
-                android:layout_marginStart="100dp"
-                android:textSize="15sp"
-                app:cornerRadius="20dp" />
+                <!-- GridLayout pour afficher les images sélectionnées -->
+                <GridLayout
+                    android:id="@+id/imageGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:columnCount="2"
+                    android:orientation="horizontal"
+                    android:padding="8dp"
+                    android:rowCount="1"
+                    android:background="@drawable/_00901" />
 
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:id="@+id/txtNumeroEvent"
+                    android:background="@drawable/lavender_border"
+                    android:layout_marginTop="5dp"
+                    android:padding="16sp"
+                    android:textSize="13sp"
+                    android:hint="Numero"
+                    android:textColorHint="@color/lavender"
+                    android:gravity="start|center_vertical"
+                    android:textColor="@color/lavender" />
 
-        </LinearLayout>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:id="@+id/txtTitreEvent"
+                    android:background="@drawable/lavender_border"
+                    android:layout_marginTop="5dp"
+                    android:padding="16sp"
+                    android:textSize="13sp"
+                    android:hint="Titre de l'évènement"
+                    android:textColorHint="@color/lavender"
+                    android:gravity="start|center_vertical"
+                    android:textColor="@color/lavender" />
 
-    </ScrollView>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:id="@+id/txtDateEvent"
+                    android:background="@drawable/lavender_border"
+                    android:layout_marginTop="5dp"
+                    android:padding="16sp"
+                    android:textSize="13sp"
+                    android:hint="Date de l'évènement"
+                    android:textColorHint="@color/lavender"
+                    android:gravity="start|center_vertical"
+                    android:textColor="@color/lavender" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:id="@+id/txtHeureEvent"
+                    android:background="@drawable/lavender_border"
+                    android:layout_marginTop="5dp"
+                    android:padding="16sp"
+                    android:textSize="13sp"
+                    android:hint="Heure de l'évènement"
+                    android:textColorHint="@color/lavender"
+                    android:gravity="start|center_vertical"
+                    android:textColor="@color/lavender" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:id="@+id/txtDescriptionEvent"
+                    android:background="@drawable/lavender_border"
+                    android:layout_marginTop="5dp"
+                    android:padding="16sp"
+                    android:textSize="13sp"
+                    android:hint="Description"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:inputType="textMultiLine"
+                    android:textColorHint="@color/lavender"
+                    android:textColor="@color/lavender" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/bntSaveEvent"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:text="Enregistré"
+            android:textSize="15sp"
+            app:cornerRadius="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp" />
+
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>
