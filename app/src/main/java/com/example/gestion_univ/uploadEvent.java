@@ -22,9 +22,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 public class uploadEvent extends AppCompatActivity {
 
@@ -53,7 +55,6 @@ public class uploadEvent extends AppCompatActivity {
                             displaySelectedImages();
                         }
                     } else if (data.getData() != null) {
-                        // Si une seule image est sélectionnée
                         imageUris.clear();
                         imageUris.add(data.getData());
                         displaySelectedImages();
@@ -69,8 +70,8 @@ public class uploadEvent extends AppCompatActivity {
         // Initialisation des vues
         txtNumeroEvent = findViewById(R.id.txtNumeroEvent);
         txtTitreEvent = findViewById(R.id.txtTitreEvent);
-        txtDateEvent = findViewById(R.id.txtDateEvent);
-        txtHeureEvent = findViewById(R.id.txtHeureEvent);
+       // txtDateEvent = findViewById(R.id.txtDateEvent);
+      //  txtHeureEvent = findViewById(R.id.txtHeureEvent);
         txtDescriptionEvent = findViewById(R.id.txtDescriptionEvent);
         gridLayoutImages = findViewById(R.id.imageGrid);
         btnSaveEvent = findViewById(R.id.bntSaveEvent);
@@ -89,46 +90,19 @@ public class uploadEvent extends AppCompatActivity {
         // Enregistrer l'évènement
         btnSaveEvent.setOnClickListener(v -> saveEventData());
 
-        // Date picker
-        txtDateEvent.setOnClickListener(v -> {
-            final Calendar c = Calendar.getInstance();
-            int year = c.get(Calendar.YEAR);
-            int month = c.get(Calendar.MONTH);
-            int day = c.get(Calendar.DAY_OF_MONTH);
-
-            DatePickerDialog datePickerDialog = new DatePickerDialog(uploadEvent.this,
-                    (view, year1, monthOfYear, dayOfMonth) -> txtDateEvent.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year1),
-                    year, month, day);
-            datePickerDialog.show();
-        });
-
-        // Time picker
-        txtHeureEvent.setOnClickListener(v -> {
-            final Calendar c = Calendar.getInstance();
-            int hour = c.get(Calendar.HOUR_OF_DAY);
-            int minute = c.get(Calendar.MINUTE);
-
-            TimePickerDialog timePickerDialog = new TimePickerDialog(uploadEvent.this,
-                    (view, hourOfDay, minute1) -> txtHeureEvent.setText(hourOfDay + ":" + minute1),
-                    hour, minute, true);
-            timePickerDialog.show();
-        });
+        // Désactiver les pickers manuels car nous allons les remplir automatiquement
+        // txtDateEvent.setOnClickListener(v -> {...});
+        // txtHeureEvent.setOnClickListener(v -> {...});
     }
 
     // Afficher les images sélectionnées dans GridLayout
     private void displaySelectedImages() {
-        gridLayoutImages.removeAllViews(); // Clear previous images
-
-        // Définir le nombre de colonnes souhaité
+        gridLayoutImages.removeAllViews(); // Efface les images précédentes
         int numColumns = 3;
-        gridLayoutImages.setColumnCount(numColumns); // Assure que GridLayout a le bon nombre de colonnes
-
-        // Obtenir la largeur du GridLayout pour calculer la taille des images
+        gridLayoutImages.setColumnCount(numColumns);
         gridLayoutImages.post(() -> {
             int totalWidth = gridLayoutImages.getWidth();
-            int imageSize = totalWidth / numColumns; // Taille de l'image en fonction du nombre de colonnes
-
-            // Parcourir les images sélectionnées
+            int imageSize = totalWidth / numColumns;
             for (Uri imageUri : imageUris) {
                 ImageView imageView = new ImageView(this);
                 GridLayout.LayoutParams params = new GridLayout.LayoutParams();
@@ -136,8 +110,6 @@ public class uploadEvent extends AppCompatActivity {
                 params.height = imageSize;
                 imageView.setLayoutParams(params);
                 imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-
-                // Charger l'image avec Glide
                 Glide.with(this).load(imageUri).into(imageView);
                 gridLayoutImages.addView(imageView);
             }
@@ -147,12 +119,10 @@ public class uploadEvent extends AppCompatActivity {
     private void saveEventData() {
         String numeroEvent = txtNumeroEvent.getText().toString();
         String titreEvent = txtTitreEvent.getText().toString();
-        String dateEvent = txtDateEvent.getText().toString();
-        String timeEvent = txtHeureEvent.getText().toString();
-        String descriptionEvent = txtDescriptionEvent.getText().toString(); // Ajout de la description
+        String descriptionEvent = txtDescriptionEvent.getText().toString();
 
         // Validation des champs
-        if (numeroEvent.isEmpty() || titreEvent.isEmpty() || dateEvent.isEmpty() || timeEvent.isEmpty() || descriptionEvent.isEmpty()) {
+        if (numeroEvent.isEmpty() || titreEvent.isEmpty() || descriptionEvent.isEmpty()) {
             Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -162,13 +132,19 @@ public class uploadEvent extends AppCompatActivity {
             return;
         }
 
+        // Ajout de la date et de l'heure automatiques
+        Calendar currentDateTime = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
+
+        String dateEvent = dateFormat.format(currentDateTime.getTime());
+        String timeEvent = timeFormat.format(currentDateTime.getTime());
+
         // Vérification du doublon pour numeroEvent
         databaseReference.orderByChild("numeroEvent").equalTo(numeroEvent).get().addOnCompleteListener(task -> {
             if (task.isSuccessful() && task.getResult().exists()) {
-                // Si un évènement avec ce numéro existe déjà
                 Toast.makeText(uploadEvent.this, "Numéro d'événement déjà existant", Toast.LENGTH_SHORT).show();
             } else {
-                // Aucun doublon, on continue avec l'enregistrement
                 uploadImagesAndSaveEvent(numeroEvent, titreEvent, dateEvent, timeEvent, descriptionEvent);
             }
         }).addOnFailureListener(e -> {
@@ -177,28 +153,17 @@ public class uploadEvent extends AppCompatActivity {
     }
 
     private void uploadImagesAndSaveEvent(String numeroEvent, String titreEvent, String dateEvent, String timeEvent, String descriptionEvent) {
-        // Liste pour stocker les URL des images téléchargées
         List<String> uploadedImages = new ArrayList<>();
-
-        // Télécharge les images une par une
         for (Uri imageUri : imageUris) {
-            // Référence de stockage avec nom unique basé sur le timestamp
             StorageReference imageRef = storageReference.child(System.currentTimeMillis() + ".jpg");
-
-            // Téléchargement du fichier vers Firebase Storage
             imageRef.putFile(imageUri).addOnSuccessListener(taskSnapshot -> {
-                // Récupérer l'URL de téléchargement une fois l'image téléchargée
                 imageRef.getDownloadUrl().addOnSuccessListener(uri -> {
-                    // Ajouter l'URL à la liste des images téléchargées
                     uploadedImages.add(uri.toString());
-
-                    // Lorsque toutes les images sont téléchargées, sauvegarder l'événement dans la base de données
                     if (uploadedImages.size() == imageUris.size()) {
                         saveEventToDatabase(numeroEvent, titreEvent, dateEvent, timeEvent, descriptionEvent, uploadedImages);
                     }
                 });
             }).addOnFailureListener(e -> {
-                // Gestion de l'erreur de téléchargement
                 Toast.makeText(uploadEvent.this, "Échec du téléchargement de l'image", Toast.LENGTH_SHORT).show();
             });
         }

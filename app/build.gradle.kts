@@ -59,7 +59,7 @@ dependencies {
     implementation("com.github.clans:fab:1.6.4")
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.25")
     implementation(libs.zxing)
-    implementation(libs.firebase.messaging)
+   // implementation(libs.firebase.messaging)
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
 
 
