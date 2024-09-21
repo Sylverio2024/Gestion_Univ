@@ -3566,6 +3566,7 @@ id custom
 id customPanel
 id cut
 id dark
+id dateCours
 id dateD
 id dateE
 id dateEvent
@@ -3593,6 +3594,7 @@ id detailCategorie
 id detailDate
 id detailDescriptionCours
 id detailDescriptionSalle
+id detailHeure
 id detailImage
 id detailImage1
 id detailImageU
@@ -3703,6 +3705,7 @@ id group_divider
 id grouping
 id groups
 id header_title
+id heureCours
 id heureEvent
 id hideable
 id home
@@ -3719,6 +3722,7 @@ id image
 id imageGrid
 id imageLRG
 id imageLRG1
+id imageRecyclerView
 id imageView
 id imageView10
 id imageView11
@@ -3736,6 +3740,7 @@ id imageView7
 id imageView8
 id imageView81
 id imageView9
+id imageViewItem
 id imageViewLarge
 id imageViewU
 id imgChoose
@@ -3763,6 +3768,7 @@ id labelAdresse
 id labelAdresse1
 id labelCategorie
 id labelDate
+id labelDateHeure
 id labelDescription
 id labelDescriptionCours
 id labelMention
@@ -3958,7 +3964,6 @@ id recCard31
 id recCard4
 id recImage
 id recImage1
-id recImage4
 id rectangles
 id recyclerView
 id recyclerView1
@@ -4151,13 +4156,11 @@ id tv_verification_message
 id txtAdresseS
 id txtAdresseT
 id txtCategorieT
-id txtDateEvent
 id txtDate_naissanceS
 id txtDescriptionCours
 id txtDescriptionEvent
 id txtDescriptionSalle
 id txtEmail
-id txtHeureEvent
 id txtLemail
 id txtLmdp
 id txtMdp
@@ -4454,6 +4457,7 @@ layout drawer_header
 layout drawer_header1
 layout home
 layout home1
+layout image_item
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

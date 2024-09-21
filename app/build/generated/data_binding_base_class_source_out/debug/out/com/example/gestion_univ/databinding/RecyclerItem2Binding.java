@@ -53,6 +53,12 @@ public final class RecyclerItem2Binding implements ViewBinding {
   public final TextView SalleCoursD;
 
   @NonNull
+  public final TextView dateCours;
+
+  @NonNull
+  public final TextView heureCours;
+
+  @NonNull
   public final TextView numD;
 
   @NonNull
@@ -63,7 +69,8 @@ public final class RecyclerItem2Binding implements ViewBinding {
       @NonNull TextView NiveauCoursD, @NonNull TextView NomCours, @NonNull TextView NomD,
       @NonNull TextView NumeroIDCours, @NonNull TextView ParcoursCours,
       @NonNull TextView ParcoursCoursD, @NonNull TextView SalleCours, @NonNull TextView SalleCoursD,
-      @NonNull TextView numD, @NonNull CardView recCard2) {
+      @NonNull TextView dateCours, @NonNull TextView heureCours, @NonNull TextView numD,
+      @NonNull CardView recCard2) {
     this.rootView = rootView;
     this.DescriptionCours = DescriptionCours;
     this.DescriptionCoursD = DescriptionCoursD;
@@ -76,6 +83,8 @@ public final class RecyclerItem2Binding implements ViewBinding {
     this.ParcoursCoursD = ParcoursCoursD;
     this.SalleCours = SalleCours;
     this.SalleCoursD = SalleCoursD;
+    this.dateCours = dateCours;
+    this.heureCours = heureCours;
     this.numD = numD;
     this.recCard2 = recCard2;
   }
@@ -173,6 +182,18 @@ public final class RecyclerItem2Binding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.dateCours;
+      TextView dateCours = ViewBindings.findChildViewById(rootView, id);
+      if (dateCours == null) {
+        break missingId;
+      }
+
+      id = R.id.heureCours;
+      TextView heureCours = ViewBindings.findChildViewById(rootView, id);
+      if (heureCours == null) {
+        break missingId;
+      }
+
       id = R.id.numD;
       TextView numD = ViewBindings.findChildViewById(rootView, id);
       if (numD == null) {
@@ -183,7 +204,7 @@ public final class RecyclerItem2Binding implements ViewBinding {
 
       return new RecyclerItem2Binding((CardView) rootView, DescriptionCours, DescriptionCoursD,
           NiveauCours, NiveauCoursD, NomCours, NomD, NumeroIDCours, ParcoursCours, ParcoursCoursD,
-          SalleCours, SalleCoursD, numD, recCard2);
+          SalleCours, SalleCoursD, dateCours, heureCours, numD, recCard2);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

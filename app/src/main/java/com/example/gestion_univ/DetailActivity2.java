@@ -23,7 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class DetailActivity2 extends AppCompatActivity {
-    TextView detailNumeroCours, detailNomCours, detailSalleCours, detailParcoursCours,detailNiveauCours,detailDescriptionCours;
+    TextView detailNumeroCours, detailNomCours, detailSalleCours, detailParcoursCours, detailNiveauCours, detailDescriptionCours;
+    TextView detailDate, detailHeure;  // Nouveaux TextViews pour la date et l'heure
     FloatingActionButton deleteButton, editButton;
     String key2 = "";
     AlertDialog dialog;
@@ -46,6 +47,8 @@ public class DetailActivity2 extends AppCompatActivity {
         detailParcoursCours = findViewById(R.id.detailParcoursCours);
         detailNiveauCours = findViewById(R.id.detailNiveauCours);
         detailDescriptionCours = findViewById(R.id.detailDescriptionCours);
+        detailDate = findViewById(R.id.detailDate);  // Initialisation du TextView pour la date
+        detailHeure = findViewById(R.id.detailHeure); // Initialisation du TextView pour l'heure
 
         deleteButton = findViewById(R.id.deleteButtonCours);
         editButton = findViewById(R.id.editButtonCours);
@@ -58,6 +61,8 @@ public class DetailActivity2 extends AppCompatActivity {
             detailParcoursCours.setText(bundle.getString("parcoursCours"));
             detailNiveauCours.setText(bundle.getString("niveauCours"));
             detailDescriptionCours.setText(bundle.getString("descriptionCours"));
+            detailDate.setText(bundle.getString("dateCours"));  // Récupérer la date
+            detailHeure.setText(bundle.getString("heureCours")); // Récupérer l'heure
             key2 = bundle.getString("key2");
         }
 
@@ -71,6 +76,8 @@ public class DetailActivity2 extends AppCompatActivity {
                         .putExtra("parcoursCours", detailParcoursCours.getText().toString())
                         .putExtra("niveauCours", detailNiveauCours.getText().toString())
                         .putExtra("descriptionCours", detailDescriptionCours.getText().toString())
+                        .putExtra("dateCours", detailDate.getText().toString())  // Passer la date
+                        .putExtra("heureCours", detailHeure.getText().toString()) // Passer l'heure
                         .putExtra("key2", key2);
                 startActivity(intent);
             }

@@ -35,13 +35,7 @@ public final class ActivityUploadEventBinding implements ViewBinding {
   public final ScrollView scrollView4;
 
   @NonNull
-  public final EditText txtDateEvent;
-
-  @NonNull
   public final EditText txtDescriptionEvent;
-
-  @NonNull
-  public final EditText txtHeureEvent;
 
   @NonNull
   public final EditText txtNumeroEvent;
@@ -51,17 +45,14 @@ public final class ActivityUploadEventBinding implements ViewBinding {
 
   private ActivityUploadEventBinding(@NonNull CardView rootView, @NonNull Button bntSaveEvent,
       @NonNull GridLayout imageGrid, @NonNull CardView main, @NonNull ScrollView scrollView4,
-      @NonNull EditText txtDateEvent, @NonNull EditText txtDescriptionEvent,
-      @NonNull EditText txtHeureEvent, @NonNull EditText txtNumeroEvent,
+      @NonNull EditText txtDescriptionEvent, @NonNull EditText txtNumeroEvent,
       @NonNull EditText txtTitreEvent) {
     this.rootView = rootView;
     this.bntSaveEvent = bntSaveEvent;
     this.imageGrid = imageGrid;
     this.main = main;
     this.scrollView4 = scrollView4;
-    this.txtDateEvent = txtDateEvent;
     this.txtDescriptionEvent = txtDescriptionEvent;
-    this.txtHeureEvent = txtHeureEvent;
     this.txtNumeroEvent = txtNumeroEvent;
     this.txtTitreEvent = txtTitreEvent;
   }
@@ -113,21 +104,9 @@ public final class ActivityUploadEventBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.txtDateEvent;
-      EditText txtDateEvent = ViewBindings.findChildViewById(rootView, id);
-      if (txtDateEvent == null) {
-        break missingId;
-      }
-
       id = R.id.txtDescriptionEvent;
       EditText txtDescriptionEvent = ViewBindings.findChildViewById(rootView, id);
       if (txtDescriptionEvent == null) {
-        break missingId;
-      }
-
-      id = R.id.txtHeureEvent;
-      EditText txtHeureEvent = ViewBindings.findChildViewById(rootView, id);
-      if (txtHeureEvent == null) {
         break missingId;
       }
 
@@ -144,8 +123,7 @@ public final class ActivityUploadEventBinding implements ViewBinding {
       }
 
       return new ActivityUploadEventBinding((CardView) rootView, bntSaveEvent, imageGrid, main,
-          scrollView4, txtDateEvent, txtDescriptionEvent, txtHeureEvent, txtNumeroEvent,
-          txtTitreEvent);
+          scrollView4, txtDescriptionEvent, txtNumeroEvent, txtTitreEvent);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

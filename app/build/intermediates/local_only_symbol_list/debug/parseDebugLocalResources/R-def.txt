@@ -176,6 +176,7 @@ id buttonDrawerToggle1
 id constraintLayout
 id constraintLayout3
 id cours
+id dateCours
 id dateD
 id dateE
 id dateEvent
@@ -191,6 +192,7 @@ id detailCategorie
 id detailDate
 id detailDescriptionCours
 id detailDescriptionSalle
+id detailHeure
 id detailImage
 id detailImage1
 id detailImageU
@@ -239,11 +241,13 @@ id fabMenu
 id fabMenu1
 id fabSalle
 id forgotTitle
+id heureCours
 id heureEvent
 id home
 id imageGrid
 id imageLRG
 id imageLRG1
+id imageRecyclerView
 id imageView
 id imageView10
 id imageView11
@@ -261,6 +265,7 @@ id imageView7
 id imageView8
 id imageView81
 id imageView9
+id imageViewItem
 id imageViewLarge
 id imageViewU
 id imgChoose
@@ -278,6 +283,7 @@ id labelAdresse
 id labelAdresse1
 id labelCategorie
 id labelDate
+id labelDateHeure
 id labelDescription
 id labelDescriptionCours
 id labelMention
@@ -341,7 +347,6 @@ id recCard31
 id recCard4
 id recImage
 id recImage1
-id recImage4
 id recyclerView
 id recyclerView1
 id recyclerViewCours
@@ -415,13 +420,11 @@ id tv_verification_message
 id txtAdresseS
 id txtAdresseT
 id txtCategorieT
-id txtDateEvent
 id txtDate_naissanceS
 id txtDescriptionCours
 id txtDescriptionEvent
 id txtDescriptionSalle
 id txtEmail
-id txtHeureEvent
 id txtLemail
 id txtLmdp
 id txtMdp
@@ -545,6 +548,7 @@ layout drawer_header
 layout drawer_header1
 layout home
 layout home1
+layout image_item
 layout progress_layout
 layout recycler_item
 layout recycler_item1

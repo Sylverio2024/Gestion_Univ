@@ -31,6 +31,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.DateFormat;
+import java.util.Date;
+
 public class UploadCours extends AppCompatActivity {
     private static final int REQUEST_CODE_CHOIX_SALLE = 1;
 
@@ -67,7 +70,6 @@ public class UploadCours extends AppCompatActivity {
                 final int DRAWABLE_RIGHT = 2;
                 if (event.getAction() == MotionEvent.ACTION_UP) {
                     if (event.getRawX() >= (txtSalleCours.getRight() - txtSalleCours.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
-                        // Ouvrir l'activité choixSalle ici
                         Intent intent = new Intent(UploadCours.this, choixSalle.class);
                         startActivityForResult(intent, REQUEST_CODE_CHOIX_SALLE);
                         return true;
@@ -138,8 +140,12 @@ public class UploadCours extends AppCompatActivity {
         String niveauCours = txtNiveauCours.getText().toString();
         String descriptionCours = txtDescriptionCours.getText().toString();
 
-        DataClass2 dataClass2 = new DataClass2(numeroCours, nameCours, salleCours, parcoursCours, niveauCours, descriptionCours);
-        String currentDate = String.valueOf(System.currentTimeMillis());
+        String currentDate = DateFormat.getDateInstance().format(new Date());
+        String currentTime = DateFormat.getTimeInstance().format(new Date());
+
+        DataClass2 dataClass2 = new DataClass2(numeroCours, nameCours, salleCours, parcoursCours, niveauCours, descriptionCours, currentDate, currentTime);
+        String dateCours = String.valueOf(System.currentTimeMillis());
+
         AlertDialog.Builder builder = new AlertDialog.Builder(UploadCours.this);
         LayoutInflater inflater = getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.progress_layout, null);
@@ -152,9 +158,9 @@ public class UploadCours extends AppCompatActivity {
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) Button bntQ = dialogView.findViewById(R.id.btnQuitterDialog);
         bntQ.setOnClickListener(v -> dialog.dismiss());
 
-        databaseReference.child(currentDate).setValue(dataClass2).addOnCompleteListener(task -> {
+        databaseReference.child(dateCours).setValue(dataClass2).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
-                updateSalleStatus(salleCours); // Mise à jour du statut de la salle
+                updateSalleStatus(salleCours);
             } else {
                 Toast.makeText(UploadCours.this, "Échec de l'enregistrement", Toast.LENGTH_SHORT).show();
                 dialog.dismiss();

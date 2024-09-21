@@ -8,10 +8,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.gestion_univ.R;
-import com.google.android.material.imageview.ShapeableImageView;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -33,13 +33,13 @@ public final class RecyclerItem4Binding implements ViewBinding {
   public final TextView heureEvent;
 
   @NonNull
+  public final RecyclerView imageRecyclerView;
+
+  @NonNull
   public final TextView numD;
 
   @NonNull
   public final CardView recCard4;
-
-  @NonNull
-  public final ShapeableImageView recImage4;
 
   @NonNull
   public final TextView titreD;
@@ -49,16 +49,16 @@ public final class RecyclerItem4Binding implements ViewBinding {
 
   private RecyclerItem4Binding(@NonNull CardView rootView, @NonNull TextView NumeroIDEvent,
       @NonNull TextView dateEvent, @NonNull TextView descriptionEvent, @NonNull TextView heureEvent,
-      @NonNull TextView numD, @NonNull CardView recCard4, @NonNull ShapeableImageView recImage4,
+      @NonNull RecyclerView imageRecyclerView, @NonNull TextView numD, @NonNull CardView recCard4,
       @NonNull TextView titreD, @NonNull TextView titreEvent) {
     this.rootView = rootView;
     this.NumeroIDEvent = NumeroIDEvent;
     this.dateEvent = dateEvent;
     this.descriptionEvent = descriptionEvent;
     this.heureEvent = heureEvent;
+    this.imageRecyclerView = imageRecyclerView;
     this.numD = numD;
     this.recCard4 = recCard4;
-    this.recImage4 = recImage4;
     this.titreD = titreD;
     this.titreEvent = titreEvent;
   }
@@ -114,6 +114,12 @@ public final class RecyclerItem4Binding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.imageRecyclerView;
+      RecyclerView imageRecyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (imageRecyclerView == null) {
+        break missingId;
+      }
+
       id = R.id.numD;
       TextView numD = ViewBindings.findChildViewById(rootView, id);
       if (numD == null) {
@@ -121,12 +127,6 @@ public final class RecyclerItem4Binding implements ViewBinding {
       }
 
       CardView recCard4 = (CardView) rootView;
-
-      id = R.id.recImage4;
-      ShapeableImageView recImage4 = ViewBindings.findChildViewById(rootView, id);
-      if (recImage4 == null) {
-        break missingId;
-      }
 
       id = R.id.titreD;
       TextView titreD = ViewBindings.findChildViewById(rootView, id);
@@ -141,7 +141,7 @@ public final class RecyclerItem4Binding implements ViewBinding {
       }
 
       return new RecyclerItem4Binding((CardView) rootView, NumeroIDEvent, dateEvent,
-          descriptionEvent, heureEvent, numD, recCard4, recImage4, titreD, titreEvent);
+          descriptionEvent, heureEvent, imageRecyclerView, numD, recCard4, titreD, titreEvent);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

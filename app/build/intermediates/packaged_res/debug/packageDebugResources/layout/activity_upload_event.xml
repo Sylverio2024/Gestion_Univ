@@ -45,7 +45,6 @@
                     android:columnCount="2"
                     android:orientation="horizontal"
                     android:padding="8dp"
-                    android:rowCount="1"
                     android:background="@drawable/_00901" />
 
                 <EditText
@@ -70,32 +69,6 @@
                     android:padding="16sp"
                     android:textSize="13sp"
                     android:hint="Titre de l'évènement"
-                    android:textColorHint="@color/lavender"
-                    android:gravity="start|center_vertical"
-                    android:textColor="@color/lavender" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:id="@+id/txtDateEvent"
-                    android:background="@drawable/lavender_border"
-                    android:layout_marginTop="5dp"
-                    android:padding="16sp"
-                    android:textSize="13sp"
-                    android:hint="Date de l'évènement"
-                    android:textColorHint="@color/lavender"
-                    android:gravity="start|center_vertical"
-                    android:textColor="@color/lavender" />
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:id="@+id/txtHeureEvent"
-                    android:background="@drawable/lavender_border"
-                    android:layout_marginTop="5dp"
-                    android:padding="16sp"
-                    android:textSize="13sp"
-                    android:hint="Heure de l'évènement"
                     android:textColorHint="@color/lavender"
                     android:gravity="start|center_vertical"
                     android:textColor="@color/lavender" />
