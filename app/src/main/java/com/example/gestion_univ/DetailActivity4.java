@@ -1,5 +1,6 @@
 package com.example.gestion_univ;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -9,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.clans.fab.FloatingActionButton;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class DetailActivity4 extends AppCompatActivity {
@@ -41,7 +41,7 @@ public class DetailActivity4 extends AppCompatActivity {
         String dateEvent = getIntent().getStringExtra("dateEvent");
         String timeEvent = getIntent().getStringExtra("heureEvent");
         String descriptionEvent = getIntent().getStringExtra("descriptionEvent");
-        imageUrls = getIntent().getStringArrayListExtra("imagesEvent"); // Liste d'images
+        imageUrls = getIntent().getStringArrayListExtra("imagesEvent");
 
         // Mise à jour des TextViews avec les données reçues
         detailNumero.setText(numeroEvent);
@@ -50,9 +50,20 @@ public class DetailActivity4 extends AppCompatActivity {
         detailTime.setText(timeEvent);
         detailDescription.setText(descriptionEvent);
 
-        // Configuration du RecyclerView pour les images
-        imageRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        imageAdapter = new ImageAdapter(this, imageUrls);
+        // Configuration du RecyclerView pour les images avec défilement vertical
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+        imageRecyclerView.setLayoutManager(layoutManager);
+
+        // Adapter avec listener pour l'affichage plein écran
+        imageAdapter = new ImageAdapter(this, imageUrls, new ImageAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(String imageUrl) {
+                // Ouvre une nouvelle activité pour afficher l'image en plein écran
+                Intent intent = new Intent(DetailActivity4.this, FullScreenImageActivity.class);
+                intent.putExtra("imageUrl", imageUrl);
+                startActivity(intent);
+            }
+        });
         imageRecyclerView.setAdapter(imageAdapter);
     }
 }
