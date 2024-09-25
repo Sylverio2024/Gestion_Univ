@@ -190,6 +190,7 @@ id detailAdresse
 id detailAdresse1
 id detailCategorie
 id detailDate
+id detailDescription
 id detailDescriptionCours
 id detailDescriptionSalle
 id detailHeure
@@ -203,6 +204,7 @@ id detailNom
 id detailNom1
 id detailNomCours
 id detailNomSalle
+id detailNumero
 id detailNumeroCours
 id detailNumeroID
 id detailNumeroID1
@@ -217,6 +219,8 @@ id detailSpecialite
 id detailStatutSalle
 id detailTelephone
 id detailTelephone1
+id detailTime
+id detailTitre
 id dialogBox
 id dialogForgot
 id eTextEmail

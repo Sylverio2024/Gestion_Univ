@@ -4,30 +4,72 @@ package com.example.gestion_univ.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.gestion_univ.R;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ActivityDetail4Binding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final CoordinatorLayout rootView;
 
   @NonNull
-  public final ConstraintLayout main;
+  public final FloatingActionButton deleteButton;
 
-  private ActivityDetail4Binding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout main) {
+  @NonNull
+  public final TextView detailDate;
+
+  @NonNull
+  public final TextView detailDescription;
+
+  @NonNull
+  public final TextView detailNumero;
+
+  @NonNull
+  public final TextView detailTime;
+
+  @NonNull
+  public final TextView detailTitre;
+
+  @NonNull
+  public final FloatingActionButton editButton;
+
+  @NonNull
+  public final FloatingActionMenu fabMenu;
+
+  @NonNull
+  public final RecyclerView imageRecyclerView;
+
+  private ActivityDetail4Binding(@NonNull CoordinatorLayout rootView,
+      @NonNull FloatingActionButton deleteButton, @NonNull TextView detailDate,
+      @NonNull TextView detailDescription, @NonNull TextView detailNumero,
+      @NonNull TextView detailTime, @NonNull TextView detailTitre,
+      @NonNull FloatingActionButton editButton, @NonNull FloatingActionMenu fabMenu,
+      @NonNull RecyclerView imageRecyclerView) {
     this.rootView = rootView;
-    this.main = main;
+    this.deleteButton = deleteButton;
+    this.detailDate = detailDate;
+    this.detailDescription = detailDescription;
+    this.detailNumero = detailNumero;
+    this.detailTime = detailTime;
+    this.detailTitre = detailTitre;
+    this.editButton = editButton;
+    this.fabMenu = fabMenu;
+    this.imageRecyclerView = imageRecyclerView;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public CoordinatorLayout getRoot() {
     return rootView;
   }
 
@@ -48,12 +90,69 @@ public final class ActivityDetail4Binding implements ViewBinding {
 
   @NonNull
   public static ActivityDetail4Binding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.deleteButton;
+      FloatingActionButton deleteButton = ViewBindings.findChildViewById(rootView, id);
+      if (deleteButton == null) {
+        break missingId;
+      }
+
+      id = R.id.detailDate;
+      TextView detailDate = ViewBindings.findChildViewById(rootView, id);
+      if (detailDate == null) {
+        break missingId;
+      }
+
+      id = R.id.detailDescription;
+      TextView detailDescription = ViewBindings.findChildViewById(rootView, id);
+      if (detailDescription == null) {
+        break missingId;
+      }
+
+      id = R.id.detailNumero;
+      TextView detailNumero = ViewBindings.findChildViewById(rootView, id);
+      if (detailNumero == null) {
+        break missingId;
+      }
+
+      id = R.id.detailTime;
+      TextView detailTime = ViewBindings.findChildViewById(rootView, id);
+      if (detailTime == null) {
+        break missingId;
+      }
+
+      id = R.id.detailTitre;
+      TextView detailTitre = ViewBindings.findChildViewById(rootView, id);
+      if (detailTitre == null) {
+        break missingId;
+      }
+
+      id = R.id.editButton;
+      FloatingActionButton editButton = ViewBindings.findChildViewById(rootView, id);
+      if (editButton == null) {
+        break missingId;
+      }
+
+      id = R.id.fabMenu;
+      FloatingActionMenu fabMenu = ViewBindings.findChildViewById(rootView, id);
+      if (fabMenu == null) {
+        break missingId;
+      }
+
+      id = R.id.imageRecyclerView;
+      RecyclerView imageRecyclerView = ViewBindings.findChildViewById(rootView, id);
+      if (imageRecyclerView == null) {
+        break missingId;
+      }
+
+      return new ActivityDetail4Binding((CoordinatorLayout) rootView, deleteButton, detailDate,
+          detailDescription, detailNumero, detailTime, detailTitre, editButton, fabMenu,
+          imageRecyclerView);
     }
-
-    ConstraintLayout main = (ConstraintLayout) rootView;
-
-    return new ActivityDetail4Binding((ConstraintLayout) rootView, main);
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }
