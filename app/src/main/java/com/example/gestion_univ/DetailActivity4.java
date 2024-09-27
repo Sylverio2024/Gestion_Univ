@@ -17,7 +17,7 @@ public class DetailActivity4 extends AppCompatActivity {
     private TextView detailNumero, detailTitre, detailDate, detailTime, detailDescription;
     private RecyclerView imageRecyclerView;
     private List<String> imageUrls;
-    private ImageAdapter imageAdapter;
+    private Adapter1 Adapter1;
     FloatingActionButton deleteButton, editButton;
 
     @Override
@@ -49,13 +49,11 @@ public class DetailActivity4 extends AppCompatActivity {
         detailDate.setText(dateEvent);
         detailTime.setText(timeEvent);
         detailDescription.setText(descriptionEvent);
-
         // Configuration du RecyclerView pour les images avec défilement vertical
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         imageRecyclerView.setLayoutManager(layoutManager);
-
         // Adapter avec listener pour l'affichage plein écran
-        imageAdapter = new ImageAdapter(this, imageUrls, new ImageAdapter.OnItemClickListener() {
+        Adapter1 = new Adapter1(this, imageUrls, new Adapter1.OnItemClickListener() {
             @Override
             public void onItemClick(String imageUrl) {
                 // Ouvre une nouvelle activité pour afficher l'image en plein écran
@@ -64,6 +62,6 @@ public class DetailActivity4 extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        imageRecyclerView.setAdapter(imageAdapter);
+        imageRecyclerView.setAdapter(Adapter1);
     }
 }

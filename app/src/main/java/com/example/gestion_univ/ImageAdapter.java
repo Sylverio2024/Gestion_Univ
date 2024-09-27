@@ -1,7 +1,6 @@
 package com.example.gestion_univ;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +17,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
     private Context context;
     private List<String> imageUrls;
-    private OnItemClickListener listener;
 
-    public ImageAdapter(Context context, List<String> imageUrls, OnItemClickListener listener) {
+    public ImageAdapter(Context context, List<String> imageUrls) {
         this.context = context;
         this.imageUrls = imageUrls;
-        this.listener = listener;
     }
 
     @NonNull
@@ -37,14 +34,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
         String imageUrl = imageUrls.get(position);
         Glide.with(context).load(imageUrl).into(holder.imageView);
-
-        // Clic sur l'image pour ouvrir en taille réelle
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onItemClick(imageUrl);
-            }
-        });
     }
 
     @Override
@@ -52,16 +41,12 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         return imageUrls.size();
     }
 
-    public class ImageViewHolder extends RecyclerView.ViewHolder {
+    class ImageViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
 
         public ImageViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageViewItem);
         }
-    }
-
-    public interface OnItemClickListener {
-        void onItemClick(String imageUrl);
     }
 }

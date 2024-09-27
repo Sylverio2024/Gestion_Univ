@@ -12,6 +12,10 @@
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_detail2.xml"
     },
     {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_full_screen_image.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_full_screen_image.xml"
+    },
+    {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_edit_profil.xml",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_edit_profil.xml"
     },
@@ -44,12 +48,12 @@
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_upload_student.xml"
     },
     {
-        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_choose_pdp1.xml",
-        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_choose_pdp1.xml"
-    },
-    {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_main.xml",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_choose_pdp1.xml",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_choose_pdp1.xml"
     },
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_scanner3.xml",
@@ -74,6 +78,10 @@
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_fn_enseignant.xml",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_fn_enseignant.xml"
+    },
+    {
+        "merged": "com.example.gestion_univ.app-mergeDebugResources-57:/layout/image_item1.xml",
+        "source": "com.example.gestion_univ.app-main-60:/layout/image_item1.xml"
     },
     {
         "merged": "com.example.gestion_univ.app-mergeDebugResources-57:/layout/activity_detail4.xml",

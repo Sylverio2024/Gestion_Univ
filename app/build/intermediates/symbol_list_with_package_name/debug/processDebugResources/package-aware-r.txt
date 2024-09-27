@@ -3698,6 +3698,7 @@ id forever
 id forgotTitle
 id fragment_container_view_tag
 id frost
+id fullImageView
 id fullscreen_header
 id ghost_view
 id ghost_view_holder
@@ -4408,6 +4409,7 @@ layout activity_fn5
 layout activity_fn5_content
 layout activity_fn_enseignant
 layout activity_fn_etudiant
+layout activity_full_screen_image
 layout activity_login
 layout activity_main
 layout activity_main2
@@ -4462,6 +4464,7 @@ layout drawer_header1
 layout home
 layout home1
 layout image_item
+layout image_item1
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
