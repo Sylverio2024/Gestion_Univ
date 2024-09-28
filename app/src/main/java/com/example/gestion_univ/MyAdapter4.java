@@ -52,7 +52,7 @@ public class MyAdapter4 extends RecyclerView.Adapter<MyViewHolder4> {
 
         holder.recCard4.setOnClickListener(v -> {
             Intent intent = new Intent(context, DetailActivity4.class);
-            intent.putExtra("NumeroIDEvent", dataClass4.getNumeroEvent());
+            intent.putExtra("numeroEvent", dataClass4.getNumeroEvent());
             intent.putExtra("titreEvent", dataClass4.getTitreEvent());
             intent.putExtra("dateEvent", dataClass4.getDateEvent());
             intent.putExtra("heureEvent", dataClass4.getTimeEvent());

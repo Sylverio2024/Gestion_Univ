@@ -11,7 +11,7 @@
         android:layout_marginTop="100dp"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
-        android:id="@+id/search"
+        android:id="@+id/searchH1"
         app:iconifiedByDefault="false"
         app:searchHintIcon="@null"
         app:queryHint="Recherche..."
@@ -23,9 +23,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewH1"
         android:scrollbars="vertical"
         android:layout_marginTop="10dp"
-        android:layout_below="@+id/search"
+        android:layout_below="@+id/searchH1"
         />
 </RelativeLayout>

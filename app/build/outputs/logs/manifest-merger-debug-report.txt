@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-187:12
-INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-187:12
-INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-187:12
-INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-187:12
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-190:12
+INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-190:12
+INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-190:12
+INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-190:12
 MERGED from [androidx.databinding:viewbinding:8.3.1] C:\Users\willson JFB PROd\.gradle\caches\transforms-4\0f61215dedb121db07c8e2471cec29df\transformed\jetified-viewbinding-8.3.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\willson JFB PROd\.gradle\caches\transforms-4\e5b28b1463b858ec4b3f81619bb17cd9\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:17:1-75:12
 MERGED from [com.google.firebase:firebase-firestore:24.11.1] C:\Users\willson JFB PROd\.gradle\caches\transforms-4\607e1d67a6d1ac13d461c52985622863\transformed\jetified-firebase-firestore-24.11.1\AndroidManifest.xml:2:1-26:12
@@ -179,8 +179,8 @@ MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\willson JFB 
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:14:19-67
 application
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:16:5-185:19
-INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:16:5-185:19
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:16:5-188:19
+INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:16:5-188:19
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\willson JFB PROd\.gradle\caches\transforms-4\e5b28b1463b858ec4b3f81619bb17cd9\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\willson JFB PROd\.gradle\caches\transforms-4\e5b28b1463b858ec4b3f81619bb17cd9\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-firestore:24.11.1] C:\Users\willson JFB PROd\.gradle\caches\transforms-4\607e1d67a6d1ac13d461c52985622863\transformed\jetified-firebase-firestore-24.11.1\AndroidManifest.xml:13:5-24:19
@@ -275,320 +275,326 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\wi
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:24:9-50
 	android:dataExtractionRules
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:18:9-65
-activity#com.example.gestion_univ.FullScreenImageActivity
+activity#com.example.gestion_univ.DetailActivityCours
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:26:9-28:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:28:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:27:13-52
-activity#com.example.gestion_univ.uploadEvent
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:27:13-48
+activity#com.example.gestion_univ.FullScreenImageActivity
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:29:9-31:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:31:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:30:13-40
-activity#com.example.gestion_univ.updateEvent
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:30:13-52
+activity#com.example.gestion_univ.uploadEvent
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:32:9-34:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:34:13-37
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:33:13-40
-activity#com.example.gestion_univ.Evenement
+activity#com.example.gestion_univ.updateEvent
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:35:9-37:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:37:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:36:13-38
-activity#com.example.gestion_univ.DetailActivity4
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:36:13-40
+activity#com.example.gestion_univ.Evenement
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:38:9-40:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:40:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:39:13-44
-activity#com.example.gestion_univ.choixSalle1
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:39:13-38
+activity#com.example.gestion_univ.DetailActivity4
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:41:9-43:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:43:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:42:13-40
-activity#com.example.gestion_univ.updateCours
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:42:13-44
+activity#com.example.gestion_univ.choixSalle1
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:44:9-46:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:46:13-37
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:45:13-40
-activity#com.example.gestion_univ.choixSalle
+activity#com.example.gestion_univ.updateCours
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:47:9-49:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:49:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:48:13-39
-activity#com.example.gestion_univ.photoEtudiant
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:48:13-40
+activity#com.example.gestion_univ.choixSalle
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:50:9-52:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:52:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:51:13-42
-activity#com.example.gestion_univ.UpdateStudent
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:51:13-39
+activity#com.example.gestion_univ.photoEtudiant
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:53:9-55:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:55:13-37
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:54:13-42
-activity#com.example.gestion_univ.DetailActivity1
+activity#com.example.gestion_univ.UpdateStudent
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:56:9-58:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:58:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:57:13-44
-activity#com.example.gestion_univ.DetailActivity2
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:57:13-42
+activity#com.example.gestion_univ.DetailActivity1
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:59:9-61:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:61:13-37
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:60:13-44
-activity#com.example.gestion_univ.verificationEmail
+activity#com.example.gestion_univ.DetailActivity2
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:62:9-64:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:64:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:63:13-46
-activity#com.example.gestion_univ.detailUser
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:63:13-44
+activity#com.example.gestion_univ.verificationEmail
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:65:9-67:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:67:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:66:13-39
-activity#com.example.gestion_univ.Utilisateur
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:66:13-46
+activity#com.example.gestion_univ.detailUser
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:68:9-70:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:70:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:69:13-40
-activity#com.example.gestion_univ.updateSalle
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:69:13-39
+activity#com.example.gestion_univ.Utilisateur
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:71:9-73:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:73:13-37
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:72:13-40
-activity#com.example.gestion_univ.detailActivity3
+activity#com.example.gestion_univ.updateSalle
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:74:9-76:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:76:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:75:13-44
-activity#com.example.gestion_univ.ScannerActivity3
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:75:13-40
+activity#com.example.gestion_univ.detailActivity3
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:77:9-79:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:79:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:78:13-45
-activity#com.example.gestion_univ.ScannerActivity2
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:78:13-44
+activity#com.example.gestion_univ.ScannerActivity3
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:80:9-82:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:82:13-37
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:81:13-45
-activity#com.example.gestion_univ.editPDP1
+activity#com.example.gestion_univ.ScannerActivity2
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:83:9-85:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:85:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:84:13-37
-activity#com.example.gestion_univ.choosePDP1
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:84:13-45
+activity#com.example.gestion_univ.editPDP1
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:86:9-88:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:88:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:87:13-39
-activity#com.example.gestion_univ.editProfil1
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:87:13-37
+activity#com.example.gestion_univ.choosePDP1
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:89:9-91:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:91:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:90:13-40
-activity#com.example.gestion_univ.ProfileUser
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:90:13-39
+activity#com.example.gestion_univ.editProfil1
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:92:9-94:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:94:13-37
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:93:13-40
-activity#com.example.gestion_univ.UploadSalle
+activity#com.example.gestion_univ.ProfileUser
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:95:9-97:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:97:13-37
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:96:13-40
-activity#com.example.gestion_univ.Salle
+activity#com.example.gestion_univ.UploadSalle
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:98:9-100:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:100:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:99:13-34
-activity#com.example.gestion_univ.MainActivity2
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:99:13-40
+activity#com.example.gestion_univ.Salle
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:101:9-103:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:103:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:102:13-42
-activity#com.example.gestion_univ.ScannerActivity
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:102:13-34
+activity#com.example.gestion_univ.MainActivity2
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:104:9-106:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:106:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:105:13-44
-activity#com.example.gestion_univ.UploadCours
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:107:9-110:58
-	android:windowSoftInputMode
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:110:13-55
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:105:13-42
+activity#com.example.gestion_univ.ScannerActivity
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:107:9-109:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:109:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:108:13-40
-activity#com.example.gestion_univ.Cours
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:111:9-113:40
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:108:13-44
+activity#com.example.gestion_univ.UploadCours
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:110:9-113:58
+	android:windowSoftInputMode
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:113:13-55
 	android:exported
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:113:13-37
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:112:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:112:13-34
-activity#com.example.gestion_univ.photoEnseignant
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:111:13-40
+activity#com.example.gestion_univ.Cours
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:114:9-116:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:116:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:115:13-44
-activity#com.example.gestion_univ.UploadStudent
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:115:13-34
+activity#com.example.gestion_univ.photoEnseignant
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:117:9-119:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:119:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:118:13-42
-activity#com.example.gestion_univ.UpdateTeacher
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:118:13-44
+activity#com.example.gestion_univ.UploadStudent
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:120:9-122:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:122:13-37
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:121:13-42
-activity#com.example.gestion_univ.DetailActivity
+activity#com.example.gestion_univ.UpdateTeacher
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:123:9-125:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:125:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:124:13-43
-activity#com.example.gestion_univ.UpdloadTeacher
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:126:9-129:58
-	android:windowSoftInputMode
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:129:13-55
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:124:13-42
+activity#com.example.gestion_univ.DetailActivity
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:126:9-128:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:128:13-37
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:127:13-43
-activity#com.example.gestion_univ.choosePDP
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:130:9-132:40
+activity#com.example.gestion_univ.UpdloadTeacher
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:129:9-132:58
+	android:windowSoftInputMode
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:132:13-55
 	android:exported
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:132:13-37
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:131:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:131:13-38
-activity#com.example.gestion_univ.editPDP
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:130:13-43
+activity#com.example.gestion_univ.choosePDP
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:133:9-135:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:135:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:134:13-36
-activity#com.example.gestion_univ.editProfil
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:134:13-38
+activity#com.example.gestion_univ.editPDP
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:136:9-138:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:138:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:137:13-39
-activity#com.example.gestion_univ.ProfileAdmin
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:137:13-36
+activity#com.example.gestion_univ.editProfil
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:139:9-141:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:141:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:140:13-41
-activity#com.example.gestion_univ.mode
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:140:13-39
+activity#com.example.gestion_univ.ProfileAdmin
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:142:9-144:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:144:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:143:13-33
-activity#com.example.gestion_univ.MainEtudiant
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:143:13-41
+activity#com.example.gestion_univ.mode
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:145:9-147:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:147:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:146:13-41
-activity#com.example.gestion_univ.login
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:146:13-33
+activity#com.example.gestion_univ.MainEtudiant
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:148:9-150:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:150:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:149:13-34
-activity#com.example.gestion_univ.Register
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:149:13-41
+activity#com.example.gestion_univ.login
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:151:9-153:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:153:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:152:13-37
-activity#com.example.gestion_univ.fnEtudiant
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:152:13-34
+activity#com.example.gestion_univ.Register
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:154:9-156:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:156:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:155:13-39
-activity#com.example.gestion_univ.fnEnseignant
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:155:13-37
+activity#com.example.gestion_univ.fnEtudiant
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:157:9-159:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:159:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:158:13-41
-activity#com.example.gestion_univ.fn5
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:158:13-39
+activity#com.example.gestion_univ.fnEnseignant
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:160:9-162:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:162:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:161:13-32
-activity#com.example.gestion_univ.fn4
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:163:9-171:20
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:161:13-41
+activity#com.example.gestion_univ.fn5
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:163:9-165:40
 	android:exported
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:165:13-36
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:165:13-37
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:164:13-32
-intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:166:13-170:29
-action#android.intent.action.MAIN
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:167:17-69
-	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:167:25-66
-category#android.intent.category.LAUNCHER
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:169:17-77
-	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:169:27-74
-activity#com.example.gestion_univ.fn3
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:172:9-174:40
+activity#com.example.gestion_univ.fn4
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:166:9-174:20
 	android:exported
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:174:13-37
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:168:13-36
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:173:13-32
-activity#com.example.gestion_univ.fen2
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:167:13-32
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:169:13-173:29
+action#android.intent.action.MAIN
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:170:17-69
+	android:name
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:170:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:172:17-77
+	android:name
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:172:27-74
+activity#com.example.gestion_univ.fn3
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:175:9-177:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:177:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:176:13-33
-activity#com.example.gestion_univ.MainActivity
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:176:13-32
+activity#com.example.gestion_univ.fen2
 ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:178:9-180:40
 	android:exported
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:180:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:179:13-41
-meta-data#preloaded_fonts
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:182:9-184:57
-	android:resource
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:184:13-54
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:179:13-33
+activity#com.example.gestion_univ.MainActivity
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:181:9-183:40
+	android:exported
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:183:13-37
 	android:name
-		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:183:13-43
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:182:13-41
+meta-data#preloaded_fonts
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:185:9-187:57
+	android:resource
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:187:13-54
+	android:name
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:186:13-43
 uses-sdk
 INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml

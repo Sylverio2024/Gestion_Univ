@@ -21,16 +21,16 @@ public final class Home1Binding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final RecyclerView recyclerView;
+  public final RecyclerView recyclerViewH1;
 
   @NonNull
-  public final SearchView search;
+  public final SearchView searchH1;
 
-  private Home1Binding(@NonNull RelativeLayout rootView, @NonNull RecyclerView recyclerView,
-      @NonNull SearchView search) {
+  private Home1Binding(@NonNull RelativeLayout rootView, @NonNull RecyclerView recyclerViewH1,
+      @NonNull SearchView searchH1) {
     this.rootView = rootView;
-    this.recyclerView = recyclerView;
-    this.search = search;
+    this.recyclerViewH1 = recyclerViewH1;
+    this.searchH1 = searchH1;
   }
 
   @Override
@@ -60,19 +60,19 @@ public final class Home1Binding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.recyclerView;
-      RecyclerView recyclerView = ViewBindings.findChildViewById(rootView, id);
-      if (recyclerView == null) {
+      id = R.id.recyclerViewH1;
+      RecyclerView recyclerViewH1 = ViewBindings.findChildViewById(rootView, id);
+      if (recyclerViewH1 == null) {
         break missingId;
       }
 
-      id = R.id.search;
-      SearchView search = ViewBindings.findChildViewById(rootView, id);
-      if (search == null) {
+      id = R.id.searchH1;
+      SearchView searchH1 = ViewBindings.findChildViewById(rootView, id);
+      if (searchH1 == null) {
         break missingId;
       }
 
-      return new Home1Binding((RelativeLayout) rootView, recyclerView, search);
+      return new Home1Binding((RelativeLayout) rootView, recyclerViewH1, searchH1);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

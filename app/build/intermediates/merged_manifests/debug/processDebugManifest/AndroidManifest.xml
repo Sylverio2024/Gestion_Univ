@@ -52,6 +52,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gestion_Univ" >
         <activity
+            android:name="com.example.gestion_univ.DetailActivityCours"
+            android:exported="false" />
+        <activity
             android:name="com.example.gestion_univ.FullScreenImageActivity"
             android:exported="false" />
         <activity

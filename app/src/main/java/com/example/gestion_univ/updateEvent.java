@@ -5,11 +5,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,13 +34,13 @@ public class updateEvent extends AppCompatActivity {
         // Référence à Firebase pour les événements
         eventReference = FirebaseDatabase.getInstance().getReference("Evenement");
 
-        // Supposons que vous ayez passé le numeroEvent actuel via une Intent
+        // Supposons que vous ayez passé le numeroEvent actuel via une Intent depuis DetailActivity4
         oldNumeroEvent = getIntent().getStringExtra("numeroEvent");
 
         // Charger les données actuelles dans les EditTexts
         loadEventData();
 
-        // Action du bouton "Modifier"
+        // Action du bouton "Enregistrer"
         btnSaveEvent.setOnClickListener(v -> {
             String newNumeroEvent = editNumeroEvent.getText().toString().trim();
             String titreEvent = editTitreEvent.getText().toString().trim();
@@ -110,19 +106,12 @@ public class updateEvent extends AppCompatActivity {
 
     // Fonction pour mettre à jour les données de l'événement
     private void updateEventInDatabase(String numeroEvent, String titreEvent, String descriptionEvent) {
-        // Vérifier s'il y a des modifications réelles
-        if (titreEvent.equals(editTitreEvent.getText().toString()) &&
-                descriptionEvent.equals(editDescriptionEvent.getText().toString())) {
-            Toast.makeText(updateEvent.this, "Aucune modification détectée", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
         // Mise à jour des champs de l'événement dans la base de données
         eventReference.child(numeroEvent).child("titreEvent").setValue(titreEvent);
         eventReference.child(numeroEvent).child("descriptionEvent").setValue(descriptionEvent)
                 .addOnSuccessListener(aVoid -> {
                     Toast.makeText(updateEvent.this, "Événement mis à jour avec succès", Toast.LENGTH_SHORT).show();
-                    finish(); // Retour à l'écran précédent
+                    finish(); // Retour à l'écran précédent après la mise à jour
                 })
                 .addOnFailureListener(e -> Toast.makeText(updateEvent.this, "Erreur lors de la mise à jour", Toast.LENGTH_SHORT).show());
     }

@@ -4,30 +4,57 @@ package com.example.gestion_univ.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ScrollView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
+import androidx.viewbinding.ViewBindings;
 import com.example.gestion_univ.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
+import java.lang.String;
 
 public final class ActivityUpdateEventBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final CardView rootView;
 
   @NonNull
-  public final ConstraintLayout main;
+  public final EditText UpdateDescriptionEvent;
 
-  private ActivityUpdateEventBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ConstraintLayout main) {
+  @NonNull
+  public final EditText UpdateNumeroEvent;
+
+  @NonNull
+  public final EditText UpdateTitreEvent;
+
+  @NonNull
+  public final Button bntSaveEvent;
+
+  @NonNull
+  public final CardView main;
+
+  @NonNull
+  public final ScrollView scrollView4;
+
+  private ActivityUpdateEventBinding(@NonNull CardView rootView,
+      @NonNull EditText UpdateDescriptionEvent, @NonNull EditText UpdateNumeroEvent,
+      @NonNull EditText UpdateTitreEvent, @NonNull Button bntSaveEvent, @NonNull CardView main,
+      @NonNull ScrollView scrollView4) {
     this.rootView = rootView;
+    this.UpdateDescriptionEvent = UpdateDescriptionEvent;
+    this.UpdateNumeroEvent = UpdateNumeroEvent;
+    this.UpdateTitreEvent = UpdateTitreEvent;
+    this.bntSaveEvent = bntSaveEvent;
     this.main = main;
+    this.scrollView4 = scrollView4;
   }
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public CardView getRoot() {
     return rootView;
   }
 
@@ -48,12 +75,46 @@ public final class ActivityUpdateEventBinding implements ViewBinding {
 
   @NonNull
   public static ActivityUpdateEventBinding bind(@NonNull View rootView) {
-    if (rootView == null) {
-      throw new NullPointerException("rootView");
+    // The body of this method is generated in a way you would not otherwise write.
+    // This is done to optimize the compiled bytecode for size and performance.
+    int id;
+    missingId: {
+      id = R.id.UpdateDescriptionEvent;
+      EditText UpdateDescriptionEvent = ViewBindings.findChildViewById(rootView, id);
+      if (UpdateDescriptionEvent == null) {
+        break missingId;
+      }
+
+      id = R.id.UpdateNumeroEvent;
+      EditText UpdateNumeroEvent = ViewBindings.findChildViewById(rootView, id);
+      if (UpdateNumeroEvent == null) {
+        break missingId;
+      }
+
+      id = R.id.UpdateTitreEvent;
+      EditText UpdateTitreEvent = ViewBindings.findChildViewById(rootView, id);
+      if (UpdateTitreEvent == null) {
+        break missingId;
+      }
+
+      id = R.id.bntSaveEvent;
+      Button bntSaveEvent = ViewBindings.findChildViewById(rootView, id);
+      if (bntSaveEvent == null) {
+        break missingId;
+      }
+
+      CardView main = (CardView) rootView;
+
+      id = R.id.scrollView4;
+      ScrollView scrollView4 = ViewBindings.findChildViewById(rootView, id);
+      if (scrollView4 == null) {
+        break missingId;
+      }
+
+      return new ActivityUpdateEventBinding((CardView) rootView, UpdateDescriptionEvent,
+          UpdateNumeroEvent, UpdateTitreEvent, bntSaveEvent, main, scrollView4);
     }
-
-    ConstraintLayout main = (ConstraintLayout) rootView;
-
-    return new ActivityUpdateEventBinding((ConstraintLayout) rootView, main);
+    String missingId = rootView.getResources().getResourceName(id);
+    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
   }
 }

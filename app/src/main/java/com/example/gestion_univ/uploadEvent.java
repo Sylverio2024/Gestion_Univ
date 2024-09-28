@@ -30,7 +30,7 @@ import java.util.Locale;
 
 public class uploadEvent extends AppCompatActivity {
 
-    private EditText txtNumeroEvent, txtTitreEvent, txtDateEvent, txtHeureEvent, txtDescriptionEvent;
+    private EditText txtNumeroEvent, txtTitreEvent, txtDescriptionEvent;
     private Button btnSaveEvent;
     private GridLayout gridLayoutImages;
     private List<Uri> imageUris = new ArrayList<>();
@@ -70,8 +70,6 @@ public class uploadEvent extends AppCompatActivity {
         // Initialisation des vues
         txtNumeroEvent = findViewById(R.id.txtNumeroEvent);
         txtTitreEvent = findViewById(R.id.txtTitreEvent);
-       // txtDateEvent = findViewById(R.id.txtDateEvent);
-      //  txtHeureEvent = findViewById(R.id.txtHeureEvent);
         txtDescriptionEvent = findViewById(R.id.txtDescriptionEvent);
         gridLayoutImages = findViewById(R.id.imageGrid);
         btnSaveEvent = findViewById(R.id.bntSaveEvent);
@@ -89,10 +87,6 @@ public class uploadEvent extends AppCompatActivity {
 
         // Enregistrer l'évènement
         btnSaveEvent.setOnClickListener(v -> saveEventData());
-
-        // Désactiver les pickers manuels car nous allons les remplir automatiquement
-        // txtDateEvent.setOnClickListener(v -> {...});
-        // txtHeureEvent.setOnClickListener(v -> {...});
     }
 
     // Afficher les images sélectionnées dans GridLayout
@@ -141,15 +135,30 @@ public class uploadEvent extends AppCompatActivity {
         String timeEvent = timeFormat.format(currentDateTime.getTime());
 
         // Vérification du doublon pour numeroEvent
-        databaseReference.orderByChild("numeroEvent").equalTo(numeroEvent).get().addOnCompleteListener(task -> {
-            if (task.isSuccessful() && task.getResult().exists()) {
-                Toast.makeText(uploadEvent.this, "Numéro d'événement déjà existant", Toast.LENGTH_SHORT).show();
-            } else {
-                uploadImagesAndSaveEvent(numeroEvent, titreEvent, dateEvent, timeEvent, descriptionEvent);
-            }
-        }).addOnFailureListener(e -> {
-            Toast.makeText(uploadEvent.this, "Erreur lors de la vérification du numéro d'événement", Toast.LENGTH_SHORT).show();
-        });
+        databaseReference.orderByChild("numeroEvent").equalTo(numeroEvent).get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        if (task.getResult().exists()) {
+                            // Si un événement avec le même numéro existe
+                            Toast.makeText(uploadEvent.this, "Numéro d'événement déjà existant", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // Numéro d'événement est unique, on peut procéder
+                            uploadImagesAndSaveEvent(numeroEvent, titreEvent, dateEvent, timeEvent, descriptionEvent);
+                        }
+                    } else {
+                        // En cas d'erreur dans la requête Firebase
+                        Toast.makeText(uploadEvent.this, "Erreur lors de la vérification du numéro d'événement", Toast.LENGTH_SHORT).show();
+                        // Affichage du message d'erreur pour débogage
+                        if (task.getException() != null) {
+                            task.getException().printStackTrace();
+                        }
+                    }
+                })
+                .addOnFailureListener(e -> {
+                    // En cas d'échec de la requête Firebase
+                    Toast.makeText(uploadEvent.this, "Erreur lors de la vérification du numéro d'événement", Toast.LENGTH_SHORT).show();
+                    e.printStackTrace();  // Afficher les erreurs pour aider au débogage
+                });
     }
 
     private void uploadImagesAndSaveEvent(String numeroEvent, String titreEvent, String dateEvent, String timeEvent, String descriptionEvent) {

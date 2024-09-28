@@ -1,5 +1,4 @@
 package com.example.gestion_univ;
-
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -7,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -19,11 +19,14 @@ import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
@@ -32,8 +35,16 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainEtudiant extends AppCompatActivity {
     private DrawerLayout drawerLayout1;
@@ -45,6 +56,16 @@ public class MainEtudiant extends AppCompatActivity {
     private ImageView imageLarge1;
     private ProgressDialog progressDialog1;
     private boolean isDataLoaded1 = false;
+    //TextView DateCours, HeureCours;
+
+
+    //cours
+    RecyclerView recyclerViewH1;
+    List<DataClass2> dataList2;
+    DatabaseReference databaseReference;
+    ValueEventListener eventListener2;
+    AdapterCours adapter2;
+    SearchView searchViewH1;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -65,14 +86,71 @@ public class MainEtudiant extends AppCompatActivity {
         db1 = FirebaseFirestore.getInstance();
         user1 = mAuth1.getCurrentUser();
 
+        recyclerViewH1=findViewById(R.id.recyclerViewH1);
+        searchViewH1=findViewById(R.id.searchH1);
+        searchViewH1.clearFocus();
+
         // ProgressDialog pour indiquer le chargement
-        progressDialog1 = new ProgressDialog(this);
+      /*  progressDialog1 = new ProgressDialog(this);
         progressDialog1.setMessage("Chargement des données...");
         progressDialog1.setCancelable(false);
-        progressDialog1.show();
+        progressDialog1.show();*/
 
         // Mise à jour de l'en-tête de navigation
         updateNavheader1();
+
+        //Affichage du cours avec chargement
+        GridLayoutManager gridLayoutManager=new GridLayoutManager(MainEtudiant.this,1);
+        recyclerViewH1.setLayoutManager(gridLayoutManager);
+        AlertDialog.Builder builder=new AlertDialog.Builder(MainEtudiant.this);
+        builder.setCancelable(false);
+        builder.setView(R.layout.progress_layout);
+        AlertDialog dialog=builder.create();
+        dialog.show();
+        Button bntQ = dialog.findViewById(R.id.btnQuitterDialog);
+        bntQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+        dataList2=new ArrayList<>();
+        adapter2=new AdapterCours(MainEtudiant.this,dataList2);
+        recyclerViewH1.setAdapter(adapter2);
+
+        databaseReference= FirebaseDatabase.getInstance().getReference("Cours");
+        dialog.show();
+
+        eventListener2=databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                dataList2.clear();
+                for(DataSnapshot itemSnapshot: snapshot.getChildren()){
+                    DataClass2 dataClass2=itemSnapshot.getValue(DataClass2.class);
+                    dataClass2.setKey2(itemSnapshot.getKey());
+                    dataList2.add(dataClass2);
+                }
+                adapter2.notifyDataSetChanged();
+                dialog.dismiss();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                dialog.dismiss();
+            }
+        });
+        searchViewH1.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                searchList2(newText);
+                return true;
+            }
+        });
 
         // Gestion du clic sur l'image de profil
         imageLarge1.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +184,9 @@ public class MainEtudiant extends AppCompatActivity {
         int itemId = item.getItemId();
         if (itemId == R.id.Cours1) {
             Toast.makeText(MainEtudiant.this, "Home", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainEtudiant.this, MainEtudiant.class);
+            startActivity(intent);
+            finish();
         } else if (itemId == R.id.Event1) {
             Toast.makeText(MainEtudiant.this, "Evenement", Toast.LENGTH_SHORT).show();
         }  else if (itemId == R.id.About1) {
@@ -162,16 +243,16 @@ public class MainEtudiant extends AppCompatActivity {
                                 Glide.with(MainEtudiant.this).load(imageUrl).transform(new CircleCrop()).into(photoView);
                             }
                             isDataLoaded1 = true;
-                            progressDialog1.dismiss();
+                            //progressDialog1.dismiss();
                         }
                     } else {
                         Log.d("MainEtudiant", "get failed with ", task.getException());
-                        progressDialog1.dismiss();
+                      //  progressDialog1.dismiss();
                     }
                 }
             });
         } else {
-            progressDialog1.dismiss();
+           // progressDialog1.dismiss();
         }
     }
     private void showProfileImageLarge1() {
@@ -200,5 +281,14 @@ public class MainEtudiant extends AppCompatActivity {
         }
 
         dialog.show();
+    }
+    public void searchList2(String text){
+        ArrayList<DataClass2> searchList2 = new ArrayList<>();
+        for(DataClass2 dataClass2:dataList2){
+            if(dataClass2.getNumeroCours().toLowerCase().contains(text.toLowerCase()) || dataClass2.getNameCours().toLowerCase().contains(text.toLowerCase()) || dataClass2.getParcoursCours().toLowerCase().contains(text.toLowerCase()) || dataClass2.getNiveauCours().toLowerCase().contains(text.toLowerCase())){
+                searchList2.add(dataClass2);
+            }
+        }
+        adapter2.searchDataList2(searchList2);
     }
 }

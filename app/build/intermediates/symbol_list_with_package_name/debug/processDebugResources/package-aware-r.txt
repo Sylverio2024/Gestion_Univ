@@ -3383,6 +3383,9 @@ id Telephone
 id TelephoneD
 id TelephoneU
 id TelephoneUser
+id UpdateDescriptionEvent
+id UpdateNumeroEvent
+id UpdateTitreEvent
 id User
 id accelerate
 id accessibility_action_clickable_span
@@ -3788,6 +3791,7 @@ id labelParcours
 id labelParcoursCours
 id labelPrenom
 id labelPrenom1
+id labelPub
 id labelSalleCours
 id labelSpecialite
 id labelStatut
@@ -3974,6 +3978,7 @@ id recyclerView
 id recyclerView1
 id recyclerViewCours
 id recyclerViewEvent
+id recyclerViewH1
 id recyclerViewSalle
 id recyclerViewSalleChoix
 id recyclerViewSalleChoix1
@@ -4016,6 +4021,7 @@ id search
 id search1
 id searchCours
 id searchEvent
+id searchH1
 id searchSalle
 id searchSalleChoix
 id searchSalleChoix1
@@ -4396,6 +4402,7 @@ layout activity_detail1
 layout activity_detail2
 layout activity_detail3
 layout activity_detail4
+layout activity_detail_cours
 layout activity_detail_user
 layout activity_edit_pdp
 layout activity_edit_pdp1
@@ -4537,6 +4544,7 @@ layout recycler_item1
 layout recycler_item2
 layout recycler_item3
 layout recycler_item4
+layout recycler_item_cours
 layout salle_item
 layout salle_item1
 layout select_dialog_item_material

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/recCard2"
+    android:layout_marginHorizontal="12dp"
+    android:layout_marginVertical="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:padding="16dp">
+
+        <!-- Heure à gauche -->
+
+        <!-- Date à droite -->
+
+        <!-- Espacement entre heure/date et le numéro du cours -->
+
+        <TextView
+            android:id="@+id/labelPub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="0dp"
+            android:text="Publié: "
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/heureCours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="0dp"
+            android:text="Heure"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/dateCours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="50dp"
+            android:text="Date"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <!-- Numéro du cours -->
+        <TextView
+            android:id="@+id/numD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/heureCours"
+            android:layout_alignParentStart="true"
+            android:text="Numéro cours:"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/NumeroIDCours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/heureCours"
+            android:layout_marginStart="6dp"
+            android:layout_toEndOf="@id/numD"
+            android:text="Numéro cours"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <!-- Nom du cours -->
+        <TextView
+            android:id="@+id/NomD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/NumeroIDCours"
+            android:layout_marginTop="6dp"
+            android:text="Nom du cours:"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <!-- Salle du cours -->
+        <TextView
+            android:id="@+id/NomCours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/NumeroIDCours"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@id/NomD"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Nom du cours"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/SalleCoursD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/NomCours"
+            android:layout_marginTop="6dp"
+            android:text="Salle du cours:"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <!-- Parcours -->
+
+        <TextView
+            android:id="@+id/SalleCours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/NomCours"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/SalleCoursD"
+            android:text="Salle du cours"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/ParcoursCoursD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SalleCours"
+            android:layout_marginTop="6dp"
+            android:text="Parcours:"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <!-- Niveau -->
+
+        <TextView
+            android:id="@+id/ParcoursCours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/SalleCours"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="6dp"
+            android:layout_toEndOf="@id/ParcoursCoursD"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Parcours"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/NiveauCoursD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ParcoursCours"
+            android:layout_marginTop="6dp"
+            android:text="Niveau:"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <!-- Description -->
+
+        <TextView
+            android:id="@+id/NiveauCours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ParcoursCours"
+            android:layout_marginStart="59dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@id/NiveauCoursD"
+            android:text="Niveau"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/DescriptionCoursD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/NiveauCours"
+            android:layout_marginTop="26dp"
+            android:text="Description:"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/DescriptionCours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/NiveauCours"
+            android:layout_marginStart="26dp"
+            android:layout_marginTop="26dp"
+            android:layout_toEndOf="@id/DescriptionCoursD"
+            android:text="Description"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:layout_marginStart="16dp"
-        android:text="Enregistré :"
+        android:text="Publié :"
         android:textColor="@color/lavender"
         android:textSize="15sp" />
     <TextView
@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:layout_marginStart="310dp"
+        android:layout_marginStart="280dp"
         android:text="Heure"
         android:textColor="@color/lavender"
         android:textSize="15sp" />
