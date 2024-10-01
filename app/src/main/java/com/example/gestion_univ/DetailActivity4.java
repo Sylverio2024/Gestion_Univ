@@ -32,7 +32,8 @@ public class DetailActivity4 extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private StorageReference storageReference;
 
-    private String numeroEvent;
+    String key4 = "";
+    String imageUrl = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,19 +54,19 @@ public class DetailActivity4 extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("Evenement");
         storageReference = FirebaseStorage.getInstance().getReference("EventsImages");
 
-        // Récupérer les données de l'intent
-        numeroEvent = getIntent().getStringExtra("numeroEvent");
-        String titreEvent = getIntent().getStringExtra("titreEvent");
-        String descriptionEvent = getIntent().getStringExtra("descriptionEvent");
-        String dateEvent = getIntent().getStringExtra("dateEvent");
-        String heureEvent = getIntent().getStringExtra("heureEvent");
-        imageUrls = getIntent().getStringArrayListExtra("imagesEvent");
-        // Afficher les données dans les TextView correspondants
-        detailNumero.setText(numeroEvent);
-        detailTitre.setText(titreEvent);
-        detailDescription.setText(descriptionEvent);
-        detailDate.setText(dateEvent);
-        detailTime.setText(heureEvent);
+        // Récupérer les données de l'Intent à l'aide d'un Bundle
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            detailNumero.setText(bundle.getString("numeroEvent"));
+            detailTitre.setText(bundle.getString("titreEvent"));
+            detailDescription.setText(bundle.getString("descriptionEvent"));
+            detailDate.setText(bundle.getString("dateEvent"));
+            detailTime.setText(bundle.getString("heureEvent"));
+            imageUrls = bundle.getStringArrayList("imagesEvent");
+            key4 = bundle.getString("key4");
+            imageUrl = bundle.getString("Image");
+        }
+
         // Configuration du RecyclerView pour les images
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         imageRecyclerView.setLayoutManager(layoutManager);
@@ -76,27 +77,34 @@ public class DetailActivity4 extends AppCompatActivity {
             startActivity(intent);
         });
         imageRecyclerView.setAdapter(adapter);
+
         // Action de suppression
         deleteButton.setOnClickListener(v -> deleteEvent());
+
         // Action de modification
         editButton.setOnClickListener(v -> {
             Intent intent = new Intent(DetailActivity4.this, updateEvent.class);
-            intent.putExtra("numeroEvent", numeroEvent);
-            intent.putExtra("TitreEvent", titreEvent);
-            intent.putExtra("DescriptionEvent", descriptionEvent);
+            intent.putExtra("numeroEvent", detailNumero.getText().toString());
+            intent.putExtra("TitreEvent", detailTitre.getText().toString());
+            intent.putExtra("DescriptionEvent", detailDescription.getText().toString());
+            intent.putExtra("dateEvent", detailDate.getText().toString());
+            intent.putExtra("heureEvent", detailTime.getText().toString());
             startActivity(intent);
         });
     }
+
+    // Méthode pour supprimer l'événement
     private void deleteEvent() {
         // Vérifier si l'événement existe avant de tenter de le supprimer
-        databaseReference.child(numeroEvent).addListenerForSingleValueEvent(new ValueEventListener() {
+        databaseReference.child(key4).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    // L'événement existe, récupérer les URLs des images avant de supprimer l'événement
+                    // Récupérer les URLs des images avant de supprimer l'événement
                     List<String> imageUrls = (List<String>) dataSnapshot.child("imagesEvent").getValue();
+
                     // Supprimer l'événement de la Realtime Database
-                    databaseReference.child(numeroEvent).removeValue()
+                    databaseReference.child(key4).removeValue()
                             .addOnSuccessListener(aVoid -> {
                                 // Si des images existent, les supprimer de Firebase Storage
                                 if (imageUrls != null && !imageUrls.isEmpty()) {
@@ -114,14 +122,16 @@ public class DetailActivity4 extends AppCompatActivity {
                     Toast.makeText(DetailActivity4.this, "L'événement n'existe pas ou a déjà été supprimé", Toast.LENGTH_SHORT).show();
                 }
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
                 Toast.makeText(DetailActivity4.this, "Erreur lors de la récupération de l'événement", Toast.LENGTH_SHORT).show();
             }
         });
     }
+
+    // Méthode pour supprimer les images associées à l'événement
     private void deleteEventImages(List<String> imageUrls) {
-        // Parcourir les URL des images et les supprimer du Storage
         for (String imageUrl : imageUrls) {
             StorageReference imageRef = FirebaseStorage.getInstance().getReferenceFromUrl(imageUrl);
             imageRef.delete()
