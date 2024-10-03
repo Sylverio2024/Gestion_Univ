@@ -312,7 +312,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/C:/Users/willson%20JFB%20PROd/AppData/Local/Android/Sdk/icons/material/materialicons/crop_free/baseline_crop_free_24.xml" />
+                                      <entry key="url" value="file:/C:/Users/willson%20JFB%20PROd/AppData/Local/Android/Sdk/icons/material/materialicons/broken_image/baseline_broken_image_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -323,7 +323,7 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="faf9f9" />
-                            <entry key="outputName" value="baseline_crop_free_24" />
+                            <entry key="outputName" value="baseline_broken_image_24" />
                             <entry key="sourceFile" value="E:\AndroidProject" />
                           </map>
                         </option>

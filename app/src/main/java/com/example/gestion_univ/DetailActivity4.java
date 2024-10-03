@@ -74,6 +74,7 @@ public class DetailActivity4 extends AppCompatActivity {
         adapter = new Adapter1(this, imageUrls, imageUrl -> {
             // Ouvrir l'image en plein écran
             Intent intent = new Intent(DetailActivity4.this, FullScreenImageActivity.class);
+            intent.putExtra("key4", key4);
             intent.putExtra("imageUrl", imageUrl);
             startActivity(intent);
         });

@@ -3141,6 +3141,7 @@ int drawable baseline_account_circle_24 0x7f08007f
 int drawable baseline_add_a_photo_24 0x7f080080
 int drawable baseline_alternate_email_24 0x7f080081
 int drawable baseline_arrow_back_24 0x7f080082
+int drawable baseline_broken_image_24 0x7f080131
 int drawable baseline_business_center_24 0x7f080083
 int drawable baseline_class_24 0x7f080084
 int drawable baseline_clear_24 0x7f080085
@@ -3504,6 +3505,8 @@ int id btnCam1 0x7f0a00b8
 int id btnCamE 0x7f0a00b9
 int id btnCamS 0x7f0a00ba
 int id btnConnexion 0x7f0a00bb
+int id btnDelete 0x7f0a03bd
+int id btnEdit 0x7f0a03be
 int id btnGal 0x7f0a00bc
 int id btnGal1 0x7f0a00bd
 int id btnGalE 0x7f0a00be

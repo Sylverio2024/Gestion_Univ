@@ -22,6 +22,7 @@ drawable baseline_account_circle_24
 drawable baseline_add_a_photo_24
 drawable baseline_alternate_email_24
 drawable baseline_arrow_back_24
+drawable baseline_broken_image_24
 drawable baseline_business_center_24
 drawable baseline_class_24
 drawable baseline_clear_24
@@ -156,6 +157,8 @@ id btnCam1
 id btnCamE
 id btnCamS
 id btnConnexion
+id btnDelete
+id btnEdit
 id btnGal
 id btnGal1
 id btnGalE
