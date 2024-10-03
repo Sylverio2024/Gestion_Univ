@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-190:12
-INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-190:12
-INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-190:12
-INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-190:12
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-197:12
+INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-197:12
+INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-197:12
+INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:2:1-197:12
 MERGED from [androidx.databinding:viewbinding:8.3.1] C:\Users\willson JFB PROd\.gradle\caches\transforms-4\0f61215dedb121db07c8e2471cec29df\transformed\jetified-viewbinding-8.3.1\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\willson JFB PROd\.gradle\caches\transforms-4\e5b28b1463b858ec4b3f81619bb17cd9\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:17:1-75:12
 MERGED from [com.google.firebase:firebase-firestore:24.11.1] C:\Users\willson JFB PROd\.gradle\caches\transforms-4\607e1d67a6d1ac13d461c52985622863\transformed\jetified-firebase-firestore-24.11.1\AndroidManifest.xml:2:1-26:12
@@ -179,8 +179,8 @@ MERGED from [com.journeyapps:zxing-android-embedded:4.3.0] C:\Users\willson JFB 
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:14:19-67
 application
-ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:16:5-188:19
-INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:16:5-188:19
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:16:5-195:19
+INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml:16:5-195:19
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\willson JFB PROd\.gradle\caches\transforms-4\e5b28b1463b858ec4b3f81619bb17cd9\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-auth:22.3.1] C:\Users\willson JFB PROd\.gradle\caches\transforms-4\e5b28b1463b858ec4b3f81619bb17cd9\transformed\jetified-firebase-auth-22.3.1\AndroidManifest.xml:28:5-73:19
 MERGED from [com.google.firebase:firebase-firestore:24.11.1] C:\Users\willson JFB PROd\.gradle\caches\transforms-4\607e1d67a6d1ac13d461c52985622863\transformed\jetified-firebase-firestore-24.11.1\AndroidManifest.xml:13:5-24:19
@@ -595,6 +595,18 @@ ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:185:9-187:57
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:187:13-54
 	android:name
 		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:186:13-43
+service#com.example.gestion_univ.FCMNotificationService
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:189:9-194:19
+	android:exported
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:190:18-42
+	android:name
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:189:18-56
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:191:13-193:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:192:17-77
+	android:name
+		ADDED from E:\AndroidProject\app\src\main\AndroidManifest.xml:192:25-75
 uses-sdk
 INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\AndroidProject\app\src\main\AndroidManifest.xml

@@ -76,7 +76,7 @@ tools:context=".Register">
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/txtMdp"
         android:layout_width="376dp"
-        android:layout_height="74dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:hint="Mot de passe"
         android:textColorHint="#F4EBEB"

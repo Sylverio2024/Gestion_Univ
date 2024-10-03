@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DetailActivity4 extends AppCompatActivity {
@@ -64,7 +65,7 @@ public class DetailActivity4 extends AppCompatActivity {
             detailTime.setText(bundle.getString("heureEvent"));
             imageUrls = bundle.getStringArrayList("imagesEvent");
             key4 = bundle.getString("key4");
-            imageUrl = bundle.getString("Image");
+          //  imageUrl = bundle.getString("Image");
         }
 
         // Configuration du RecyclerView pour les images
@@ -85,10 +86,12 @@ public class DetailActivity4 extends AppCompatActivity {
         editButton.setOnClickListener(v -> {
             Intent intent = new Intent(DetailActivity4.this, updateEvent.class);
             intent.putExtra("numeroEvent", detailNumero.getText().toString());
-            intent.putExtra("TitreEvent", detailTitre.getText().toString());
-            intent.putExtra("DescriptionEvent", detailDescription.getText().toString());
+            intent.putExtra("titreEvent", detailTitre.getText().toString());
             intent.putExtra("dateEvent", detailDate.getText().toString());
             intent.putExtra("heureEvent", detailTime.getText().toString());
+            intent.putExtra("descriptionEvent", detailDescription.getText().toString());
+            intent.putStringArrayListExtra("imagesEvent", (ArrayList<String>) imageUrls);
+            intent.putExtra("key4", key4);
             startActivity(intent);
         });
     }

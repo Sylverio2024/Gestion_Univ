@@ -21,14 +21,15 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="341dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
         android:gravity="center"
         android:text="Connectez-vous"
         android:textSize="35sp"
         android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toEndOf="@+id/bckLogin"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -100,8 +101,8 @@
 
     <TextView
         android:id="@+id/txtRegister"
-        android:layout_width="269dp"
-        android:layout_height="47dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:gravity="center"
         android:text="Nouveau ici? Creer un compte"
@@ -125,8 +126,8 @@
 
     <TextView
         android:id="@+id/txtdialog"
-        android:layout_width="226dp"
-        android:layout_height="37dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:gravity="center"
         android:text="Mot de passe oublié?"
