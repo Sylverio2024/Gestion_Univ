@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -253,23 +254,35 @@ public class DetailActivity extends AppCompatActivity {
         linePaint.setColor(android.graphics.Color.BLACK);
         linePaint.setStrokeWidth(2);
 
-        // Dessin de l'image en haut
+        // Chargement et dessin du logo en haut à droite
+        Bitmap logoBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.isstm_logo); // Assurez-vous que le logo est dans le dossier drawable
+        float logoWidth = 100; // Ajustez la taille selon vos besoins
+        float logoHeight = logoBitmap.getHeight() * (logoWidth / logoBitmap.getWidth());
+
+        // Positionnement du logo en haut à droite
+        float logoX = pageWidth - padding - logoWidth;
+        float logoY = padding;
+        Rect logoSrcRect = new Rect(0, 0, logoBitmap.getWidth(), logoBitmap.getHeight());
+        Rect logoDestRect = new Rect((int) logoX, (int) logoY, (int) (logoX + logoWidth), (int) (logoY + logoHeight));
+        canvas.drawBitmap(logoBitmap, logoSrcRect, logoDestRect, paint);
+
+        // Chargement et dessin de l'image principale en dessous du logo
         Bitmap bitmap = ((BitmapDrawable) detailImage.getDrawable()).getBitmap();
         float imageWidth = 200;
         float imageHeight = bitmap.getHeight() * (imageWidth / bitmap.getWidth());
 
-        // Redimensionner l'image si nécessaire
+        // Redimensionnement si l'image est trop grande
         if (imageHeight > pageHeight / 3) {
             imageHeight = pageHeight / 3;
             imageWidth = bitmap.getWidth() * (imageHeight / bitmap.getHeight());
         }
 
         Rect srcRect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
-        Rect destRect = new Rect(padding, padding, padding + (int) imageWidth, padding + (int) imageHeight);
+        Rect destRect = new Rect(padding, padding + (int) logoHeight + padding, padding + (int) imageWidth, padding + (int) logoHeight + (int) imageHeight + padding);
         canvas.drawBitmap(bitmap, srcRect, destRect, paint);
 
-        // Déplacement après l'image
-        int y = padding + (int) imageHeight + padding;
+        // Positionnement du texte après les images
+        int y = padding + (int) logoHeight + (int) imageHeight + padding;
 
         // Dessin des informations dans un tableau
         String[] labels = {"NuméroID:", "Nom:", "Prénom:", "Spécialité:", "Adresse:", "Catégorie:", "Téléphone:"};
@@ -286,16 +299,16 @@ public class DetailActivity extends AppCompatActivity {
             y += paint.descent() - paint.ascent() + padding;
         }
 
-        // Ajout d'une marge après le tableau pour éviter la confusion avec le QR code
+        // Ajouter une marge après le tableau pour éviter la confusion avec le QR code
         y += padding;
 
-        // Calcul de l'espace restant pour le QR code
+        // Calculer l'espace restant pour le QR code
         float qrSize = 200;
         if (y + qrSize > pageHeight - padding - 30) { // 30 est une marge pour l'année universitaire
             qrSize = pageHeight - padding - 30 - y;
         }
 
-        // Dessin du QR code en bas
+        // Dessin du QR code en bas de page
         if (qrCodeBitmap != null) {
             int qrX = (pageWidth - (int) qrSize) / 2;
             int qrY = y;
@@ -303,7 +316,7 @@ public class DetailActivity extends AppCompatActivity {
             canvas.drawBitmap(qrCodeBitmap, null, qrDestRect, paint);
         }
 
-        // Ajout de la date universitaire dans le pied de page
+        // Ajout de l'année universitaire dans le pied de page
         paint.setTextSize(14);
         paint.setColor(Color.BLACK);
         String anneeUniversitaire = "Année universitaire : " + getAnneeUniversitaire();
@@ -323,7 +336,7 @@ public class DetailActivity extends AppCompatActivity {
 
         document.close();
 
-        // Démarrage de l'activité d'impression
+        // Démarrer l'activité d'impression
         printPdf(filePath);
     }
 

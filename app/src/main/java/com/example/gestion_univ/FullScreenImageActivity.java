@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -27,7 +28,7 @@ public class FullScreenImageActivity extends AppCompatActivity {
     private ImageView fullImageView;
     private ImageView btnEdit;
     private ImageView btnDelete;
-    private  ImageView btnSaveImgEvent;
+    private TextView btnSaveImgEvent;
     ImageButton buttonRetourEvent;
     private static final int PICK_IMAGE_REQUEST = 1;
     private Uri imageUri; // Pour stocker l'URI de l'image sélectionnée
@@ -58,7 +59,7 @@ public class FullScreenImageActivity extends AppCompatActivity {
         key4 = intent.getStringExtra("key4");
 
         // Charger l'image existante
-        Glide.with(this).load(imageUrl).into(fullImageView);
+      //  Glide.with(this).load(imageUrl).into(fullImageView);
 
         // Charger l'image en plein écran avec Glide
         Glide.with(this).load(imageUrl).into(fullImageView);
@@ -126,7 +127,10 @@ public class FullScreenImageActivity extends AppCompatActivity {
                         databaseReference.child(key4).child("imagesEvent").setValue(imageUrls)
                                 .addOnSuccessListener(aVoid -> {
                                     Toast.makeText(FullScreenImageActivity.this, "Image mise à jour avec succès", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(FullScreenImageActivity.this, Evenement.class);
+                                    startActivity(intent);
                                     finish(); // Retour à l'activité précédente
+
                                 })
                                 .addOnFailureListener(e -> Toast.makeText(FullScreenImageActivity.this, "Erreur lors de la mise à jour de l'image", Toast.LENGTH_SHORT).show());
                     }

@@ -164,14 +164,6 @@
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\dialog_image.xml"
     },
     {
-        "merged": "com.example.gestion_univ.app-mergeDebugResources-57:/layout/activity_fn5_content.xml",
-        "source": "com.example.gestion_univ.app-main-60:/layout/activity_fn5_content.xml"
-    },
-    {
-        "merged": "com.example.gestion_univ.app-mergeDebugResources-57:/layout/activity_main_content.xml",
-        "source": "com.example.gestion_univ.app-main-60:/layout/activity_main_content.xml"
-    },
-    {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-mergeDebugResources-57:\\layout\\activity_update_salle.xml",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_update_salle.xml"
     },

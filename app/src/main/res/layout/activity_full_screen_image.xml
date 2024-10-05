@@ -46,8 +46,8 @@
         android:id="@+id/btnEdit"
         android:layout_width="88dp"
         android:layout_height="67dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="38dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fullImageView"
         app:srcCompat="@drawable/baseline_edit_24" />
@@ -56,9 +56,8 @@
         android:id="@+id/btnDelete"
         android:layout_width="88dp"
         android:layout_height="67dp"
-        android:layout_marginStart="24dp"
-
-        android:layout_marginTop="88dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fullImageView"
         app:srcCompat="@drawable/baseline_delete_24" />
