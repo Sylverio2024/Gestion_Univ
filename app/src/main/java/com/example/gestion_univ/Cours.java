@@ -139,7 +139,7 @@ public class Cours extends AppCompatActivity {
     public void searchList2(String text){
         ArrayList<DataClass2> searchList2 = new ArrayList<>();
         for(DataClass2 dataClass2:dataList2){
-            if(dataClass2.getNumeroCours().toLowerCase().contains(text.toLowerCase()) || dataClass2.getNameCours().toLowerCase().contains(text.toLowerCase()) || dataClass2.getParcoursCours().toLowerCase().contains(text.toLowerCase()) || dataClass2.getNiveauCours().toLowerCase().contains(text.toLowerCase())){
+            if(dataClass2.getNumeroCours().toLowerCase().contains(text.toLowerCase()) || dataClass2.getNameCours().toLowerCase().contains(text.toLowerCase()) || dataClass2.getParcoursCours().toLowerCase().contains(text.toLowerCase()) || dataClass2.getNiveauCours().toLowerCase().contains(text.toLowerCase()) || dataClass2.getDescriptionCours().toLowerCase().contains(text.toLowerCase())){
                 searchList2.add(dataClass2);
             }
         }
