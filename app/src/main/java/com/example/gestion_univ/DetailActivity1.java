@@ -3,6 +3,7 @@ package com.example.gestion_univ;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
@@ -259,6 +260,18 @@ public class DetailActivity1 extends AppCompatActivity {
         Paint linePaint = new Paint();
         linePaint.setColor(android.graphics.Color.BLACK);
         linePaint.setStrokeWidth(2);
+
+        // Chargement et dessin du logo en haut à droite
+        Bitmap logoBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.isstm_logo); // Assurez-vous que le logo est dans le dossier drawable
+        float logoWidth = 100; // Ajustez la taille selon vos besoins
+        float logoHeight = logoBitmap.getHeight() * (logoWidth / logoBitmap.getWidth());
+
+        // Positionnement du logo en haut à droite
+        float logoX = pageWidth - padding - logoWidth;
+        float logoY = padding;
+        Rect logoSrcRect = new Rect(0, 0, logoBitmap.getWidth(), logoBitmap.getHeight());
+        Rect logoDestRect = new Rect((int) logoX, (int) logoY, (int) (logoX + logoWidth), (int) (logoY + logoHeight));
+        canvas.drawBitmap(logoBitmap, logoSrcRect, logoDestRect, paint);
 
         // Dessin de l'image en haut
         Bitmap bitmap = ((BitmapDrawable) detailImage1.getDrawable()).getBitmap();

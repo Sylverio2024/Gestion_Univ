@@ -36,7 +36,6 @@ public class FullScreenImageActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
     private String imageUrl; // L'URL de l'image dans Firebase Storage
     private String key4; // Clé de l'événement dans Realtime Database
-
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +72,13 @@ public class FullScreenImageActivity extends AppCompatActivity {
         btnDelete.setOnClickListener(v -> {
             // Logique pour supprimer l'image
             // Par exemple : afficher un dialogue de confirmation et supprimer l'image
+            // Demander une confirmation avant la suppression
+            new android.app.AlertDialog.Builder(FullScreenImageActivity.this)
+                    .setTitle("Supprimer l'image")
+                    .setMessage("Êtes-vous sûr de vouloir supprimer cette image?")
+                    .setPositiveButton("Oui", (dialog, which) -> deleteImage())
+                    .setNegativeButton("Non", null)
+                    .show();
         });
         btnSaveImgEvent.setOnClickListener(v -> {
             uploadImageToFirebase();
@@ -134,6 +140,42 @@ public class FullScreenImageActivity extends AppCompatActivity {
                                 })
                                 .addOnFailureListener(e -> Toast.makeText(FullScreenImageActivity.this, "Erreur lors de la mise à jour de l'image", Toast.LENGTH_SHORT).show());
                     }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(FullScreenImageActivity.this, "Erreur lors de la récupération des images", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    private void deleteImage() {
+        // Supprimer l'image de Firebase Storage
+        StorageReference imageRef = FirebaseStorage.getInstance().getReferenceFromUrl(imageUrl);
+        imageRef.delete().addOnSuccessListener(aVoid -> {
+            // Une fois l'image supprimée de Firebase Storage, supprimer l'URL de la base de données
+            removeImageUrlFromDatabase();
+        }).addOnFailureListener(e -> {
+            Toast.makeText(FullScreenImageActivity.this, "Échec de la suppression de l'image", Toast.LENGTH_SHORT).show();
+        });
+    }
+
+    private void removeImageUrlFromDatabase() {
+        // Récupérer les images associées à l'événement dans Firebase Realtime Database
+        databaseReference.child(key4).child("imagesEvent").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                List<String> imageUrls = (List<String>) dataSnapshot.getValue();
+                if (imageUrls != null) {
+                    // Retirer l'URL de l'image de la liste
+                    imageUrls.remove(imageUrl);
+                    // Mettre à jour la liste d'images dans Firebase Realtime Database
+                    databaseReference.child(key4).child("imagesEvent").setValue(imageUrls)
+                            .addOnSuccessListener(aVoid -> {
+                                Toast.makeText(FullScreenImageActivity.this, "Image supprimée avec succès", Toast.LENGTH_SHORT).show();
+                                finish(); // Retour à l'activité précédente
+                            })
+                            .addOnFailureListener(e -> Toast.makeText(FullScreenImageActivity.this, "Erreur lors de la mise à jour des images", Toast.LENGTH_SHORT).show());
                 }
             }
 

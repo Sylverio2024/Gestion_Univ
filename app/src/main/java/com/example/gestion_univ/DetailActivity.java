@@ -152,13 +152,14 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DetailActivity.this, photoEnseignant.class)
-                        .putExtra("Image", imageUrl);
-                startActivityForResult(intent, 100);
+                        .putExtra("Image", imageUrl)
+                        .putExtra("key", key);
+                startActivity(intent);
             }
         });
     }
 
-    @Override
+   /* @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100 && resultCode == RESULT_OK && data != null) {
@@ -170,9 +171,9 @@ public class DetailActivity extends AppCompatActivity {
                 deleteAndUploadNewImage(newImageUri);
             }
         }
-    }
+    }*/
 
-    private void deleteAndUploadNewImage(Uri imageUri) {
+  /*  private void deleteAndUploadNewImage(Uri imageUri) {
         // Afficher le dialog de chargement
         AlertDialog.Builder builder = new AlertDialog.Builder(DetailActivity.this);
         LayoutInflater inflater = getLayoutInflater();
@@ -217,7 +218,7 @@ public class DetailActivity extends AppCompatActivity {
             Toast.makeText(DetailActivity.this, "Échec de la suppression de l'ancienne image", Toast.LENGTH_SHORT).show();
             dialog.dismiss(); // Cacher le dialog de chargement
         });
-    }
+    }*/
 
 
     private Bitmap generateQRCode(String content) {
@@ -247,28 +248,26 @@ public class DetailActivity extends AppCompatActivity {
 
         PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(pageWidth, pageHeight, 1).create();
         PdfDocument.Page page = document.startPage(pageInfo);
-
         Canvas canvas = page.getCanvas();
         Paint paint = new Paint();
         Paint linePaint = new Paint();
         linePaint.setColor(android.graphics.Color.BLACK);
         linePaint.setStrokeWidth(2);
 
-        // Chargement et dessin du logo en haut à droite
-        Bitmap logoBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.isstm_logo); // Assurez-vous que le logo est dans le dossier drawable
-        float logoWidth = 100; // Ajustez la taille selon vos besoins
+        // Dessin du logo
+        Bitmap logoBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.isstm_logo);
+        float logoWidth = 100;
         float logoHeight = logoBitmap.getHeight() * (logoWidth / logoBitmap.getWidth());
-
-        // Positionnement du logo en haut à droite
         float logoX = pageWidth - padding - logoWidth;
         float logoY = padding;
-        Rect logoSrcRect = new Rect(0, 0, logoBitmap.getWidth(), logoBitmap.getHeight());
-        Rect logoDestRect = new Rect((int) logoX, (int) logoY, (int) (logoX + logoWidth), (int) (logoY + logoHeight));
-        canvas.drawBitmap(logoBitmap, logoSrcRect, logoDestRect, paint);
 
-        // Chargement et dessin de l'image principale en dessous du logo
+        // Dessiner le logo
+        Rect logoDestRect = new Rect((int) logoX, (int) logoY, (int) (logoX + logoWidth), (int) (logoY + logoHeight));
+        canvas.drawBitmap(logoBitmap, null, logoDestRect, paint);
+
+        // Dessin de l'image principale
         Bitmap bitmap = ((BitmapDrawable) detailImage.getDrawable()).getBitmap();
-        float imageWidth = 200;
+        float imageWidth = Math.min(200, pageWidth - 2 * padding);
         float imageHeight = bitmap.getHeight() * (imageWidth / bitmap.getWidth());
 
         // Redimensionnement si l'image est trop grande
@@ -277,18 +276,24 @@ public class DetailActivity extends AppCompatActivity {
             imageWidth = bitmap.getWidth() * (imageHeight / bitmap.getHeight());
         }
 
-        Rect srcRect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
-        Rect destRect = new Rect(padding, padding + (int) logoHeight + padding, padding + (int) imageWidth, padding + (int) logoHeight + (int) imageHeight + padding);
-        canvas.drawBitmap(bitmap, srcRect, destRect, paint);
+        Rect destRect = new Rect(padding, (int) (logoY + logoHeight + padding), (int) (padding + imageWidth),
+                (int) (logoY + logoHeight + imageHeight + padding));
+        canvas.drawBitmap(bitmap, null, destRect, paint);
 
-        // Positionnement du texte après les images
-        int y = padding + (int) logoHeight + (int) imageHeight + padding;
+        // Positionnement du texte
+        int y = (int) (logoY + logoHeight + imageHeight + 2 * padding); // Ajouter une marge supplémentaire
 
-        // Dessin des informations dans un tableau
+        // Dessin des informations
         String[] labels = {"NuméroID:", "Nom:", "Prénom:", "Spécialité:", "Adresse:", "Catégorie:", "Téléphone:"};
-        String[] values = {detailNumeroID.getText().toString(), detailNom.getText().toString(), detailPrenom.getText().toString(),
-                detailSpecialite.getText().toString(), detailAdresse.getText().toString(), detailCategorie.getText().toString(),
-                detailTelephone.getText().toString()};
+        String[] values = {
+                detailNumeroID.getText().toString(),
+                detailNom.getText().toString(),
+                detailPrenom.getText().toString(),
+                detailSpecialite.getText().toString(),
+                detailAdresse.getText().toString(),
+                detailCategorie.getText().toString(),
+                detailTelephone.getText().toString()
+        };
 
         paint.setTextSize(18);
         paint.setFakeBoldText(true);
@@ -299,16 +304,15 @@ public class DetailActivity extends AppCompatActivity {
             y += paint.descent() - paint.ascent() + padding;
         }
 
-        // Ajouter une marge après le tableau pour éviter la confusion avec le QR code
+        // Ajouter une marge pour le QR code
         y += padding;
 
-        // Calculer l'espace restant pour le QR code
+        // Dessin du QR code
         float qrSize = 200;
-        if (y + qrSize > pageHeight - padding - 30) { // 30 est une marge pour l'année universitaire
+        if (y + qrSize > pageHeight - padding - 30) {
             qrSize = pageHeight - padding - 30 - y;
         }
 
-        // Dessin du QR code en bas de page
         if (qrCodeBitmap != null) {
             int qrX = (pageWidth - (int) qrSize) / 2;
             int qrY = y;
@@ -316,9 +320,8 @@ public class DetailActivity extends AppCompatActivity {
             canvas.drawBitmap(qrCodeBitmap, null, qrDestRect, paint);
         }
 
-        // Ajout de l'année universitaire dans le pied de page
+        // Année universitaire
         paint.setTextSize(14);
-        paint.setColor(Color.BLACK);
         String anneeUniversitaire = "Année universitaire : " + getAnneeUniversitaire();
         float textWidth = paint.measureText(anneeUniversitaire);
         canvas.drawText(anneeUniversitaire, pageWidth - textWidth - padding, pageHeight - padding, paint);

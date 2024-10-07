@@ -53,6 +53,15 @@
         android:testOnly="true"
         android:theme="@style/Theme.Gestion_Univ" >
         <activity
+            android:name="com.example.gestion_univ.FullScreenImageActivity1"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gestion_univ.DetailActivityEvent"
+            android:exported="false" />
+        <activity
+            android:name="com.example.gestion_univ.Evenement1"
+            android:exported="false" />
+        <activity
             android:name="com.example.gestion_univ.DetailActivityCours"
             android:exported="false" />
         <activity

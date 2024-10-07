@@ -24,6 +24,10 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
 import com.example.gestion_univ.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
@@ -39,6 +43,8 @@ public class photoEnseignant extends AppCompatActivity {
     TextView btnsaveE;
     Uri imageUri;
     AlertDialog loadingDialog;
+    private String imageUrl; // L'URL de l'image dans Firebase Storage
+    private String key; // Clé de l'événement dans Realtime Database
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -58,23 +64,47 @@ public class photoEnseignant extends AppCompatActivity {
         imgChooseE = findViewById(R.id.imgChooseE);
         btnsaveE = findViewById(R.id.btnSaveE);
 
-        // Récupérer l'image passée depuis DetailActivity
-        Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
-            String imageUrl = bundle.getString("Image");
-            if (imageUrl != null) {
-                Glide.with(this).load(imageUrl).into(imgChooseE);
-            }
-        }
+        // Récupérer les données de l'Intent
+        Intent intent = getIntent();
+        imageUrl = intent.getStringExtra("imageUrl");
+        key = intent.getStringExtra("key");
+
+        // Charger l'image existante
+        //  Glide.with(this).load(imageUrl).into(fullImageView);
+
+        // Charger l'image en plein écran avec Glide
+        Glide.with(this).load(imageUrl).into(imgChooseE);
 
         btnRetourPDP.setOnClickListener(v -> finish());
 
+        // Enregistrer l'image sélectionnée ou capturée dans Firebase
         btnsaveE.setOnClickListener(v -> {
             if (imageUri != null) {
-                Intent resultIntent = new Intent();
-                resultIntent.setData(imageUri);
-                setResult(RESULT_OK, resultIntent);
-                finish();
+                // Référence de stockage pour l'image basée sur la clé de l'enseignant
+                StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("Android Images/" + key);
+
+                // Téléchargement de l'image dans Firebase Storage
+                storageRef.putFile(imageUri).addOnSuccessListener(taskSnapshot -> {
+                    // Récupérer l'URL de téléchargement après la réussite du téléchargement
+                    storageRef.getDownloadUrl().addOnSuccessListener(uri -> {
+                        // Mettre à jour l'URL de l'image dans Firebase Realtime Database
+                        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Enseignants").child(key);
+                        dbRef.child("imageT").setValue(uri.toString()).addOnCompleteListener(task -> {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(photoEnseignant.this, "Image mise à jour avec succès", Toast.LENGTH_SHORT).show();
+                                // Créer un Intent pour revenir à la fenêtre fnEnseignant
+                                Intent fnEnseignantIntent = new Intent(photoEnseignant.this, fnEnseignant.class);
+                                startActivity(fnEnseignantIntent);
+                                finish(); // Fermer l'activité actuelle
+                            } else {
+                                Toast.makeText(photoEnseignant.this, "Échec de la mise à jour de l'image", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    });
+                }).addOnFailureListener(e -> {
+
+                    Toast.makeText(photoEnseignant.this, "Échec du téléchargement de l'image", Toast.LENGTH_SHORT).show();
+                });
             } else {
                 Toast.makeText(photoEnseignant.this, "Aucune image sélectionnée", Toast.LENGTH_SHORT).show();
             }

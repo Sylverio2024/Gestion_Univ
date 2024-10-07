@@ -51,7 +51,7 @@ dependencies {
     implementation ("com.karumi:dexter:6.2.3")
 
     implementation ("com.squareup.okhttp3:okhttp:4.9.3")
-   // implementation ("com.google.zxing:core:3.4.1")
+   //implementation ("com.google.zxing:core:3.4.1")
    implementation ("com.journeyapps:zxing-android-embedded:4.3.0")
 
 

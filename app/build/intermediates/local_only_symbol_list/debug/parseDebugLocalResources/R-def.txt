@@ -59,6 +59,7 @@ drawable ic_menu_slideshow
 drawable image1
 drawable imageicon
 drawable images
+drawable isstm_logo
 drawable lavender_border
 drawable lavender_round
 drawable loading_98
@@ -298,6 +299,7 @@ id labelDate
 id labelDateHeure
 id labelDescription
 id labelDescriptionCours
+id labelHD
 id labelMention
 id labelNiveau
 id labelNiveauCours
@@ -516,12 +518,14 @@ layout activity_detail2
 layout activity_detail3
 layout activity_detail4
 layout activity_detail_cours
+layout activity_detail_event
 layout activity_detail_user
 layout activity_edit_pdp
 layout activity_edit_pdp1
 layout activity_edit_profil
 layout activity_edit_profil1
 layout activity_evenement
+layout activity_evenement1
 layout activity_fen2
 layout activity_fn3
 layout activity_fn4
@@ -530,6 +534,7 @@ layout activity_fn5_content
 layout activity_fn_enseignant
 layout activity_fn_etudiant
 layout activity_full_screen_image
+layout activity_full_screen_image1
 layout activity_login
 layout activity_main
 layout activity_main2
@@ -574,6 +579,7 @@ layout recycler_item2
 layout recycler_item3
 layout recycler_item4
 layout recycler_item_cours
+layout recycler_item_event
 layout salle_item
 layout salle_item1
 layout user_item

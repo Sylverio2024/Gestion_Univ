@@ -2,10 +2,14 @@ package com.example.gestion_univ;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -38,6 +42,14 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        // Modifier la couleur de la barre d'état
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = this.getWindow();
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(getResources().getColor(R.color.ic_launcher_background)); // Remplacez par la couleur désirée
+        }
 
         fullName = findViewById(R.id.txtName);
         email = findViewById(R.id.eTextEmail);
@@ -118,6 +130,7 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(Register.this, "Erreur lors de l'inscription: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                     pgBar.setVisibility(View.GONE);
                 });
+
     }
 
     private boolean checkField(EditText textField) {

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/recCard4"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="226dp">
+
+        <!-- Autres éléments d'affichage texte -->
+        <TextView
+            android:id="@+id/numD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="50dp"
+            android:text="Numéro Evenement:"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/NumeroIDEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="27dp"
+            android:layout_marginTop="50dp"
+            android:layout_toEndOf="@id/numD"
+            android:text="Numéro"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/titreD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/NumeroIDEvent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="17dp"
+            android:text="Titre de l'évènement:"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/titreEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/NumeroIDEvent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="17dp"
+            android:layout_toEndOf="@id/titreD"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Titre"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/labelHD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="7dp"
+            android:text="Publié:"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <!-- Nouveau RecyclerView pour afficher plusieurs images -->
+
+        <TextView
+            android:id="@+id/heureEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/labelHD"
+            android:text="Heure"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/dateEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="139dp"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@id/heureEvent"
+            android:text="Date"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/imageRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@id/titreD"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal" />
+
+        <!-- Description cachée en bas du RecyclerView -->
+        <TextView
+            android:id="@+id/descriptionEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageRecyclerView"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:text="Description"
+            android:textColor="@color/lavender"
+            android:textSize="16sp" /> <!-- La description est cachée par défaut -->
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

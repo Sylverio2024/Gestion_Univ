@@ -28,6 +28,10 @@
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\menu\\drawer_item.xml"
     },
     {
+        "merged": "com.example.gestion_univ.app-debug-58:/layout_activity_evenement1.xml.flat",
+        "source": "com.example.gestion_univ.app-main-60:/layout/activity_evenement1.xml"
+    },
+    {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\layout_progress_layout.xml.flat",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\progress_layout.xml"
     },
@@ -40,16 +44,24 @@
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_updload_teacher.xml"
     },
     {
-        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\drawable_baseline_logout_24.xml.flat",
-        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\drawable\\baseline_logout_24.xml"
-    },
-    {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\drawable_images.png.flat",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\drawable\\images.png"
     },
     {
+        "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\drawable_baseline_logout_24.xml.flat",
+        "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\drawable\\baseline_logout_24.xml"
+    },
+    {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\layout_activity_main2.xml.flat",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_main2.xml"
+    },
+    {
+        "merged": "com.example.gestion_univ.app-debug-58:/layout_activity_detail_event.xml.flat",
+        "source": "com.example.gestion_univ.app-main-60:/layout/activity_detail_event.xml"
+    },
+    {
+        "merged": "com.example.gestion_univ.app-debug-58:/layout_activity_login.xml.flat",
+        "source": "com.example.gestion_univ.app-main-60:/layout/activity_login.xml"
     },
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\drawable_ic_launcher_foreground.xml.flat",
@@ -74,6 +86,10 @@
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\drawable_baseline_manage_accounts_24.xml.flat",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\drawable\\baseline_manage_accounts_24.xml"
+    },
+    {
+        "merged": "com.example.gestion_univ.app-debug-58:/layout_activity_full_screen_image1.xml.flat",
+        "source": "com.example.gestion_univ.app-main-60:/layout/activity_full_screen_image1.xml"
     },
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\layout_drawer_header.xml.flat",
@@ -150,6 +166,10 @@
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\layout_activity_detail3.xml.flat",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\layout\\activity_detail3.xml"
+    },
+    {
+        "merged": "com.example.gestion_univ.app-debug-58:/layout_recycler_item_event.xml.flat",
+        "source": "com.example.gestion_univ.app-main-60:/layout/recycler_item_event.xml"
     },
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\drawable_lavender_border.xml.flat",
@@ -614,6 +634,10 @@
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
         "source": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-main-60:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "com.example.gestion_univ.app-debug-58:/drawable_isstm_logo.jpg.flat",
+        "source": "com.example.gestion_univ.app-main-60:/drawable/isstm_logo.jpg"
     },
     {
         "merged": "C:\\Users\\willson JFB PROd\\.gradle\\daemon\\8.7\\com.example.gestion_univ.app-debug-58:\\layout_activity_mode.xml.flat",
