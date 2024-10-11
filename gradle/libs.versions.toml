@@ -23,6 +23,7 @@ ucrop = "2.2.6"
 zxing = "1.9.8"
 googleGmsGoogleServices = "4.4.2"
 firebaseMessaging = "24.0.1"
+firebaseMessagingVersion = "24.0.2"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -47,6 +48,7 @@ dexter = { group = "com.karumi", name = "dexter", version.ref = "dexter" }
 ucrop = { group = "com.github.yalantis", name = "ucrop", version.ref = "ucrop" }
 zxing = { group = "me.dm7.barcodescanner", name = "zxing", version.ref = "zxing" }
 firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebaseMessaging" }
+google-firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging", version.ref = "firebaseMessagingVersion" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

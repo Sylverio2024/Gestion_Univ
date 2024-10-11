@@ -1241,6 +1241,7 @@ attr suffixText
 attr suffixTextAppearance
 attr suffixTextColor
 attr suggestionRowLayout
+attr swipeRefreshLayoutProgressSpinnerBackgroundColor
 attr switchMinWidth
 attr switchPadding
 attr switchStyle
@@ -3133,6 +3134,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable add_images
 drawable avd_hide_password
 drawable avd_show_password
 drawable back_round
@@ -3447,6 +3449,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id add_images
 id adjust_height
 id adjust_width
 id adresseD
@@ -4087,6 +4090,11 @@ id stretch
 id submenuarrow
 id submit_area
 id supportScrollUp
+id swipeRefreshLayout
+id swipeRefreshLayout1
+id swipeRefreshLayoutCours
+id swipeRefreshLayoutSalle
+id swipeRefreshLayoutU
 id switchActivateAccount
 id tabMode
 id tag_accessibility_actions
@@ -4398,6 +4406,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_images
 layout activity_choix_salle
 layout activity_choix_salle1
 layout activity_choose_pdp
@@ -4481,6 +4490,7 @@ layout home
 layout home1
 layout image_item
 layout image_item1
+layout loading_dialog
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -4645,6 +4655,7 @@ string fab_transformation_sheet_behavior
 string fallback_menu_item_copy_link
 string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
+string fcm_fallback_notification_channel_label
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
@@ -6071,6 +6082,7 @@ styleable State android_id constraints
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable
 styleable StateSet defaultState
+styleable SwipeRefreshLayout swipeRefreshLayoutProgressSpinnerBackgroundColor
 styleable SwitchCompat android_textOn android_textOff android_thumb showText splitTrack switchMinWidth switchPadding switchTextAppearance thumbTextPadding thumbTint thumbTintMode track trackTint trackTintMode
 styleable SwitchMaterial useMaterialThemeColors
 styleable TabItem android_icon android_layout android_text

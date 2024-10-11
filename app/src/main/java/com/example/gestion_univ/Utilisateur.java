@@ -1,9 +1,8 @@
 package com.example.gestion_univ;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.ImageButton;
 
@@ -11,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -29,6 +29,7 @@ public class Utilisateur extends AppCompatActivity {
     private ImageButton buttonRetourE;
     private FirebaseAuth auth;
     private SearchView searchView;
+    SwipeRefreshLayout swipeRefreshLayoutU;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -44,13 +45,18 @@ public class Utilisateur extends AppCompatActivity {
         db = FirebaseFirestore.getInstance();
         buttonRetourE = findViewById(R.id.BackTeach);
         searchView = findViewById(R.id.searchU);
-
+        swipeRefreshLayoutU = findViewById(R.id.swipeRefreshLayoutU);
         String currentUserEmail = auth.getCurrentUser() != null ? auth.getCurrentUser().getEmail() : "";
 
         userAdapter = new UserAdapter(filteredUserList, this, currentUserEmail);
         recyclerView.setAdapter(userAdapter);
 
         fetchUsers();
+
+        swipeRefreshLayoutU.setOnRefreshListener(() -> {
+            // Recharger les données lors du balayage
+            fetchUsers();
+        });
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -73,24 +79,29 @@ public class Utilisateur extends AppCompatActivity {
     }
 
     private void fetchUsers() {
+        // Vider les listes avant de charger les nouvelles données
+        userList.clear();
+        filteredUserList.clear();
+
         db.collection("Users")
                 .whereEqualTo("role", "utilisateur")
                 .get()
                 .addOnSuccessListener(queryDocumentSnapshots -> {
                     if (!queryDocumentSnapshots.isEmpty()) {
-                        userList.clear();
                         for (DocumentSnapshot documentSnapshot : queryDocumentSnapshots.getDocuments()) {
                             User1 user1 = documentSnapshot.toObject(User1.class);
                             if (user1 != null) {
                                 userList.add(user1);
                             }
                         }
-                        filteredUserList.addAll(userList);  // Copiez la liste complète des utilisateurs dans filteredUserList
+                        filteredUserList.addAll(userList);  // Copier la liste des utilisateurs dans filteredUserList
                         userAdapter.notifyDataSetChanged();
                     }
+                    swipeRefreshLayoutU.setRefreshing(false);  // Arrêter l'animation de rafraîchissement
                 })
                 .addOnFailureListener(e -> {
                     Log.e("Utilisateur", "Erreur lors de la récupération des utilisateurs", e);
+                    swipeRefreshLayoutU.setRefreshing(false);  // Arrêter l'animation même en cas d'échec
                 });
     }
 

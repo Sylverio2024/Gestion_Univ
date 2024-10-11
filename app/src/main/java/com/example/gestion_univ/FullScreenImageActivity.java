@@ -173,6 +173,8 @@ public class FullScreenImageActivity extends AppCompatActivity {
                     databaseReference.child(key4).child("imagesEvent").setValue(imageUrls)
                             .addOnSuccessListener(aVoid -> {
                                 Toast.makeText(FullScreenImageActivity.this, "Image supprimée avec succès", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(FullScreenImageActivity.this, Evenement.class);
+                                startActivity(intent);
                                 finish(); // Retour à l'activité précédente
                             })
                             .addOnFailureListener(e -> Toast.makeText(FullScreenImageActivity.this, "Erreur lors de la mise à jour des images", Toast.LENGTH_SHORT).show());

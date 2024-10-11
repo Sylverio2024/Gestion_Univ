@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -17,6 +18,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
@@ -37,6 +39,7 @@ public class Evenement extends AppCompatActivity {
     ValueEventListener eventListener;
     MyAdapter4 adapter4;
     SearchView searchViewEvent;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -44,11 +47,6 @@ public class Evenement extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_evenement);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
 
         recyclerViewEvent = findViewById(R.id.recyclerViewEvent);
         buttonRetourEvent = findViewById(R.id.BackTeach);
@@ -56,51 +54,38 @@ public class Evenement extends AppCompatActivity {
         searchViewEvent = findViewById(R.id.searchEvent);
         searchViewEvent.clearFocus();
 
+        // Initialisation du SwipeRefreshLayout
+        swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout); // Assurez-vous que cet ID existe dans votre layout
+
         GridLayoutManager gridLayoutManager = new GridLayoutManager(Evenement.this, 1);
         recyclerViewEvent.setLayoutManager(gridLayoutManager);
 
-        // Progress Dialog Setup
+        // Configuration de la boîte de dialogue de chargement
         AlertDialog.Builder builder = new AlertDialog.Builder(Evenement.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.progress_layout, null);
+        builder.setView(dialogView);
         builder.setCancelable(false);
-        builder.setView(R.layout.progress_layout);
         AlertDialog dialog = builder.create();
-        dialog.show();
 
-        // Close Dialog button
-        Button bntQ = dialog.findViewById(R.id.btnQuitterDialog);
-        bntQ.setOnClickListener(v -> dialog.dismiss());
+        // Récupérer la référence au bouton Quitter du Dialog
+        Button buttonQuitter = dialogView.findViewById(R.id.btnQuitterDialog);
+        buttonQuitter.setOnClickListener(v -> dialog.dismiss());
 
-        // Data and Adapter setup
+        // Initialisation des données et de l'adaptateur
         dataList4 = new ArrayList<>();
         adapter4 = new MyAdapter4(Evenement.this, dataList4);
         recyclerViewEvent.setAdapter(adapter4);
 
-        // Fetching data from Firebase
+        // Récupération des données depuis Firebase
         databaseReference = FirebaseDatabase.getInstance().getReference("Evenement");
-        dialog.show();
+        loadData(dialog); // Appel à la méthode pour charger les données
 
-        eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                dataList4.clear();
-                for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
-                    DataClass4 dataClass4 = itemSnapshot.getValue(DataClass4.class);
-                    if (dataClass4 != null) {
-                        dataClass4.setKey4(itemSnapshot.getKey());
-                        dataList4.add(dataClass4);
-                    }
-                }
-                adapter4.notifyDataSetChanged();
-                dialog.dismiss();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                dialog.dismiss();
-            }
+        // Configurer le rafraîchissement par balayage
+        swipeRefreshLayout.setOnRefreshListener(() -> {
+            loadData(null); // Recharger les données lors du tirage vers le bas
         });
 
-        // Search functionality
+        // Fonctionnalité de recherche
         searchViewEvent.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -114,13 +99,13 @@ public class Evenement extends AppCompatActivity {
             }
         });
 
-        // Floating Action Button to add new Event
+        // Action pour le bouton flottant
         fabEvent.setOnClickListener(v -> {
             Intent intent = new Intent(Evenement.this, uploadEvent.class);
             startActivity(intent);
         });
 
-        // Back button action
+        // Action pour le bouton de retour
         buttonRetourEvent.setOnClickListener(v -> {
             Intent intent = new Intent(Evenement.this, fn5.class);
             startActivity(intent);
@@ -128,7 +113,41 @@ public class Evenement extends AppCompatActivity {
         });
     }
 
-    // Override Back button press to return to the main activity
+    // Méthode pour charger les données depuis Firebase
+    private void loadData(AlertDialog dialog) {
+        if (dialog != null) {
+            dialog.show(); // Afficher la boîte de dialogue
+        }
+
+        eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                dataList4.clear(); // Effacer la liste avant de récupérer de nouvelles données
+                for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
+                    DataClass4 dataClass4 = itemSnapshot.getValue(DataClass4.class);
+                    if (dataClass4 != null) {
+                        dataClass4.setKey4(itemSnapshot.getKey());
+                        dataList4.add(dataClass4);
+                    }
+                }
+                adapter4.notifyDataSetChanged();
+                if (dialog != null) {
+                    dialog.dismiss(); // Masquer la boîte de dialogue
+                }
+                swipeRefreshLayout.setRefreshing(false); // Arrêter l'animation de rafraîchissement
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                if (dialog != null) {
+                    dialog.dismiss(); // Masquer la boîte de dialogue en cas d'erreur
+                }
+                swipeRefreshLayout.setRefreshing(false); // Arrêter l'animation de rafraîchissement
+            }
+        });
+    }
+
+    // Surcharger l'action du bouton retour
     @Override
     public void onBackPressed() {
         if (isTaskRoot()) {
@@ -140,7 +159,7 @@ public class Evenement extends AppCompatActivity {
         }
     }
 
-    // Search logic for filtering events
+    // Logique de recherche pour filtrer les événements
     public void searchList4(String text) {
         ArrayList<DataClass4> searchList4 = new ArrayList<>();
         for (DataClass4 dataClass4 : dataList4) {

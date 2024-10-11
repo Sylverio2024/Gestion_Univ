@@ -159,13 +159,14 @@ public class DetailActivity1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(DetailActivity1.this, photoEtudiant.class)
-                        .putExtra("ImageE", imageUrl1);
-                startActivityForResult(intent, 100);
+                        .putExtra("ImageE", imageUrl1)
+                        .putExtra("key1", key1);
+                startActivity(intent);
             }
         });
     }
 
-    @Override
+  /*  @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100 && resultCode == RESULT_OK && data != null) {
@@ -177,8 +178,8 @@ public class DetailActivity1 extends AppCompatActivity {
                 deleteAndUploadNewImage(newImageUri);
             }
         }
-    }
-
+    }*/
+/*
     private void deleteAndUploadNewImage(Uri imageUri1) {
         // Afficher le dialog de chargement
         AlertDialog.Builder builder = new AlertDialog.Builder(DetailActivity1.this);
@@ -224,7 +225,7 @@ public class DetailActivity1 extends AppCompatActivity {
             Toast.makeText(DetailActivity1.this, "Échec de la suppression de l'ancienne image", Toast.LENGTH_SHORT).show();
             dialog1.dismiss(); // Cacher le dialog de chargement
         });
-    }
+    }*/
 
 
     private Bitmap generateQRCode(String content) {

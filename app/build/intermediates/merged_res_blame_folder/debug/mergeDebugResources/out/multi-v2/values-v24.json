@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.gestion_univ.app-mergeDebugResources-56:/values-v24/values-v24.xml",
+            "outputFile": "com.example.gestion_univ.app-mergeDebugResources-58:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\willson JFB PROd\\.gradle\\caches\\transforms-4\\1426d31454292c1ac3a6435f8482954e\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\willson JFB PROd\\.gradle\\caches\\transforms-4\\175cde1419071ae4ea92ca3d11418eb6\\transformed\\appcompat-1.6.1\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\willson JFB PROd\\.gradle\\caches\\transforms-4\\1fdc3d0a82dc0b1c27b44b872c118ad8\\transformed\\media-1.0.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\willson JFB PROd\\.gradle\\caches\\transforms-4\\8e1b9911fd6f7f318557b9fa295be4c6\\transformed\\media-1.0.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -31,7 +31,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\willson JFB PROd\\.gradle\\caches\\transforms-4\\0cce107795f5103dc265a6bde1d53f17\\transformed\\material-1.10.0\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\willson JFB PROd\\.gradle\\caches\\transforms-4\\816882d06ad8c498b71b7779c048ba5a\\transformed\\material-1.10.0\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

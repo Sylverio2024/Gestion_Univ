@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.gestion_univ.R;
@@ -32,14 +33,19 @@ public final class ActivityUtilisateurBinding implements ViewBinding {
   @NonNull
   public final SearchView searchU;
 
+  @NonNull
+  public final SwipeRefreshLayout swipeRefreshLayoutU;
+
   private ActivityUtilisateurBinding(@NonNull RelativeLayout rootView,
       @NonNull ActivityFn5ContentBinding include2, @NonNull RelativeLayout main,
-      @NonNull RecyclerView recyclerViewU, @NonNull SearchView searchU) {
+      @NonNull RecyclerView recyclerViewU, @NonNull SearchView searchU,
+      @NonNull SwipeRefreshLayout swipeRefreshLayoutU) {
     this.rootView = rootView;
     this.include2 = include2;
     this.main = main;
     this.recyclerViewU = recyclerViewU;
     this.searchU = searchU;
+    this.swipeRefreshLayoutU = swipeRefreshLayoutU;
   }
 
   @Override
@@ -90,8 +96,14 @@ public final class ActivityUtilisateurBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.swipeRefreshLayoutU;
+      SwipeRefreshLayout swipeRefreshLayoutU = ViewBindings.findChildViewById(rootView, id);
+      if (swipeRefreshLayoutU == null) {
+        break missingId;
+      }
+
       return new ActivityUtilisateurBinding((RelativeLayout) rootView, binding_include2, main,
-          recyclerViewU, searchU);
+          recyclerViewU, searchU, swipeRefreshLayoutU);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

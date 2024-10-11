@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.gestion_univ.app-mergeDebugResources-56:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.example.gestion_univ.app-mergeDebugResources-58:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\willson JFB PROd\\.gradle\\caches\\transforms-4\\1426d31454292c1ac3a6435f8482954e\\transformed\\appcompat-1.6.1\\res\\values-watch-v20\\values-watch-v20.xml",
+                    "source": "C:\\Users\\willson JFB PROd\\.gradle\\caches\\transforms-4\\175cde1419071ae4ea92ca3d11418eb6\\transformed\\appcompat-1.6.1\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\willson JFB PROd\\.gradle\\caches\\transforms-4\\e295fca5efe88a83c8c71b6fe80b3c69\\transformed\\jetified-play-services-auth-21.0.0\\res\\values-watch-v20\\values.xml",
+                    "source": "C:\\Users\\willson JFB PROd\\.gradle\\caches\\transforms-4\\227c12054e72e7cb22877d85e079f985\\transformed\\jetified-play-services-auth-21.0.0\\res\\values-watch-v20\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",

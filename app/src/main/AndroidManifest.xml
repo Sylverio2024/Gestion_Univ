@@ -9,6 +9,8 @@
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
@@ -23,6 +25,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gestion_Univ"
         tools:targetApi="31">
+        <activity
+            android:name=".add_images"
+            android:exported="false" />
         <activity
             android:name=".FullScreenImageActivity1"
             android:exported="false" />

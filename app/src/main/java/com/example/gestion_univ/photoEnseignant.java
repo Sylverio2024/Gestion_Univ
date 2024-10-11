@@ -24,8 +24,11 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
 import com.example.gestion_univ.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.karumi.dexter.Dexter;
@@ -66,7 +69,7 @@ public class photoEnseignant extends AppCompatActivity {
 
         // Récupérer les données de l'Intent
         Intent intent = getIntent();
-        imageUrl = intent.getStringExtra("imageUrl");
+        imageUrl = intent.getStringExtra("Image");
         key = intent.getStringExtra("key");
 
         // Charger l'image existante
@@ -74,36 +77,50 @@ public class photoEnseignant extends AppCompatActivity {
 
         // Charger l'image en plein écran avec Glide
         Glide.with(this).load(imageUrl).into(imgChooseE);
+        // Initialiser le dialog de chargement
+        AlertDialog.Builder builder = new AlertDialog.Builder(photoEnseignant.this);
+        builder.setCancelable(false); // Empêche de fermer le dialog en appuyant à l'extérieur
+        builder.setView(R.layout.loading_dialog); // Utiliser un layout personnalisé pour le dialog
+        loadingDialog = builder.create();
 
         btnRetourPDP.setOnClickListener(v -> finish());
 
         // Enregistrer l'image sélectionnée ou capturée dans Firebase
         btnsaveE.setOnClickListener(v -> {
-            if (imageUri != null) {
-                // Référence de stockage pour l'image basée sur la clé de l'enseignant
-                StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("Android Images/" + key);
+             if (imageUri != null) {
+                loadingDialog.show(); // Afficher le dialog de chargement ici
+                // Récupérer l'ancienne URL de l'image de Firebase pour la supprimer
+                DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Enseignants").child(key);
+                dbRef.child("imageT").addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String oldImageUrl = snapshot.getValue(String.class);
 
-                // Téléchargement de l'image dans Firebase Storage
-                storageRef.putFile(imageUri).addOnSuccessListener(taskSnapshot -> {
-                    // Récupérer l'URL de téléchargement après la réussite du téléchargement
-                    storageRef.getDownloadUrl().addOnSuccessListener(uri -> {
-                        // Mettre à jour l'URL de l'image dans Firebase Realtime Database
-                        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Enseignants").child(key);
-                        dbRef.child("imageT").setValue(uri.toString()).addOnCompleteListener(task -> {
-                            if (task.isSuccessful()) {
-                                Toast.makeText(photoEnseignant.this, "Image mise à jour avec succès", Toast.LENGTH_SHORT).show();
-                                // Créer un Intent pour revenir à la fenêtre fnEnseignant
-                                Intent fnEnseignantIntent = new Intent(photoEnseignant.this, fnEnseignant.class);
-                                startActivity(fnEnseignantIntent);
-                                finish(); // Fermer l'activité actuelle
-                            } else {
-                                Toast.makeText(photoEnseignant.this, "Échec de la mise à jour de l'image", Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    });
-                }).addOnFailureListener(e -> {
+                        if (oldImageUrl != null && !oldImageUrl.isEmpty()) {
+                            // Référence à l'ancienne image dans Firebase Storage
+                            StorageReference oldImageRef = FirebaseStorage.getInstance().getReferenceFromUrl(oldImageUrl);
 
-                    Toast.makeText(photoEnseignant.this, "Échec du téléchargement de l'image", Toast.LENGTH_SHORT).show();
+                            // Supprimer l'ancienne image
+                            oldImageRef.delete().addOnSuccessListener(aVoid -> {
+                                // L'ancienne image a été supprimée avec succès, télécharger la nouvelle image
+                                uploadNewImage(imageUri, key);
+                            }).addOnFailureListener(e -> {
+                                loadingDialog.dismiss(); // Cacher le dialog en cas d'échec
+                                // En cas d'échec de la suppression, afficher un message d'erreur
+                                Toast.makeText(photoEnseignant.this, "Échec de la suppression de l'ancienne image", Toast.LENGTH_SHORT).show();
+
+                            });
+                        } else {
+                            // Aucune ancienne image à supprimer, télécharger directement la nouvelle
+                            uploadNewImage(imageUri, key);
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+                        loadingDialog.dismiss(); // Cacher le dialog en cas d'échec
+                        Toast.makeText(photoEnseignant.this, "Erreur de récupération de l'image", Toast.LENGTH_SHORT).show();
+                    }
                 });
             } else {
                 Toast.makeText(photoEnseignant.this, "Aucune image sélectionnée", Toast.LENGTH_SHORT).show();
@@ -171,5 +188,29 @@ public class photoEnseignant extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
+    }
+    // Méthode pour télécharger la nouvelle image
+    private void uploadNewImage(Uri imageUri, String key) {
+        StorageReference storageRef = FirebaseStorage.getInstance().getReference().child("Android Images/" + key);
+
+        storageRef.putFile(imageUri).addOnSuccessListener(taskSnapshot -> {
+            storageRef.getDownloadUrl().addOnSuccessListener(uri -> {
+                DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Enseignants").child(key);
+                dbRef.child("imageT").setValue(uri.toString()).addOnCompleteListener(task -> {
+                    loadingDialog.dismiss(); // Cacher le dialog après le succès
+                    if (task.isSuccessful()) {
+                        Toast.makeText(photoEnseignant.this, "Image mise à jour avec succès", Toast.LENGTH_SHORT).show();
+                        Intent fnEnseignantIntent = new Intent(photoEnseignant.this, fnEnseignant.class);
+                        startActivity(fnEnseignantIntent);
+                        finish();
+                    } else {
+                        Toast.makeText(photoEnseignant.this, "Échec de la mise à jour de l'image", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            });
+        }).addOnFailureListener(e -> {
+            loadingDialog.dismiss(); // Cacher le dialog en cas d'échec
+            Toast.makeText(photoEnseignant.this, "Échec du téléchargement de l'image", Toast.LENGTH_SHORT).show();
+        });
     }
 }

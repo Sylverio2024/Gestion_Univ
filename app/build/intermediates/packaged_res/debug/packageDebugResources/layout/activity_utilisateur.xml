@@ -26,12 +26,20 @@
         app:closeIcon="@drawable/baseline_clear_24"
         app:searchIcon="@drawable/baseline_manage_search_24"
         />
-    <androidx.recyclerview.widget.RecyclerView
+
+    <!-- SwipeRefreshLayout ajoutée autour du RecyclerView -->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayoutU"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recyclerViewU"
-        android:scrollbars="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/searchU"
-        />
+        android:layout_below="@id/searchU"
+        android:layout_marginTop="10dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewU"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </RelativeLayout>

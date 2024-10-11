@@ -4,11 +4,11 @@ package com.example.gestion_univ.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.gestion_univ.R;
@@ -19,7 +19,7 @@ import java.lang.String;
 
 public final class ActivityEvenementBinding implements ViewBinding {
   @NonNull
-  private final RelativeLayout rootView;
+  private final SwipeRefreshLayout rootView;
 
   @NonNull
   public final FloatingActionButton fabEvent;
@@ -28,29 +28,29 @@ public final class ActivityEvenementBinding implements ViewBinding {
   public final ActivityFn5ContentBinding include2;
 
   @NonNull
-  public final RelativeLayout main;
-
-  @NonNull
   public final RecyclerView recyclerViewEvent;
 
   @NonNull
   public final SearchView searchEvent;
 
-  private ActivityEvenementBinding(@NonNull RelativeLayout rootView,
+  @NonNull
+  public final SwipeRefreshLayout swipeRefreshLayout;
+
+  private ActivityEvenementBinding(@NonNull SwipeRefreshLayout rootView,
       @NonNull FloatingActionButton fabEvent, @NonNull ActivityFn5ContentBinding include2,
-      @NonNull RelativeLayout main, @NonNull RecyclerView recyclerViewEvent,
-      @NonNull SearchView searchEvent) {
+      @NonNull RecyclerView recyclerViewEvent, @NonNull SearchView searchEvent,
+      @NonNull SwipeRefreshLayout swipeRefreshLayout) {
     this.rootView = rootView;
     this.fabEvent = fabEvent;
     this.include2 = include2;
-    this.main = main;
     this.recyclerViewEvent = recyclerViewEvent;
     this.searchEvent = searchEvent;
+    this.swipeRefreshLayout = swipeRefreshLayout;
   }
 
   @Override
   @NonNull
-  public RelativeLayout getRoot() {
+  public SwipeRefreshLayout getRoot() {
     return rootView;
   }
 
@@ -88,8 +88,6 @@ public final class ActivityEvenementBinding implements ViewBinding {
       }
       ActivityFn5ContentBinding binding_include2 = ActivityFn5ContentBinding.bind(include2);
 
-      RelativeLayout main = (RelativeLayout) rootView;
-
       id = R.id.recyclerViewEvent;
       RecyclerView recyclerViewEvent = ViewBindings.findChildViewById(rootView, id);
       if (recyclerViewEvent == null) {
@@ -102,8 +100,10 @@ public final class ActivityEvenementBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityEvenementBinding((RelativeLayout) rootView, fabEvent, binding_include2,
-          main, recyclerViewEvent, searchEvent);
+      SwipeRefreshLayout swipeRefreshLayout = (SwipeRefreshLayout) rootView;
+
+      return new ActivityEvenementBinding((SwipeRefreshLayout) rootView, fabEvent, binding_include2,
+          recyclerViewEvent, searchEvent, swipeRefreshLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -27,6 +27,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CircleCrop;
@@ -56,6 +57,7 @@ public class MainEtudiant extends AppCompatActivity {
     private ImageView imageLarge1;
     private ProgressDialog progressDialog1;
     private boolean isDataLoaded1 = false;
+    SwipeRefreshLayout swipeRefreshLayoutCours; // SwipeRefreshLayout ajouté
     //TextView DateCours, HeureCours;
 
 
@@ -89,7 +91,7 @@ public class MainEtudiant extends AppCompatActivity {
         recyclerViewH1=findViewById(R.id.recyclerViewH1);
         searchViewH1=findViewById(R.id.searchH1);
         searchViewH1.clearFocus();
-
+        swipeRefreshLayoutCours = findViewById(R.id.swipeRefreshLayoutCours); // Initialisation du SwipeRefreshLayout
         // ProgressDialog pour indiquer le chargement
       /*  progressDialog1 = new ProgressDialog(this);
         progressDialog1.setMessage("Chargement des données...");
@@ -118,7 +120,13 @@ public class MainEtudiant extends AppCompatActivity {
         adapter2=new AdapterCours(MainEtudiant.this,dataList2);
         recyclerViewH1.setAdapter(adapter2);
 
-        databaseReference= FirebaseDatabase.getInstance().getReference("Cours");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Cours");
+        // Fonction pour charger les données
+        loadData(dialog); // Appel à une méthode pour charger les données
+        // Configurer le rafraîchissement par balayage
+        swipeRefreshLayoutCours.setOnRefreshListener(() -> {
+            loadData(null); // Recharger les données lors du balayage
+        });
         dialog.show();
 
         eventListener2=databaseReference.addValueEventListener(new ValueEventListener() {
@@ -293,5 +301,36 @@ public class MainEtudiant extends AppCompatActivity {
             }
         }
         adapter2.searchDataList2(searchList2);
+    }
+    // Fonction pour charger les données de Firebase
+    private void loadData(AlertDialog dialog) {
+        if (dialog != null) {
+            dialog.show();
+        }
+
+        eventListener2 = databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                dataList2.clear();
+                for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
+                    DataClass2 dataClass2 = itemSnapshot.getValue(DataClass2.class);
+                    dataClass2.setKey2(itemSnapshot.getKey());
+                    dataList2.add(dataClass2);
+                }
+                adapter2.notifyDataSetChanged();
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+                swipeRefreshLayoutCours.setRefreshing(false); // Arrêter l'animation de rafraîchissement
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+                swipeRefreshLayoutCours.setRefreshing(false); // Arrêter l'animation en cas d'erreur
+            }
+        });
     }
 }

@@ -17,6 +17,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
@@ -29,6 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Salle extends AppCompatActivity {
+
     ImageButton buttonRetourE;
     FloatingActionButton fabSalle;
     RecyclerView recyclerView3;
@@ -37,31 +39,37 @@ public class Salle extends AppCompatActivity {
     ValueEventListener eventListener3;
     MyAdapter3 adapter3;
     SearchView searchView3;
+    SwipeRefreshLayout swipeRefreshLayoutSalle; // SwipeRefreshLayout
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_salle);
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        buttonRetourE=findViewById(R.id.BackTeach);
-        fabSalle=findViewById(R.id.fabSalle);
-        recyclerView3=findViewById(R.id.recyclerViewSalle);
 
-        searchView3=findViewById(R.id.searchSalle);
+        buttonRetourE = findViewById(R.id.BackTeach);
+        fabSalle = findViewById(R.id.fabSalle);
+        recyclerView3 = findViewById(R.id.recyclerViewSalle);
+        searchView3 = findViewById(R.id.searchSalle);
+        swipeRefreshLayoutSalle = findViewById(R.id.swipeRefreshLayoutSalle); // Initialisation du SwipeRefreshLayout
         searchView3.clearFocus();
 
-        GridLayoutManager gridLayoutManager=new GridLayoutManager(Salle.this,1);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(Salle.this, 1);
         recyclerView3.setLayoutManager(gridLayoutManager);
-        AlertDialog.Builder builder=new AlertDialog.Builder(Salle.this);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(Salle.this);
         builder.setCancelable(false);
         builder.setView(R.layout.progress_layout);
-        AlertDialog dialog=builder.create();
+        AlertDialog dialog = builder.create();
         dialog.show();
+
         Button bntQ = dialog.findViewById(R.id.btnQuitterDialog);
         bntQ.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,31 +77,34 @@ public class Salle extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
-        dataList3=new ArrayList<>();
-        adapter3=new MyAdapter3(Salle.this,dataList3);
+
+        dataList3 = new ArrayList<>();
+        adapter3 = new MyAdapter3(Salle.this, dataList3);
         recyclerView3.setAdapter(adapter3);
+        databaseReference = FirebaseDatabase.getInstance().getReference("Salle");
 
-        databaseReference= FirebaseDatabase.getInstance().getReference("Salle");
-        dialog.show();
+        // Fonction pour charger les données
+        loadData(dialog); // Appel à une méthode pour charger les données
 
-        eventListener3=databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                dataList3.clear();
-                for(DataSnapshot itemSnapshot: snapshot.getChildren()){
-                    DataClass3 dataClass3=itemSnapshot.getValue(DataClass3.class);
-                    dataClass3.setKey3(itemSnapshot.getKey());
-                    dataList3.add(dataClass3);
-                }
-                adapter3.notifyDataSetChanged();
-                dialog.dismiss();
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                dialog.dismiss();
-            }
+        // Swipe-to-Refresh: Pour recharger les données lors du rafraîchissement
+        swipeRefreshLayoutSalle.setOnRefreshListener(() -> {
+            loadData(null); // Recharger les données lors du balayage
         });
+
+        // Configuration du bouton de retour
+        buttonRetourE.setOnClickListener(v -> {
+            Intent intent = new Intent(Salle.this, fn5.class);
+            startActivity(intent);
+            finish();
+        });
+
+        // Bouton flottant pour ajouter une salle
+        fabSalle.setOnClickListener(v -> {
+            Intent intent = new Intent(Salle.this, UploadSalle.class);
+            startActivity(intent);
+        });
+
+        // Écouteur pour la barre de recherche
         searchView3.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -106,27 +117,53 @@ public class Salle extends AppCompatActivity {
                 return true;
             }
         });
+    }
+    // Fonction pour charger les données de Firebase
+    private void loadData(AlertDialog dialog) {
+        if (dialog != null) {
+            dialog.show();
+        }
 
-
-        buttonRetourE.setOnClickListener(new View.OnClickListener() {
+        eventListener3 = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                Intent packageContext;
-                Intent intent = new Intent( Salle.this, fn5.class);
-                startActivity(intent);
-                finish();
-
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                dataList3.clear();
+                for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
+                    DataClass3 dataClass3 = itemSnapshot.getValue(DataClass3.class);
+                    dataClass3.setKey3(itemSnapshot.getKey());
+                    dataList3.add(dataClass3);
+                }
+                adapter3.notifyDataSetChanged();
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+                swipeRefreshLayoutSalle.setRefreshing(false); // Arrêter l'animation de rafraîchissement
             }
-        });
-        fabSalle.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent( Salle.this, UploadSalle.class);
-                startActivity(intent);
-                //finish();
+            public void onCancelled(@NonNull DatabaseError error) {
+                if (dialog != null) {
+                    dialog.dismiss();
+                }
+                swipeRefreshLayoutSalle.setRefreshing(false); // Arrêter l'animation en cas d'erreur
             }
         });
     }
+
+    // Méthode de recherche dans la liste des salles
+    public void searchList3(String text) {
+        ArrayList<DataClass3> searchList3 = new ArrayList<>();
+        for (DataClass3 dataClass3 : dataList3) {
+            if (dataClass3.getNumeroSalle().toLowerCase().contains(text.toLowerCase()) ||
+                    dataClass3.getNameSalle().toLowerCase().contains(text.toLowerCase()) ||
+                    dataClass3.getStatutSalle().toLowerCase().contains(text.toLowerCase())) {
+                searchList3.add(dataClass3);
+            }
+        }
+        adapter3.searchDataList3(searchList3);
+    }
+
+    @Override
     public void onBackPressed() {
         if (isTaskRoot()) {
             Intent intent = new Intent(this, fn5.class);
@@ -135,14 +172,5 @@ public class Salle extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
-    }
-    public void searchList3(String text){
-        ArrayList<DataClass3> searchList3 = new ArrayList<>();
-        for(DataClass3 dataClass3:dataList3){
-            if(dataClass3.getNumeroSalle().toLowerCase().contains(text.toLowerCase()) || dataClass3.getNameSalle().toLowerCase().contains(text.toLowerCase()) || dataClass3.getStatutSalle().toLowerCase().contains(text.toLowerCase())){
-                searchList3.add(dataClass3);
-            }
-        }
-        adapter3.searchDataList3(searchList3);
     }
 }

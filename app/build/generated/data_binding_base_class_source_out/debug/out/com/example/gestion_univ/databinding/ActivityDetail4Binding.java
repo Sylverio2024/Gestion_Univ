@@ -4,6 +4,7 @@ package com.example.gestion_univ.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -21,6 +22,9 @@ import java.lang.String;
 public final class ActivityDetail4Binding implements ViewBinding {
   @NonNull
   private final CoordinatorLayout rootView;
+
+  @NonNull
+  public final ImageView addImages;
 
   @NonNull
   public final FloatingActionButton deleteButton;
@@ -49,13 +53,14 @@ public final class ActivityDetail4Binding implements ViewBinding {
   @NonNull
   public final RecyclerView imageRecyclerView;
 
-  private ActivityDetail4Binding(@NonNull CoordinatorLayout rootView,
+  private ActivityDetail4Binding(@NonNull CoordinatorLayout rootView, @NonNull ImageView addImages,
       @NonNull FloatingActionButton deleteButton, @NonNull TextView detailDate,
       @NonNull TextView detailDescription, @NonNull TextView detailNumero,
       @NonNull TextView detailTime, @NonNull TextView detailTitre,
       @NonNull FloatingActionButton editButton, @NonNull FloatingActionMenu fabMenu,
       @NonNull RecyclerView imageRecyclerView) {
     this.rootView = rootView;
+    this.addImages = addImages;
     this.deleteButton = deleteButton;
     this.detailDate = detailDate;
     this.detailDescription = detailDescription;
@@ -94,6 +99,12 @@ public final class ActivityDetail4Binding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.add_images;
+      ImageView addImages = ViewBindings.findChildViewById(rootView, id);
+      if (addImages == null) {
+        break missingId;
+      }
+
       id = R.id.deleteButton;
       FloatingActionButton deleteButton = ViewBindings.findChildViewById(rootView, id);
       if (deleteButton == null) {
@@ -148,8 +159,8 @@ public final class ActivityDetail4Binding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityDetail4Binding((CoordinatorLayout) rootView, deleteButton, detailDate,
-          detailDescription, detailNumero, detailTime, detailTitre, editButton, fabMenu,
+      return new ActivityDetail4Binding((CoordinatorLayout) rootView, addImages, deleteButton,
+          detailDate, detailDescription, detailNumero, detailTime, detailTitre, editButton, fabMenu,
           imageRecyclerView);
     }
     String missingId = rootView.getResources().getResourceName(id);

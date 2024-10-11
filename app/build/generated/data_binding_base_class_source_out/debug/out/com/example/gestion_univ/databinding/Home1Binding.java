@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.gestion_univ.R;
@@ -26,11 +27,15 @@ public final class Home1Binding implements ViewBinding {
   @NonNull
   public final SearchView searchH1;
 
+  @NonNull
+  public final SwipeRefreshLayout swipeRefreshLayoutCours;
+
   private Home1Binding(@NonNull RelativeLayout rootView, @NonNull RecyclerView recyclerViewH1,
-      @NonNull SearchView searchH1) {
+      @NonNull SearchView searchH1, @NonNull SwipeRefreshLayout swipeRefreshLayoutCours) {
     this.rootView = rootView;
     this.recyclerViewH1 = recyclerViewH1;
     this.searchH1 = searchH1;
+    this.swipeRefreshLayoutCours = swipeRefreshLayoutCours;
   }
 
   @Override
@@ -72,7 +77,14 @@ public final class Home1Binding implements ViewBinding {
         break missingId;
       }
 
-      return new Home1Binding((RelativeLayout) rootView, recyclerViewH1, searchH1);
+      id = R.id.swipeRefreshLayoutCours;
+      SwipeRefreshLayout swipeRefreshLayoutCours = ViewBindings.findChildViewById(rootView, id);
+      if (swipeRefreshLayoutCours == null) {
+        break missingId;
+      }
+
+      return new Home1Binding((RelativeLayout) rootView, recyclerViewH1, searchH1,
+          swipeRefreshLayoutCours);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

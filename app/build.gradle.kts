@@ -51,15 +51,16 @@ dependencies {
     implementation ("com.karumi:dexter:6.2.3")
 
     implementation ("com.squareup.okhttp3:okhttp:4.9.3")
-   //implementation ("com.google.zxing:core:3.4.1")
+    implementation ("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
    implementation ("com.journeyapps:zxing-android-embedded:4.3.0")
 
-
+    implementation("com.google.firebase:firebase-messaging")
 
     implementation("com.github.clans:fab:1.6.4")
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.25")
     implementation(libs.zxing)
-   // implementation(libs.firebase.messaging)
+   // implementation(libs.google.firebase.messaging)
+    // implementation(libs.firebase.messaging)
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
 
 

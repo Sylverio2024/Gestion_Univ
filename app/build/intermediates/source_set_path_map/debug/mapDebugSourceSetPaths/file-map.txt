@@ -1,61 +1,63 @@
-com.example.gestion_univ.app-constraintlayout-2.1.4-0 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\02a4e8975e911b2d9d2caeacefea09a3\transformed\constraintlayout-2.1.4\res
-com.example.gestion_univ.app-jetified-fragment-ktx-1.6.0-1 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\03d64d184986cc693bdc3671dda4a1dd\transformed\jetified-fragment-ktx-1.6.0\res
-com.example.gestion_univ.app-recyclerview-1.1.0-2 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\05f857bdde01d2823e2071b57a98e998\transformed\recyclerview-1.1.0\res
-com.example.gestion_univ.app-browser-1.4.0-3 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\06d8f13144f9a379ed875b5d911b51bf\transformed\browser-1.4.0\res
-com.example.gestion_univ.app-navigation-common-2.6.0-4 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\08220794b6e00c646028b0f298a29d06\transformed\navigation-common-2.6.0\res
-com.example.gestion_univ.app-material-1.10.0-5 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\0cce107795f5103dc265a6bde1d53f17\transformed\material-1.10.0\res
-com.example.gestion_univ.app-appcompat-1.6.1-6 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\1426d31454292c1ac3a6435f8482954e\transformed\appcompat-1.6.1\res
-com.example.gestion_univ.app-jetified-glide-4.12.0-7 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\19686a2d7ea9df7851346508572d0bb9\transformed\jetified-glide-4.12.0\res
-com.example.gestion_univ.app-media-1.0.0-8 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\1fdc3d0a82dc0b1c27b44b872c118ad8\transformed\media-1.0.0\res
-com.example.gestion_univ.app-core-runtime-2.2.0-9 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\20c2acbb3e2ae47d0041fc22026ca704\transformed\core-runtime-2.2.0\res
-com.example.gestion_univ.app-cardview-1.0.0-10 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\224da2987f50421881b0df94ac2e0f69\transformed\cardview-1.0.0\res
-com.example.gestion_univ.app-navigation-ui-2.6.0-11 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\27142be6cfb6731d87c7309bc26d38a7\transformed\navigation-ui-2.6.0\res
-com.example.gestion_univ.app-jetified-lifecycle-viewmodel-ktx-2.7.0-12 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\276548f437f6a5263eb6d54c3195bbfa\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\res
-com.example.gestion_univ.app-jetified-viewpager2-1.0.0-13 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\280fcf2f7633308069c26d9a9d8de11f\transformed\jetified-viewpager2-1.0.0\res
-com.example.gestion_univ.app-core-1.9.0-14 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\2d02c164f89d1ded644caae3734ccfba\transformed\core-1.9.0\res
-com.example.gestion_univ.app-jetified-circleimageview-3.1.0-15 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\2e01ca3a353a516bbd5b637db28756de\transformed\jetified-circleimageview-3.1.0\res
-com.example.gestion_univ.app-jetified-lifecycle-runtime-ktx-2.7.0-16 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\379a6b76b1874f28a1c5b2e8340bc9c6\transformed\jetified-lifecycle-runtime-ktx-2.7.0\res
-com.example.gestion_univ.app-jetified-android-gif-drawable-1.2.25-17 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\3d1cbf6e164f285c1abb1dc543fb427b\transformed\jetified-android-gif-drawable-1.2.25\res
-com.example.gestion_univ.app-navigation-runtime-2.6.0-18 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\40d96d2a34c4080c00d62216ef548d88\transformed\navigation-runtime-2.6.0\res
-com.example.gestion_univ.app-jetified-play-services-base-18.1.0-19 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\5093a8c577162ac4ed7a536a14a03f73\transformed\jetified-play-services-base-18.1.0\res
-com.example.gestion_univ.app-jetified-lifecycle-livedata-core-ktx-2.7.0-20 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\54766f72eabb5da44bab1e314fb2fa12\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
-com.example.gestion_univ.app-lifecycle-runtime-2.7.0-21 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\5879eef0ee2805a915158c97380211e4\transformed\lifecycle-runtime-2.7.0\res
-com.example.gestion_univ.app-jetified-firebase-common-20.4.3-22 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\5f94d5e533d9b65b8d1e4168b9b339c4\transformed\jetified-firebase-common-20.4.3\res
-com.example.gestion_univ.app-slidingpanelayout-1.2.0-23 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\62bdfc5bac6062aa65099a918f563596\transformed\slidingpanelayout-1.2.0\res
-com.example.gestion_univ.app-jetified-play-services-basement-18.3.0-24 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\659177b50be64699b749f1f437c3afb2\transformed\jetified-play-services-basement-18.3.0\res
-com.example.gestion_univ.app-jetified-core-1.9.8-25 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\6b39b819d8a94df3701efd58d2a3c80f\transformed\jetified-core-1.9.8\res
-com.example.gestion_univ.app-jetified-dexter-6.2.3-26 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\6f8e4601d200b03f987eb59ab2103c5e\transformed\jetified-dexter-6.2.3\res
-com.example.gestion_univ.app-lifecycle-viewmodel-2.7.0-27 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\70062392e113cd726937caf366ccbd12\transformed\lifecycle-viewmodel-2.7.0\res
-com.example.gestion_univ.app-navigation-fragment-2.6.0-28 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\705fc0891b61d10f8f8067317d2382d1\transformed\navigation-fragment-2.6.0\res
-com.example.gestion_univ.app-jetified-window-1.0.0-29 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\7f33633bffff9066eccc9e255f1ddd88\transformed\jetified-window-1.0.0\res
-com.example.gestion_univ.app-transition-1.4.1-30 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\84c00a38b1fb2904763fee270e3a2589\transformed\transition-1.4.1\res
-com.example.gestion_univ.app-coordinatorlayout-1.1.0-31 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\8e4b08b6cf6f1c6c93ca7ddbc88d49e7\transformed\coordinatorlayout-1.1.0\res
-com.example.gestion_univ.app-jetified-savedstate-ktx-1.2.1-32 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\a1c4bc157388155b68faeac4bc32cd92\transformed\jetified-savedstate-ktx-1.2.1\res
-com.example.gestion_univ.app-jetified-core-ktx-1.9.0-33 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\a9e127bb18cf9e8ee1c8994c2520fc56\transformed\jetified-core-ktx-1.9.0\res
-com.example.gestion_univ.app-jetified-activity-1.8.0-34 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\ac1a2ea3cb06ef23844aba48f2114b67\transformed\jetified-activity-1.8.0\res
-com.example.gestion_univ.app-jetified-startup-runtime-1.1.1-35 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\af43d75ce0b02d2cea49d1741778b6f3\transformed\jetified-startup-runtime-1.1.1\res
-com.example.gestion_univ.app-lifecycle-livedata-core-2.7.0-36 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\b0c03caa8cb2af38c5aa193a486ec3b5\transformed\lifecycle-livedata-core-2.7.0\res
-com.example.gestion_univ.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-37 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\b7eccfbd0b257baede7d3c0615507842\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
-com.example.gestion_univ.app-jetified-zxing-android-embedded-4.3.0-38 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\baaa9d32fc2a813d11551f43f649d2a1\transformed\jetified-zxing-android-embedded-4.3.0\res
-com.example.gestion_univ.app-jetified-appcompat-resources-1.6.1-39 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\bb7ceee46554593f00b830f299bcf168\transformed\jetified-appcompat-resources-1.6.1\res
-com.example.gestion_univ.app-jetified-annotation-experimental-1.3.0-40 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\c32700999667b2a7324f5a52446b638b\transformed\jetified-annotation-experimental-1.3.0\res
-com.example.gestion_univ.app-jetified-fab-1.6.4-41 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\c93618faf81fac4a6d0cc82a61c22637\transformed\jetified-fab-1.6.4\res
-com.example.gestion_univ.app-lifecycle-livedata-2.7.0-42 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\cb27e8d91c868ab37f7baa59fa31d4e7\transformed\lifecycle-livedata-2.7.0\res
-com.example.gestion_univ.app-drawerlayout-1.1.1-43 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\d6679a059b5ec69a1bfb873b630402ad\transformed\drawerlayout-1.1.1\res
-com.example.gestion_univ.app-fragment-1.6.0-44 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\dd9c2e06a57d3abe5729eb8f0e9b3278\transformed\fragment-1.6.0\res
-com.example.gestion_univ.app-jetified-activity-ktx-1.8.0-45 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\e1c1ce3dce8eb7b22ee7290766a222f4\transformed\jetified-activity-ktx-1.8.0\res
-com.example.gestion_univ.app-jetified-play-services-auth-21.0.0-46 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\e295fca5efe88a83c8c71b6fe80b3c69\transformed\jetified-play-services-auth-21.0.0\res
-com.example.gestion_univ.app-jetified-emoji2-1.2.0-47 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\eb4a6ff6fa342db48b23b4d4af4b8564\transformed\jetified-emoji2-1.2.0\res
-com.example.gestion_univ.app-jetified-profileinstaller-1.3.0-48 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\ec7d0f459ff7fc87c4fdd715fe28dc53\transformed\jetified-profileinstaller-1.3.0\res
-com.example.gestion_univ.app-jetified-emoji2-views-helper-1.2.0-49 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\efd8e6087cb51ccf23a14ceebacb1524\transformed\jetified-emoji2-views-helper-1.2.0\res
-com.example.gestion_univ.app-jetified-lifecycle-process-2.7.0-50 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\f1866743cd744e4d3272f1dcd182299a\transformed\jetified-lifecycle-process-2.7.0\res
-com.example.gestion_univ.app-jetified-savedstate-1.2.1-51 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\f2743822f7e0cc5ddf60b176370cae90\transformed\jetified-savedstate-1.2.1\res
-com.example.gestion_univ.app-jetified-lifecycle-livedata-ktx-2.7.0-52 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\faad9a518212debe3fc6fa43b3bab4ad\transformed\jetified-lifecycle-livedata-ktx-2.7.0\res
-com.example.gestion_univ.app-pngs-53 E:\AndroidProject\app\build\generated\res\pngs\debug
-com.example.gestion_univ.app-res-54 E:\AndroidProject\app\build\generated\res\processDebugGoogleServices
-com.example.gestion_univ.app-resValues-55 E:\AndroidProject\app\build\generated\res\resValues\debug
-com.example.gestion_univ.app-packageDebugResources-56 E:\AndroidProject\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
-com.example.gestion_univ.app-packageDebugResources-57 E:\AndroidProject\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
-com.example.gestion_univ.app-debug-58 E:\AndroidProject\app\build\intermediates\merged_res\debug\mergeDebugResources
-com.example.gestion_univ.app-debug-59 E:\AndroidProject\app\src\debug\res
-com.example.gestion_univ.app-main-60 E:\AndroidProject\app\src\main\res
+com.example.gestion_univ.app-jetified-window-1.0.0-0 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\02fe35c668b46a41a3253cfb317282d2\transformed\jetified-window-1.0.0\res
+com.example.gestion_univ.app-jetified-savedstate-ktx-1.2.1-1 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\0ca47ec725c478cdb986dff3bb6055ea\transformed\jetified-savedstate-ktx-1.2.1\res
+com.example.gestion_univ.app-coordinatorlayout-1.1.0-2 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\0f9f7a50784c62b94a3065f21108312c\transformed\coordinatorlayout-1.1.0\res
+com.example.gestion_univ.app-jetified-savedstate-1.2.1-3 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\1118d2393c2234eb9a899356fc56d21b\transformed\jetified-savedstate-1.2.1\res
+com.example.gestion_univ.app-jetified-lifecycle-viewmodel-ktx-2.7.0-4 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\155cd50dbea244f2786db2cdf9c1c81b\transformed\jetified-lifecycle-viewmodel-ktx-2.7.0\res
+com.example.gestion_univ.app-appcompat-1.6.1-5 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\175cde1419071ae4ea92ca3d11418eb6\transformed\appcompat-1.6.1\res
+com.example.gestion_univ.app-jetified-core-ktx-1.9.0-6 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\1820e67240b932712b527e17154d7a38\transformed\jetified-core-ktx-1.9.0\res
+com.example.gestion_univ.app-jetified-emoji2-views-helper-1.2.0-7 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\192b722c59116470cafea83116f66b87\transformed\jetified-emoji2-views-helper-1.2.0\res
+com.example.gestion_univ.app-jetified-emoji2-1.2.0-8 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\20a5a0f24b9391c53b71d502758b357f\transformed\jetified-emoji2-1.2.0\res
+com.example.gestion_univ.app-jetified-play-services-auth-21.0.0-9 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\227c12054e72e7cb22877d85e079f985\transformed\jetified-play-services-auth-21.0.0\res
+com.example.gestion_univ.app-recyclerview-1.1.0-10 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\25e673451ae3104258b960407816caf8\transformed\recyclerview-1.1.0\res
+com.example.gestion_univ.app-core-1.9.0-11 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\2a90faa4d9c2c83ae5db41f74080f698\transformed\core-1.9.0\res
+com.example.gestion_univ.app-jetified-startup-runtime-1.1.1-12 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\2aed25757704c2393614bee5eff25e35\transformed\jetified-startup-runtime-1.1.1\res
+com.example.gestion_univ.app-jetified-annotation-experimental-1.3.0-13 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\3f9bd945d9090122bf0fe212e5d6f953\transformed\jetified-annotation-experimental-1.3.0\res
+com.example.gestion_univ.app-navigation-common-2.6.0-14 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\46da4e841f6df6f4118f77cb844697f0\transformed\navigation-common-2.6.0\res
+com.example.gestion_univ.app-jetified-lifecycle-viewmodel-savedstate-2.7.0-15 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\476386d0a1dde481b884a48cba4f96f5\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\res
+com.example.gestion_univ.app-transition-1.4.1-16 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\4969710527f4e4a7412f22e4dd01e188\transformed\transition-1.4.1\res
+com.example.gestion_univ.app-jetified-zxing-android-embedded-4.3.0-17 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\52815bf78e876945faffb05bb6997a8d\transformed\jetified-zxing-android-embedded-4.3.0\res
+com.example.gestion_univ.app-jetified-circleimageview-3.1.0-18 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\572205af55cf8e3240db5698911bc203\transformed\jetified-circleimageview-3.1.0\res
+com.example.gestion_univ.app-cardview-1.0.0-19 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\5aa1ecba0b5f1bc9d18da2e43db66540\transformed\cardview-1.0.0\res
+com.example.gestion_univ.app-jetified-lifecycle-runtime-ktx-2.7.0-20 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\5d974eefcdf94b1c0db01572a2c04fc6\transformed\jetified-lifecycle-runtime-ktx-2.7.0\res
+com.example.gestion_univ.app-jetified-appcompat-resources-1.6.1-21 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\5e402c37f8a192c01deb9e4d9f514834\transformed\jetified-appcompat-resources-1.6.1\res
+com.example.gestion_univ.app-jetified-profileinstaller-1.3.0-22 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\5fc497438a1083c2c999ab1b39eb4a41\transformed\jetified-profileinstaller-1.3.0\res
+com.example.gestion_univ.app-jetified-viewpager2-1.0.0-23 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\6246e24773e54910a115f0e4031f9ce3\transformed\jetified-viewpager2-1.0.0\res
+com.example.gestion_univ.app-jetified-fab-1.6.4-24 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\6468e4bd04ebaa09482f9ccadf9cd0b5\transformed\jetified-fab-1.6.4\res
+com.example.gestion_univ.app-jetified-lifecycle-livedata-ktx-2.7.0-25 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\661cd104fbd7f3b06b8e5dd2f2c5b56b\transformed\jetified-lifecycle-livedata-ktx-2.7.0\res
+com.example.gestion_univ.app-constraintlayout-2.1.4-26 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\6678f3a6a8b7ec502691f2be04014833\transformed\constraintlayout-2.1.4\res
+com.example.gestion_univ.app-swiperefreshlayout-1.1.0-27 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\698cead3d0c7e76e82c6c310ca71ba69\transformed\swiperefreshlayout-1.1.0\res
+com.example.gestion_univ.app-drawerlayout-1.1.1-28 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\6e9cf593a5169e2a00ea12d91202b8c3\transformed\drawerlayout-1.1.1\res
+com.example.gestion_univ.app-browser-1.4.0-29 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\7389fc7984fb76d3ce2a0b5a79be5dce\transformed\browser-1.4.0\res
+com.example.gestion_univ.app-fragment-1.6.0-30 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\79ae9c1fede35e39a2f9993d2ddb7bf6\transformed\fragment-1.6.0\res
+com.example.gestion_univ.app-material-1.10.0-31 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\816882d06ad8c498b71b7779c048ba5a\transformed\material-1.10.0\res
+com.example.gestion_univ.app-navigation-ui-2.6.0-32 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\84dd9c7bba5cae58c5d915be52888fa9\transformed\navigation-ui-2.6.0\res
+com.example.gestion_univ.app-jetified-fragment-ktx-1.6.0-33 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\8b5bb54b625d4bf18dc0c2f6f762e0bf\transformed\jetified-fragment-ktx-1.6.0\res
+com.example.gestion_univ.app-media-1.0.0-34 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\8e1b9911fd6f7f318557b9fa295be4c6\transformed\media-1.0.0\res
+com.example.gestion_univ.app-navigation-fragment-2.6.0-35 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\99975a7d9ec7898d52118a00b19f8787\transformed\navigation-fragment-2.6.0\res
+com.example.gestion_univ.app-jetified-play-services-basement-18.3.0-36 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\a1f08217b0df3185de4b551b839d1769\transformed\jetified-play-services-basement-18.3.0\res
+com.example.gestion_univ.app-jetified-lifecycle-livedata-core-ktx-2.7.0-37 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\a2327834b4e676ad7a47bc708706ffdf\transformed\jetified-lifecycle-livedata-core-ktx-2.7.0\res
+com.example.gestion_univ.app-jetified-play-services-base-18.1.0-38 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\a648f5b56af2b8425bcbd803ae2fb656\transformed\jetified-play-services-base-18.1.0\res
+com.example.gestion_univ.app-jetified-lifecycle-process-2.7.0-39 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\afa1fdb62a105beb007b0deb313cca16\transformed\jetified-lifecycle-process-2.7.0\res
+com.example.gestion_univ.app-navigation-runtime-2.6.0-40 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\b3bf1e9773450c38319169cb5b0df4b0\transformed\navigation-runtime-2.6.0\res
+com.example.gestion_univ.app-jetified-glide-4.12.0-41 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\b862a17dffb16472795697fac2190ecd\transformed\jetified-glide-4.12.0\res
+com.example.gestion_univ.app-jetified-core-1.9.8-42 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\ba795a9244f09824839876a208638d29\transformed\jetified-core-1.9.8\res
+com.example.gestion_univ.app-lifecycle-viewmodel-2.7.0-43 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\bb891236f843e1dcfd252f63a43185f4\transformed\lifecycle-viewmodel-2.7.0\res
+com.example.gestion_univ.app-slidingpanelayout-1.2.0-44 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\bf5c15d08800f765fe111121eaabd910\transformed\slidingpanelayout-1.2.0\res
+com.example.gestion_univ.app-jetified-activity-ktx-1.8.0-45 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\c22071698672ec234720a6c9df073156\transformed\jetified-activity-ktx-1.8.0\res
+com.example.gestion_univ.app-jetified-android-gif-drawable-1.2.25-46 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\c2917125e41f26c5b137d19597f46aed\transformed\jetified-android-gif-drawable-1.2.25\res
+com.example.gestion_univ.app-lifecycle-livedata-2.7.0-47 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\c8721e0baacdc7d5f40a77a9d677fabd\transformed\lifecycle-livedata-2.7.0\res
+com.example.gestion_univ.app-lifecycle-runtime-2.7.0-48 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\ce67a09b3f00e40936d87f63821d1157\transformed\lifecycle-runtime-2.7.0\res
+com.example.gestion_univ.app-lifecycle-livedata-core-2.7.0-49 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\d44fdb2643d9a9693ab6558f047a0088\transformed\lifecycle-livedata-core-2.7.0\res
+com.example.gestion_univ.app-jetified-firebase-common-20.4.3-50 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\d77b00ed07b0e017fbee02017db528cf\transformed\jetified-firebase-common-20.4.3\res
+com.example.gestion_univ.app-jetified-dexter-6.2.3-51 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\e073043d868738ef69076950cefac628\transformed\jetified-dexter-6.2.3\res
+com.example.gestion_univ.app-jetified-activity-1.8.0-52 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\e8d8da2db23dae6aea7e33b9e6b94cfd\transformed\jetified-activity-1.8.0\res
+com.example.gestion_univ.app-jetified-firebase-messaging-23.4.1-53 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\f735fc48766f78727798a37bf626dc99\transformed\jetified-firebase-messaging-23.4.1\res
+com.example.gestion_univ.app-core-runtime-2.2.0-54 C:\Users\willson JFB PROd\.gradle\caches\transforms-4\fc4cd4f8dc6d03e93b62a45f7a6fcc96\transformed\core-runtime-2.2.0\res
+com.example.gestion_univ.app-pngs-55 E:\AndroidProject\app\build\generated\res\pngs\debug
+com.example.gestion_univ.app-res-56 E:\AndroidProject\app\build\generated\res\processDebugGoogleServices
+com.example.gestion_univ.app-resValues-57 E:\AndroidProject\app\build\generated\res\resValues\debug
+com.example.gestion_univ.app-packageDebugResources-58 E:\AndroidProject\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.example.gestion_univ.app-packageDebugResources-59 E:\AndroidProject\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.example.gestion_univ.app-debug-60 E:\AndroidProject\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.example.gestion_univ.app-debug-61 E:\AndroidProject\app\src\debug\res
+com.example.gestion_univ.app-main-62 E:\AndroidProject\app\src\main\res

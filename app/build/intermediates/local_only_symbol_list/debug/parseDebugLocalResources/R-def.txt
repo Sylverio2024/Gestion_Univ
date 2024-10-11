@@ -15,6 +15,7 @@ color red
 color white
 drawable _00901
 drawable _60_f_362150083_tbz2jnkwvegpbx2n8i3awmmuokyrlxj5
+drawable add_images
 drawable back_round
 drawable back_text
 drawable baseline_account_box_24
@@ -133,6 +134,7 @@ id UpdateDescriptionEvent
 id UpdateNumeroEvent
 id UpdateTitreEvent
 id User
+id add_images
 id adresseD
 id adresseE
 id back
@@ -397,6 +399,11 @@ id searchSalleChoix
 id searchSalleChoix1
 id searchU
 id setStatus
+id swipeRefreshLayout
+id swipeRefreshLayout1
+id swipeRefreshLayoutCours
+id swipeRefreshLayoutSalle
+id swipeRefreshLayoutU
 id switchActivateAccount
 id telephoneD
 id telephoneE
@@ -507,6 +514,7 @@ id viewPhoto
 id viewPhoto1
 id viewUsername
 id viewUsername1
+layout activity_add_images
 layout activity_choix_salle
 layout activity_choix_salle1
 layout activity_choose_pdp
@@ -572,6 +580,7 @@ layout home
 layout home1
 layout image_item
 layout image_item1
+layout loading_dialog
 layout progress_layout
 layout recycler_item
 layout recycler_item1

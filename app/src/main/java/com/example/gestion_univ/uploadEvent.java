@@ -1,11 +1,9 @@
 package com.example.gestion_univ;
 
-import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridLayout;
@@ -36,6 +34,7 @@ public class uploadEvent extends AppCompatActivity {
     private List<Uri> imageUris = new ArrayList<>();
     private DatabaseReference databaseReference;
     private StorageReference storageReference;
+    private ProgressDialog progressDialog; // Ajout d'un ProgressDialog
 
     // Sélection d'images
     ActivityResultLauncher<Intent> imagePickerLauncher = registerForActivityResult(
@@ -74,8 +73,14 @@ public class uploadEvent extends AppCompatActivity {
         gridLayoutImages = findViewById(R.id.imageGrid);
         btnSaveEvent = findViewById(R.id.bntSaveEvent);
 
+        // Initialisation de Firebase
         databaseReference = FirebaseDatabase.getInstance().getReference("Evenement");
         storageReference = FirebaseStorage.getInstance().getReference("EventsImages");
+
+        // Initialisation du ProgressDialog
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Enregistrement en cours...");
+        progressDialog.setCancelable(false);
 
         // Ouvrir la galerie pour sélectionner des images
         gridLayoutImages.setOnClickListener(v -> {
@@ -126,6 +131,9 @@ public class uploadEvent extends AppCompatActivity {
             return;
         }
 
+        // Afficher le ProgressDialog
+        progressDialog.show();
+
         // Ajout de la date et de l'heure automatiques
         Calendar currentDateTime = Calendar.getInstance();
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
@@ -139,25 +147,19 @@ public class uploadEvent extends AppCompatActivity {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         if (task.getResult().exists()) {
-                            // Si un événement avec le même numéro existe
                             Toast.makeText(uploadEvent.this, "Numéro d'événement déjà existant", Toast.LENGTH_SHORT).show();
+                            progressDialog.dismiss(); // Cacher le ProgressDialog en cas de doublon
                         } else {
-                            // Numéro d'événement est unique, on peut procéder
                             uploadImagesAndSaveEvent(numeroEvent, titreEvent, dateEvent, timeEvent, descriptionEvent);
                         }
                     } else {
-                        // En cas d'erreur dans la requête Firebase
                         Toast.makeText(uploadEvent.this, "Erreur lors de la vérification du numéro d'événement", Toast.LENGTH_SHORT).show();
-                        // Affichage du message d'erreur pour débogage
-                        if (task.getException() != null) {
-                            task.getException().printStackTrace();
-                        }
+                        progressDialog.dismiss(); // Cacher le ProgressDialog en cas d'erreur
                     }
                 })
                 .addOnFailureListener(e -> {
-                    // En cas d'échec de la requête Firebase
                     Toast.makeText(uploadEvent.this, "Erreur lors de la vérification du numéro d'événement", Toast.LENGTH_SHORT).show();
-                    e.printStackTrace();  // Afficher les erreurs pour aider au débogage
+                    progressDialog.dismiss(); // Cacher le ProgressDialog en cas d'échec
                 });
     }
 
@@ -174,6 +176,7 @@ public class uploadEvent extends AppCompatActivity {
                 });
             }).addOnFailureListener(e -> {
                 Toast.makeText(uploadEvent.this, "Échec du téléchargement de l'image", Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss(); // Cacher le ProgressDialog en cas d'erreur d'image
             });
         }
     }
@@ -183,10 +186,11 @@ public class uploadEvent extends AppCompatActivity {
         databaseReference.push().setValue(event).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 Toast.makeText(uploadEvent.this, "Évènement enregistré avec succès", Toast.LENGTH_SHORT).show();
-                finish();
             } else {
                 Toast.makeText(uploadEvent.this, "Échec de l'enregistrement de l'évènement", Toast.LENGTH_SHORT).show();
             }
+            progressDialog.dismiss(); // Cacher le ProgressDialog après l'enregistrement
+            finish();
         });
     }
 }

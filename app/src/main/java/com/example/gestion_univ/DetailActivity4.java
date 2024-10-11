@@ -2,6 +2,8 @@ package com.example.gestion_univ;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,6 +37,7 @@ public class DetailActivity4 extends AppCompatActivity {
 
     String key4 = "";
     String imageUrl = "";
+    ImageView add_images;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +53,7 @@ public class DetailActivity4 extends AppCompatActivity {
         detailTime = findViewById(R.id.detailTime);
         deleteButton = findViewById(R.id.deleteButton);
         editButton = findViewById(R.id.editButton);
-
+        add_images = findViewById(R.id.add_images);
         // Références Firebase
         databaseReference = FirebaseDatabase.getInstance().getReference("Evenement");
         storageReference = FirebaseStorage.getInstance().getReference("EventsImages");
@@ -79,7 +82,15 @@ public class DetailActivity4 extends AppCompatActivity {
             startActivity(intent);
         });
         imageRecyclerView.setAdapter(adapter);
+        add_images.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailActivity4.this, add_images.class);
+                intent.putExtra("key4", key4);
+                startActivity(intent);
 
+            }
+        });
         // Action de suppression
         deleteButton.setOnClickListener(v -> deleteEvent());
 

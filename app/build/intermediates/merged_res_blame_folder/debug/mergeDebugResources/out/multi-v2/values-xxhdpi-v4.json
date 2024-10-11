@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.gestion_univ.app-mergeDebugResources-56:/values-xxhdpi-v4/values-xxhdpi-v4.xml",
+            "outputFile": "com.example.gestion_univ.app-mergeDebugResources-58:/values-xxhdpi-v4/values-xxhdpi-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\willson JFB PROd\\.gradle\\caches\\transforms-4\\6b39b819d8a94df3701efd58d2a3c80f\\transformed\\jetified-core-1.9.8\\res\\values-xxhdpi-v4\\values-xxhdpi-v4.xml",
+                    "source": "C:\\Users\\willson JFB PROd\\.gradle\\caches\\transforms-4\\ba795a9244f09824839876a208638d29\\transformed\\jetified-core-1.9.8\\res\\values-xxhdpi-v4\\values-xxhdpi-v4.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

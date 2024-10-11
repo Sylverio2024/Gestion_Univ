@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.gestion_univ.R;
@@ -36,16 +37,20 @@ public final class ActivityFnEnseignantBinding implements ViewBinding {
   @NonNull
   public final SearchView search;
 
+  @NonNull
+  public final SwipeRefreshLayout swipeRefreshLayout;
+
   private ActivityFnEnseignantBinding(@NonNull RelativeLayout rootView,
       @NonNull FloatingActionButton fab, @NonNull ActivityFn5ContentBinding include2,
-      @NonNull RelativeLayout main, @NonNull RecyclerView recyclerView,
-      @NonNull SearchView search) {
+      @NonNull RelativeLayout main, @NonNull RecyclerView recyclerView, @NonNull SearchView search,
+      @NonNull SwipeRefreshLayout swipeRefreshLayout) {
     this.rootView = rootView;
     this.fab = fab;
     this.include2 = include2;
     this.main = main;
     this.recyclerView = recyclerView;
     this.search = search;
+    this.swipeRefreshLayout = swipeRefreshLayout;
   }
 
   @Override
@@ -102,8 +107,14 @@ public final class ActivityFnEnseignantBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.swipeRefreshLayout;
+      SwipeRefreshLayout swipeRefreshLayout = ViewBindings.findChildViewById(rootView, id);
+      if (swipeRefreshLayout == null) {
+        break missingId;
+      }
+
       return new ActivityFnEnseignantBinding((RelativeLayout) rootView, fab, binding_include2, main,
-          recyclerView, search);
+          recyclerView, search, swipeRefreshLayout);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

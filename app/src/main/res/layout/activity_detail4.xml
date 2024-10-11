@@ -115,6 +115,9 @@
                 android:textColor="@color/lavender"
                 android:layout_marginTop="4dp" />
 
+            <!-- ImageView same size as RecyclerView -->
+
+
             <!-- RecyclerView for Images -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/imageRecyclerView"
@@ -122,6 +125,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:orientation="vertical" />
+            <ImageView
+                android:id="@+id/add_images"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/add_images" />
         </LinearLayout>
     </ScrollView>
 
