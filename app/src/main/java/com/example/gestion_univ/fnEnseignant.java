@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +36,7 @@ public class fnEnseignant extends AppCompatActivity {
     SearchView searchView;
     SwipeRefreshLayout swipeRefreshLayout;
     AlertDialog dialog;
+    FloatingActionButton fab;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -47,6 +49,7 @@ public class fnEnseignant extends AppCompatActivity {
         buttonRetourE = findViewById(R.id.BackTeach);
         searchView = findViewById(R.id.search);
         searchView.clearFocus();
+        fab = findViewById(R.id.fab);
 
         // Setup RecyclerView
         GridLayoutManager gridLayoutManager = new GridLayoutManager(fnEnseignant.this, 1);
@@ -67,6 +70,10 @@ public class fnEnseignant extends AppCompatActivity {
 
         // SwipeRefresh setup
         swipeRefreshLayout.setOnRefreshListener(this::loadData);
+        fab.setOnClickListener(v -> {
+            Intent intent = new Intent(fnEnseignant.this, UpdloadTeacher.class);
+            startActivity(intent);
+        });
 
         // Search functionality
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {

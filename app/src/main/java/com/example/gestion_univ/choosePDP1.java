@@ -120,12 +120,18 @@ public class choosePDP1 extends AppCompatActivity {
         btnCam1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Dexter.withContext(getApplicationContext()).withPermissions(Manifest.permission.CAMERA)
+                Dexter.withContext(getApplicationContext())
+                        .withPermissions(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                         .withListener(new MultiplePermissionsListener() {
                             @Override
                             public void onPermissionsChecked(MultiplePermissionsReport multiplePermissionsReport) {
-                                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                                startActivityForResult(intent, 2);
+                                if (multiplePermissionsReport.areAllPermissionsGranted()) {
+                                    // Permissions granted, open the camera
+                                    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                                    startActivityForResult(intent, 2);
+                                } else {
+                                    Toast.makeText(choosePDP1.this, "Permissions are required to use the camera", Toast.LENGTH_SHORT).show();
+                                }
                             }
 
                             @Override
@@ -135,6 +141,29 @@ public class choosePDP1 extends AppCompatActivity {
                         }).check();
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK) {
+            if (requestCode == 1 && data != null) {
+                imageUri1 = data.getData();
+                Glide.with(this).load(imageUri1).into(imgChoose1);
+            } else if (requestCode == 2 && data != null) {
+                Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+                imageUri1 = getImageUri(bitmap);
+                Glide.with(this).load(imageUri1).into(imgChoose1);
+            }
+        }
+    }
+
+    private Uri getImageUri(Bitmap bitmap) {
+        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+        String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "Title", null);
+        return Uri.parse(path);
+
     }
     private void showProfileImageLarge1() {
         if (user != null) {
@@ -231,28 +260,6 @@ public class choosePDP1 extends AppCompatActivity {
                     });
         }
     }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK) {
-            if (requestCode == 1 && data != null) {
-                imageUri1 = data.getData();
-                Glide.with(this).load(imageUri1).into(imgChoose1);
-            } else if (requestCode == 2 && data != null) {
-                Bitmap bitmap = (Bitmap) data.getExtras().get("data");
-                imageUri1 = getImageUri1(bitmap);
-                Glide.with(this).load(imageUri1).into(imgChoose1);
-            }
-        }
-    }
-
-    private Uri getImageUri1(Bitmap bitmap) {
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-        String path = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap, "Title", null);
-        return Uri.parse(path);
-    }
-
     @Override
     public void onBackPressed() {
 

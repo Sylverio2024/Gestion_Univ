@@ -31,7 +31,6 @@ import java.util.List;
 
 public class Evenement1 extends AppCompatActivity {
     ImageButton buttonRetourEvent;
-    FloatingActionButton fabEvent;
     RecyclerView recyclerViewEvent;
     List<DataClass4> dataList4;
     DatabaseReference databaseReference;
@@ -49,7 +48,6 @@ public class Evenement1 extends AppCompatActivity {
 
         recyclerViewEvent = findViewById(R.id.recyclerViewEvent);
         buttonRetourEvent = findViewById(R.id.BackTeach);
-        fabEvent = findViewById(R.id.fabEvent);
         searchViewEvent = findViewById(R.id.searchEvent);
         searchViewEvent.clearFocus();
 
@@ -97,13 +95,7 @@ public class Evenement1 extends AppCompatActivity {
                 return true;
             }
         });
-
-        // Action pour le bouton flottant
-        fabEvent.setOnClickListener(v -> {
-            Intent intent = new Intent(Evenement1.this, uploadEvent.class);
-            startActivity(intent);
-        });
-
+        
         // Action pour le bouton de retour
         buttonRetourEvent.setOnClickListener(v -> {
             Intent intent = new Intent(Evenement1.this, MainEtudiant.class);

@@ -3,6 +3,7 @@ package com.example.gestion_univ;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -33,11 +34,12 @@ public class fnEtudiant extends AppCompatActivity {
     ImageButton buttonRetourET;
     FloatingActionButton fab1;
     RecyclerView recyclerView1;
-    List<DataClass1> dataList1;
+    List<DataClass1> dataList1, filteredDataList1;
     DatabaseReference databaseReference;
     ValueEventListener eventListener;
     MyAdapter1 adapter1;
     SearchView searchView1;
+    AlertDialog dialog;
     SwipeRefreshLayout swipeRefreshLayout; // Ajout du SwipeRefreshLayout
 
     @SuppressLint("MissingInflatedId")
@@ -50,12 +52,6 @@ public class fnEtudiant extends AppCompatActivity {
         // Initialisation du SwipeRefreshLayout
         swipeRefreshLayout = findViewById(R.id.swipeRefreshLayout1); // Assurez-vous que le layout est ajouté dans le fichier XML
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-
         recyclerView1 = findViewById(R.id.recyclerView1);
         fab1 = findViewById(R.id.fab1);
         searchView1 = findViewById(R.id.search1);
@@ -65,27 +61,21 @@ public class fnEtudiant extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(fnEtudiant.this, 1);
         recyclerView1.setLayoutManager(gridLayoutManager);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(fnEtudiant.this);
-        builder.setCancelable(false);
-        builder.setView(R.layout.progress_layout);
-        AlertDialog dialog = builder.create();
-        dialog.show();
-
-        Button bntQ = dialog.findViewById(R.id.btnQuitterDialog);
-        bntQ.setOnClickListener(v -> dialog.dismiss());
+        // Setup loading dialog
+        setupLoadingDialog();
 
         dataList1 = new ArrayList<>();
-        adapter1 = new MyAdapter1(fnEtudiant.this, dataList1);
+        filteredDataList1 = new ArrayList<>();
+        adapter1 = new MyAdapter1(fnEtudiant.this, filteredDataList1);
         recyclerView1.setAdapter(adapter1);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Etudiants");
 
-        loadData(dialog); // Appel à une méthode pour charger les données
+        // Load data initially
+        loadData();
 
-        // Configurer le rafraîchissement par balayage
-        swipeRefreshLayout.setOnRefreshListener(() -> {
-            loadData(null); // Recharger les données lors du balayage
-        });
+        // SwipeRefresh setup
+        swipeRefreshLayout.setOnRefreshListener(this::loadData);
 
         fab1.setOnClickListener(v -> {
             Intent intent = new Intent(fnEtudiant.this, UploadStudent.class);
@@ -106,41 +96,68 @@ public class fnEtudiant extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                searchList1(newText);
+                filterData(newText);
                 return true;
             }
         });
     }
+    private void setupLoadingDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(fnEtudiant.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.progress_layout, null);
+        builder.setView(dialogView);
+        builder.setCancelable(false);
+        dialog = builder.create();
 
-    private void loadData(AlertDialog dialog) {
-        if (dialog != null) {
-            dialog.show();
-        }
+        Button buttonQuitter = dialogView.findViewById(R.id.btnQuitterDialog);
+        buttonQuitter.setOnClickListener(v -> dialog.dismiss());
+    }
+    private void loadData() {
+        dialog.show();  // Show the loading dialog when fetching data
 
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                dataList1.clear();
+                dataList1.clear();  // Clear the existing list before updating
                 for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
                     DataClass1 dataClass1 = itemSnapshot.getValue(DataClass1.class);
-                    dataClass1.setKey1(itemSnapshot.getKey());
-                    dataList1.add(dataClass1);
+                    if (dataClass1 != null) {
+                        dataClass1.setKey1(itemSnapshot.getKey());
+                        dataList1.add(dataClass1);
+                    }
                 }
-                adapter1.notifyDataSetChanged();
-                if (dialog != null) {
-                    dialog.dismiss();
-                }
-                swipeRefreshLayout.setRefreshing(false); // Arrêter l'animation de rafraîchissement
+                filteredDataList1.clear();  // Update the filtered list
+                filteredDataList1.addAll(dataList1);
+
+                adapter1.notifyDataSetChanged();  // Notify adapter about data change
+                dialog.dismiss();
+                swipeRefreshLayout.setRefreshing(false);  // Stop refreshing animation
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                if (dialog != null) {
-                    dialog.dismiss();
-                }
-                swipeRefreshLayout.setRefreshing(false); // Arrêter l'animation en cas d'erreur
+                Log.e("fnEnseignant", "Error fetching data", error.toException());
+                dialog.dismiss();
+                swipeRefreshLayout.setRefreshing(false);  // Stop refreshing even in case of error
             }
         });
+    }
+
+    private void filterData(String query) {
+        String lowerCaseQuery = query.toLowerCase();
+        filteredDataList1.clear();
+
+        for (DataClass1 dataClass1 : dataList1) {
+            if (dataClass1.getNumeroIDE().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass1.getNumInscriptionE().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass1.getNameE().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass1.getPrenomE().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass1.getMentionE().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass1.getParcoursE().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass1.getNiveauE().toLowerCase().contains(lowerCaseQuery)) {
+                filteredDataList1.add(dataClass1);
+            }
+        }
+        adapter1.notifyDataSetChanged();  // Update RecyclerView with filtered data
     }
 
     @Override
@@ -152,21 +169,5 @@ public class fnEtudiant extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
-    }
-
-    public void searchList1(String text) {
-        ArrayList<DataClass1> searchList1 = new ArrayList<>();
-        for (DataClass1 dataClass1 : dataList1) {
-            if (dataClass1.getNumeroIDE().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass1.getNumInscriptionE().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass1.getNameE().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass1.getPrenomE().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass1.getMentionE().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass1.getParcoursE().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass1.getNiveauE().toLowerCase().contains(text.toLowerCase())) {
-                searchList1.add(dataClass1);
-            }
-        }
-        adapter1.searchDataList1(searchList1);
     }
 }

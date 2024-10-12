@@ -88,12 +88,7 @@ public class detailUser extends AppCompatActivity {
                     .addOnFailureListener(e -> Toast.makeText(detailUser.this, "Erreur de recherche : " + e.getMessage(), Toast.LENGTH_LONG).show());
         }
 
-        // Suppression de l'utilisateur lors du clic sur le bouton de suppression
-        findViewById(R.id.deleteButton).setOnClickListener(v -> {
-            if (userEmail != null) {
-               // deleteUserAccount(userEmail);
-            }
-        });
+
     }
 
     // Méthode pour supprimer l'utilisateur de Firebase Authentication et Firestore

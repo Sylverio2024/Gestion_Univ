@@ -3,6 +3,7 @@ package com.example.gestion_univ;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -34,11 +35,12 @@ public class Cours extends AppCompatActivity {
     ImageButton buttonRetourE;
     FloatingActionButton fabCours;
     RecyclerView recyclerView2;
-    List<DataClass2> dataList2;
+    List<DataClass2> dataList2,filteredDataList2;
     DatabaseReference databaseReference;
     ValueEventListener eventListener2;
     MyAdapter2 adapter2;
     SearchView searchView2;
+    AlertDialog dialog;
     SwipeRefreshLayout swipeRefreshLayoutCours; // SwipeRefreshLayout ajouté
 
 
@@ -65,30 +67,20 @@ public class Cours extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(Cours.this, 1);
         recyclerView2.setLayoutManager(gridLayoutManager);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(Cours.this);
-        builder.setCancelable(false);
-        builder.setView(R.layout.progress_layout);
-        AlertDialog dialog = builder.create();
-        dialog.show();
-
-        Button bntQ = dialog.findViewById(R.id.btnQuitterDialog);
-        bntQ.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        // Setup loading dialog
+        setupLoadingDialog();
 
         dataList2 = new ArrayList<>();
-        adapter2 = new MyAdapter2(Cours.this, dataList2);
+        filteredDataList2 = new ArrayList<>();
+        adapter2 = new MyAdapter2(Cours.this, filteredDataList2);
         recyclerView2.setAdapter(adapter2);
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Cours");
-        // Fonction pour charger les données
-        loadData(dialog); // Appel à une méthode pour charger les données
-        // Configurer le rafraîchissement par balayage
-        swipeRefreshLayoutCours.setOnRefreshListener(() -> {
-            loadData(null); // Recharger les données lors du balayage
-        });
+        // Load data initially
+        loadData();
+
+        // SwipeRefresh setup
+        swipeRefreshLayoutCours.setOnRefreshListener(this::loadData);
 
         searchView2.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -98,7 +90,7 @@ public class Cours extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                searchList2(newText);
+                filterData(newText);
                 return true;
             }
         });
@@ -120,7 +112,63 @@ public class Cours extends AppCompatActivity {
             }
         });
     }
+    private void setupLoadingDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Cours.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.progress_layout, null);
+        builder.setView(dialogView);
+        builder.setCancelable(false);
+        dialog = builder.create();
 
+        Button buttonQuitter = dialogView.findViewById(R.id.btnQuitterDialog);
+        buttonQuitter.setOnClickListener(v -> dialog.dismiss());
+    }
+
+    private void filterData(String query) {
+        String lowerCaseQuery = query.toLowerCase();
+        filteredDataList2.clear();
+
+        for (DataClass2 dataClass2 : dataList2) {
+            if (dataClass2.getNumeroCours().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass2.getNameCours().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass2.getParcoursCours().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass2.getNiveauCours().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass2.getDescriptionCours().toLowerCase().contains(lowerCaseQuery)) {
+                filteredDataList2.add(dataClass2);
+            }
+        }
+        adapter2.notifyDataSetChanged();  // Update RecyclerView with filtered data
+    }
+
+    private void loadData() {
+        dialog.show();  // Show the loading dialog when fetching data
+
+        eventListener2 = databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                dataList2.clear();  // Clear the existing list before updating
+                for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
+                    DataClass2 dataClass2 = itemSnapshot.getValue(DataClass2.class);
+                    if (dataClass2 != null) {
+                        dataClass2.setKey2(itemSnapshot.getKey());
+                        dataList2.add(dataClass2);
+                    }
+                }
+                filteredDataList2.clear();  // Update the filtered list
+                filteredDataList2.addAll(dataList2);
+
+                adapter2.notifyDataSetChanged();  // Notify adapter about data change
+                dialog.dismiss();
+                swipeRefreshLayoutCours.setRefreshing(false);  // Stop refreshing animation
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("fnEnseignant", "Error fetching data", error.toException());
+                dialog.dismiss();
+                swipeRefreshLayoutCours.setRefreshing(false);  // Stop refreshing even in case of error
+            }
+        });
+    }
     public void onBackPressed() {
         if (isTaskRoot()) {
             Intent intent = new Intent(this, fn5.class);
@@ -129,51 +177,5 @@ public class Cours extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
-    }
-
-    public void searchList2(String text) {
-        ArrayList<DataClass2> searchList2 = new ArrayList<>();
-        for (DataClass2 dataClass2 : dataList2) {
-            if (dataClass2.getNumeroCours().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass2.getNameCours().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass2.getParcoursCours().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass2.getNiveauCours().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass2.getDescriptionCours().toLowerCase().contains(text.toLowerCase())) {
-                searchList2.add(dataClass2);
-            }
-        }
-        adapter2.searchDataList2(searchList2);
-    }
-
-    // Fonction pour charger les données de Firebase
-    private void loadData(AlertDialog dialog) {
-        if (dialog != null) {
-            dialog.show();
-        }
-
-        eventListener2 = databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                dataList2.clear();
-                for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
-                    DataClass2 dataClass2 = itemSnapshot.getValue(DataClass2.class);
-                    dataClass2.setKey2(itemSnapshot.getKey());
-                    dataList2.add(dataClass2);
-                }
-                adapter2.notifyDataSetChanged();
-                if (dialog != null) {
-                    dialog.dismiss();
-                }
-                swipeRefreshLayoutCours.setRefreshing(false); // Arrêter l'animation de rafraîchissement
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                if (dialog != null) {
-                    dialog.dismiss();
-                }
-                swipeRefreshLayoutCours.setRefreshing(false); // Arrêter l'animation en cas d'erreur
-            }
-        });
     }
 }

@@ -20,11 +20,10 @@
 
             <ImageView
                 android:id="@+id/detailImageU"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="280dp"
                 android:layout_marginTop="16dp"
                 android:padding="8dp"
-                android:scaleType="fitXY"
                 android:src="@drawable/imageicon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -126,46 +125,6 @@
                 android:textColor="@color/lavender"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/RoleUser" />
-
-
-            <!-- Floating Action Menu -->
-            <com.github.clans.fab.FloatingActionMenu
-                android:id="@+id/fabMenu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="200dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:menu_colorNormal="@color/lavender"
-                app:menu_colorPressed="@color/lavender"
-                app:menu_fab_size="normal"
-                app:menu_icon="@drawable/baseline_format_list_bulleted_24"
-                app:menu_openDirection="down"
-                app:menu_showShadow="true">
-
-                <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/editButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/baseline_edit_24"
-                    app:fab_colorNormal="@color/green"
-                    app:fab_showShadow="true"
-                    app:fab_size="mini" />
-
-                <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/deleteButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/baseline_delete_24"
-                    app:fab_colorNormal="@color/red"
-                    app:fab_showShadow="true"
-                    app:fab_size="mini" />
-
-
-
-            </com.github.clans.fab.FloatingActionMenu>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 </ScrollView>

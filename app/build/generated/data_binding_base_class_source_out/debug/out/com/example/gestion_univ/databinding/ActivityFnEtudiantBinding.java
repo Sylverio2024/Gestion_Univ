@@ -4,10 +4,10 @@ package com.example.gestion_univ.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.SearchView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
@@ -20,7 +20,7 @@ import java.lang.String;
 
 public final class ActivityFnEtudiantBinding implements ViewBinding {
   @NonNull
-  private final ConstraintLayout rootView;
+  private final RelativeLayout rootView;
 
   @NonNull
   public final FloatingActionButton fab1;
@@ -29,7 +29,7 @@ public final class ActivityFnEtudiantBinding implements ViewBinding {
   public final ActivityFn5ContentBinding include2;
 
   @NonNull
-  public final ConstraintLayout main;
+  public final RelativeLayout main;
 
   @NonNull
   public final RecyclerView recyclerView1;
@@ -40,9 +40,9 @@ public final class ActivityFnEtudiantBinding implements ViewBinding {
   @NonNull
   public final SwipeRefreshLayout swipeRefreshLayout1;
 
-  private ActivityFnEtudiantBinding(@NonNull ConstraintLayout rootView,
+  private ActivityFnEtudiantBinding(@NonNull RelativeLayout rootView,
       @NonNull FloatingActionButton fab1, @NonNull ActivityFn5ContentBinding include2,
-      @NonNull ConstraintLayout main, @NonNull RecyclerView recyclerView1,
+      @NonNull RelativeLayout main, @NonNull RecyclerView recyclerView1,
       @NonNull SearchView search1, @NonNull SwipeRefreshLayout swipeRefreshLayout1) {
     this.rootView = rootView;
     this.fab1 = fab1;
@@ -55,7 +55,7 @@ public final class ActivityFnEtudiantBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public ConstraintLayout getRoot() {
+  public RelativeLayout getRoot() {
     return rootView;
   }
 
@@ -93,7 +93,7 @@ public final class ActivityFnEtudiantBinding implements ViewBinding {
       }
       ActivityFn5ContentBinding binding_include2 = ActivityFn5ContentBinding.bind(include2);
 
-      ConstraintLayout main = (ConstraintLayout) rootView;
+      RelativeLayout main = (RelativeLayout) rootView;
 
       id = R.id.recyclerView1;
       RecyclerView recyclerView1 = ViewBindings.findChildViewById(rootView, id);
@@ -113,8 +113,8 @@ public final class ActivityFnEtudiantBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityFnEtudiantBinding((ConstraintLayout) rootView, fab1, binding_include2,
-          main, recyclerView1, search1, swipeRefreshLayout1);
+      return new ActivityFnEtudiantBinding((RelativeLayout) rootView, fab1, binding_include2, main,
+          recyclerView1, search1, swipeRefreshLayout1);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -3,6 +3,7 @@ package com.example.gestion_univ;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -34,11 +35,12 @@ public class Salle extends AppCompatActivity {
     ImageButton buttonRetourE;
     FloatingActionButton fabSalle;
     RecyclerView recyclerView3;
-    List<DataClass3> dataList3;
+    List<DataClass3> dataList3,filteredDataList3;
     DatabaseReference databaseReference;
     ValueEventListener eventListener3;
     MyAdapter3 adapter3;
     SearchView searchView3;
+    AlertDialog dialog;
     SwipeRefreshLayout swipeRefreshLayoutSalle; // SwipeRefreshLayout
 
     @SuppressLint("MissingInflatedId")
@@ -64,32 +66,21 @@ public class Salle extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(Salle.this, 1);
         recyclerView3.setLayoutManager(gridLayoutManager);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(Salle.this);
-        builder.setCancelable(false);
-        builder.setView(R.layout.progress_layout);
-        AlertDialog dialog = builder.create();
-        dialog.show();
-
-        Button bntQ = dialog.findViewById(R.id.btnQuitterDialog);
-        bntQ.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        // Setup loading dialog
+        setupLoadingDialog();
 
         dataList3 = new ArrayList<>();
-        adapter3 = new MyAdapter3(Salle.this, dataList3);
+        filteredDataList3 = new ArrayList<>();
+        adapter3 = new MyAdapter3(Salle.this, filteredDataList3);
         recyclerView3.setAdapter(adapter3);
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Salle");
 
-        // Fonction pour charger les données
-        loadData(dialog); // Appel à une méthode pour charger les données
+        // Load data initially
+        loadData();
 
-        // Swipe-to-Refresh: Pour recharger les données lors du rafraîchissement
-        swipeRefreshLayoutSalle.setOnRefreshListener(() -> {
-            loadData(null); // Recharger les données lors du balayage
-        });
+        // SwipeRefresh setup
+        swipeRefreshLayoutSalle.setOnRefreshListener(this::loadData);
 
         // Configuration du bouton de retour
         buttonRetourE.setOnClickListener(v -> {
@@ -113,54 +104,64 @@ public class Salle extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                searchList3(newText);
+                filterData(newText);
                 return true;
             }
         });
     }
-    // Fonction pour charger les données de Firebase
-    private void loadData(AlertDialog dialog) {
-        if (dialog != null) {
-            dialog.show();
+    private void setupLoadingDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Salle.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.progress_layout, null);
+        builder.setView(dialogView);
+        builder.setCancelable(false);
+        dialog = builder.create();
+
+        Button buttonQuitter = dialogView.findViewById(R.id.btnQuitterDialog);
+        buttonQuitter.setOnClickListener(v -> dialog.dismiss());
+    }
+
+    private void filterData(String query) {
+        String lowerCaseQuery = query.toLowerCase();
+        filteredDataList3.clear();
+        for (DataClass3 dataClass3 : dataList3) {
+            if (dataClass3.getNumeroSalle().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass3.getNameSalle().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass3.getStatutSalle().toLowerCase().contains(lowerCaseQuery)) {
+                filteredDataList3.add(dataClass3);
+            }
         }
+        adapter3.notifyDataSetChanged();  // Update RecyclerView with filtered data
+    }
+
+    private void loadData() {
+        dialog.show();  // Show the loading dialog when fetching data
 
         eventListener3 = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                dataList3.clear();
+                dataList3.clear();  // Clear the existing list before updating
                 for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
                     DataClass3 dataClass3 = itemSnapshot.getValue(DataClass3.class);
-                    dataClass3.setKey3(itemSnapshot.getKey());
-                    dataList3.add(dataClass3);
+                    if (dataClass3 != null) {
+                        dataClass3.setKey3(itemSnapshot.getKey());
+                        dataList3.add(dataClass3);
+                    }
                 }
-                adapter3.notifyDataSetChanged();
-                if (dialog != null) {
-                    dialog.dismiss();
-                }
-                swipeRefreshLayoutSalle.setRefreshing(false); // Arrêter l'animation de rafraîchissement
+                filteredDataList3.clear();  // Update the filtered list
+                filteredDataList3.addAll(dataList3);
+
+                adapter3.notifyDataSetChanged();  // Notify adapter about data change
+                dialog.dismiss();
+                swipeRefreshLayoutSalle.setRefreshing(false);  // Stop refreshing animation
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                if (dialog != null) {
-                    dialog.dismiss();
-                }
-                swipeRefreshLayoutSalle.setRefreshing(false); // Arrêter l'animation en cas d'erreur
+                Log.e("fnEnseignant", "Error fetching data", error.toException());
+                dialog.dismiss();
+                swipeRefreshLayoutSalle.setRefreshing(false);  // Stop refreshing even in case of error
             }
         });
-    }
-
-    // Méthode de recherche dans la liste des salles
-    public void searchList3(String text) {
-        ArrayList<DataClass3> searchList3 = new ArrayList<>();
-        for (DataClass3 dataClass3 : dataList3) {
-            if (dataClass3.getNumeroSalle().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass3.getNameSalle().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass3.getStatutSalle().toLowerCase().contains(text.toLowerCase())) {
-                searchList3.add(dataClass3);
-            }
-        }
-        adapter3.searchDataList3(searchList3);
     }
 
     @Override

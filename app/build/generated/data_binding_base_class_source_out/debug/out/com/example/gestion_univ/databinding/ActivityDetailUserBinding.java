@@ -14,8 +14,6 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.gestion_univ.R;
-import com.github.clans.fab.FloatingActionButton;
-import com.github.clans.fab.FloatingActionMenu;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -49,16 +47,7 @@ public final class ActivityDetailUserBinding implements ViewBinding {
   public final TextView TelephoneUser;
 
   @NonNull
-  public final FloatingActionButton deleteButton;
-
-  @NonNull
   public final ImageView detailImageU;
-
-  @NonNull
-  public final FloatingActionButton editButton;
-
-  @NonNull
-  public final FloatingActionMenu fabMenu;
 
   @NonNull
   public final ConstraintLayout main;
@@ -69,10 +58,8 @@ public final class ActivityDetailUserBinding implements ViewBinding {
   private ActivityDetailUserBinding(@NonNull ScrollView rootView, @NonNull TextView EmailU,
       @NonNull TextView EmailUser, @NonNull TextView NomU, @NonNull TextView NomUser,
       @NonNull TextView RoleU, @NonNull TextView RoleUser, @NonNull TextView TelephoneU,
-      @NonNull TextView TelephoneUser, @NonNull FloatingActionButton deleteButton,
-      @NonNull ImageView detailImageU, @NonNull FloatingActionButton editButton,
-      @NonNull FloatingActionMenu fabMenu, @NonNull ConstraintLayout main,
-      @NonNull Switch switchActivateAccount) {
+      @NonNull TextView TelephoneUser, @NonNull ImageView detailImageU,
+      @NonNull ConstraintLayout main, @NonNull Switch switchActivateAccount) {
     this.rootView = rootView;
     this.EmailU = EmailU;
     this.EmailUser = EmailUser;
@@ -82,10 +69,7 @@ public final class ActivityDetailUserBinding implements ViewBinding {
     this.RoleUser = RoleUser;
     this.TelephoneU = TelephoneU;
     this.TelephoneUser = TelephoneUser;
-    this.deleteButton = deleteButton;
     this.detailImageU = detailImageU;
-    this.editButton = editButton;
-    this.fabMenu = fabMenu;
     this.main = main;
     this.switchActivateAccount = switchActivateAccount;
   }
@@ -165,27 +149,9 @@ public final class ActivityDetailUserBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.deleteButton;
-      FloatingActionButton deleteButton = ViewBindings.findChildViewById(rootView, id);
-      if (deleteButton == null) {
-        break missingId;
-      }
-
       id = R.id.detailImageU;
       ImageView detailImageU = ViewBindings.findChildViewById(rootView, id);
       if (detailImageU == null) {
-        break missingId;
-      }
-
-      id = R.id.editButton;
-      FloatingActionButton editButton = ViewBindings.findChildViewById(rootView, id);
-      if (editButton == null) {
-        break missingId;
-      }
-
-      id = R.id.fabMenu;
-      FloatingActionMenu fabMenu = ViewBindings.findChildViewById(rootView, id);
-      if (fabMenu == null) {
         break missingId;
       }
 
@@ -202,8 +168,7 @@ public final class ActivityDetailUserBinding implements ViewBinding {
       }
 
       return new ActivityDetailUserBinding((ScrollView) rootView, EmailU, EmailUser, NomU, NomUser,
-          RoleU, RoleUser, TelephoneU, TelephoneUser, deleteButton, detailImageU, editButton,
-          fabMenu, main, switchActivateAccount);
+          RoleU, RoleUser, TelephoneU, TelephoneUser, detailImageU, main, switchActivateAccount);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

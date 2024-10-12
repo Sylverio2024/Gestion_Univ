@@ -3,6 +3,7 @@ package com.example.gestion_univ;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -34,11 +35,12 @@ public class Evenement extends AppCompatActivity {
     ImageButton buttonRetourEvent;
     FloatingActionButton fabEvent;
     RecyclerView recyclerViewEvent;
-    List<DataClass4> dataList4;
+    List<DataClass4> dataList4,filteredDataList4;
     DatabaseReference databaseReference;
     ValueEventListener eventListener;
     MyAdapter4 adapter4;
     SearchView searchViewEvent;
+    AlertDialog dialog;
     SwipeRefreshLayout swipeRefreshLayout;
 
     @SuppressLint("MissingInflatedId")
@@ -60,30 +62,24 @@ public class Evenement extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(Evenement.this, 1);
         recyclerViewEvent.setLayoutManager(gridLayoutManager);
 
-        // Configuration de la boîte de dialogue de chargement
-        AlertDialog.Builder builder = new AlertDialog.Builder(Evenement.this);
-        View dialogView = getLayoutInflater().inflate(R.layout.progress_layout, null);
-        builder.setView(dialogView);
-        builder.setCancelable(false);
-        AlertDialog dialog = builder.create();
 
-        // Récupérer la référence au bouton Quitter du Dialog
-        Button buttonQuitter = dialogView.findViewById(R.id.btnQuitterDialog);
-        buttonQuitter.setOnClickListener(v -> dialog.dismiss());
 
-        // Initialisation des données et de l'adaptateur
+        // Setup loading dialog
+        setupLoadingDialog();
+
         dataList4 = new ArrayList<>();
-        adapter4 = new MyAdapter4(Evenement.this, dataList4);
+        filteredDataList4 = new ArrayList<>();
+        adapter4 = new MyAdapter4(Evenement.this, filteredDataList4);
         recyclerViewEvent.setAdapter(adapter4);
 
         // Récupération des données depuis Firebase
         databaseReference = FirebaseDatabase.getInstance().getReference("Evenement");
-        loadData(dialog); // Appel à la méthode pour charger les données
 
-        // Configurer le rafraîchissement par balayage
-        swipeRefreshLayout.setOnRefreshListener(() -> {
-            loadData(null); // Recharger les données lors du tirage vers le bas
-        });
+        // Load data initially
+        loadData();
+
+        // SwipeRefresh setup
+        swipeRefreshLayout.setOnRefreshListener(this::loadData);
 
         // Fonctionnalité de recherche
         searchViewEvent.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -94,7 +90,7 @@ public class Evenement extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                searchList4(newText);
+                filterData(newText);
                 return true;
             }
         });
@@ -112,17 +108,23 @@ public class Evenement extends AppCompatActivity {
             finish();
         });
     }
+    private void setupLoadingDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(Evenement.this);
+        View dialogView = getLayoutInflater().inflate(R.layout.progress_layout, null);
+        builder.setView(dialogView);
+        builder.setCancelable(false);
+        dialog = builder.create();
 
-    // Méthode pour charger les données depuis Firebase
-    private void loadData(AlertDialog dialog) {
-        if (dialog != null) {
-            dialog.show(); // Afficher la boîte de dialogue
-        }
+        Button buttonQuitter = dialogView.findViewById(R.id.btnQuitterDialog);
+        buttonQuitter.setOnClickListener(v -> dialog.dismiss());
+    }
+    private void loadData() {
+        dialog.show();  // Show the loading dialog when fetching data
 
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                dataList4.clear(); // Effacer la liste avant de récupérer de nouvelles données
+                dataList4.clear();  // Clear the existing list before updating
                 for (DataSnapshot itemSnapshot : snapshot.getChildren()) {
                     DataClass4 dataClass4 = itemSnapshot.getValue(DataClass4.class);
                     if (dataClass4 != null) {
@@ -130,21 +132,34 @@ public class Evenement extends AppCompatActivity {
                         dataList4.add(dataClass4);
                     }
                 }
-                adapter4.notifyDataSetChanged();
-                if (dialog != null) {
-                    dialog.dismiss(); // Masquer la boîte de dialogue
-                }
-                swipeRefreshLayout.setRefreshing(false); // Arrêter l'animation de rafraîchissement
+                filteredDataList4.clear();  // Update the filtered list
+                filteredDataList4.addAll(dataList4);
+
+                adapter4.notifyDataSetChanged();  // Notify adapter about data change
+                dialog.dismiss();
+                swipeRefreshLayout.setRefreshing(false);  // Stop refreshing animation
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                if (dialog != null) {
-                    dialog.dismiss(); // Masquer la boîte de dialogue en cas d'erreur
-                }
-                swipeRefreshLayout.setRefreshing(false); // Arrêter l'animation de rafraîchissement
+                Log.e("fnEnseignant", "Error fetching data", error.toException());
+                dialog.dismiss();
+                swipeRefreshLayout.setRefreshing(false);  // Stop refreshing even in case of error
             }
         });
+    }
+
+    private void filterData(String query) {
+        String lowerCaseQuery = query.toLowerCase();
+        filteredDataList4.clear();
+        for (DataClass4 dataClass4 : dataList4) {
+            if (dataClass4.getNumeroEvent().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass4.getTitreEvent().toLowerCase().contains(lowerCaseQuery) ||
+                    dataClass4.getDateEvent().toLowerCase().contains(lowerCaseQuery)) {
+                filteredDataList4.add(dataClass4);
+            }
+        }
+        adapter4.notifyDataSetChanged();  // Update RecyclerView with filtered data
     }
 
     // Surcharger l'action du bouton retour
@@ -157,18 +172,5 @@ public class Evenement extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
-    }
-
-    // Logique de recherche pour filtrer les événements
-    public void searchList4(String text) {
-        ArrayList<DataClass4> searchList4 = new ArrayList<>();
-        for (DataClass4 dataClass4 : dataList4) {
-            if (dataClass4.getNumeroEvent().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass4.getTitreEvent().toLowerCase().contains(text.toLowerCase()) ||
-                    dataClass4.getDateEvent().toLowerCase().contains(text.toLowerCase())) {
-                searchList4.add(dataClass4);
-            }
-        }
-        adapter4.searchDataList4(searchList4);
     }
 }
